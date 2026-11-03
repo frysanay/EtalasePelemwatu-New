@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EtalasePelemwatu — Portal Potensi Lokal Desa Pelemwatu</title>
+  <meta name="description" content="Portal digital potensi lokal Desa Pelemwatu, Kecamatan Menganti, Kabupaten Gresik, Jawa Timur.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand-wrap" href="index.html">
+      <div class="logo-placeholder">EP</div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">EtalasePelemwatu</span>
+        <span class="brand-sub">Desa Pelemwatu</span>
+      </div>
+    </a>
+    <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link active" href="#hero-desa">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#profil-desa">Profil Desa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pengenalan-etalase">Tentang Etalase</a></li>
+        <li class="nav-item"><a class="nav-link" href="#katalog">Katalog Potensi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontak-section">Kontak</a></li>
+      </ul>
+      <a href="daftar-potensi.html" class="nav-link btn-nav-daftar ms-lg-3 mt-2 mt-lg-0">
+        <i class="bi bi-plus-circle-fill me-1"></i> Daftarkan Potensimu
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO — PENGENALAN DESA PELEMWATU
+     ============================================================ -->
+<section id="hero-desa">
+  <div class="container-fluid px-0 h-100">
+    <div class="row g-0 align-items-center hero-full-row">
+      <div class="col-lg-6 col-xl-5 hero-content-col">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="bi bi-geo-alt-fill"></i> Desa Pelemwatu, Jawa Timur
+          </div>
+          <h1>Selamat Datang di<br><span>Desa Pelemwatu</span></h1>
+          <p class="hero-desc">
+            Desa Pelemwatu merupakan salah satu desa yang berada di Kecamatan Menganti,
+            Kabupaten Gresik, Jawa Timur. Melalui potensi masyarakat dan lingkungan desa,
+            Pelemwatu memiliki berbagai potensi lokal yang dapat terus dikembangkan.
+          </p>
+          <div class="hero-identity-badges">
+            <span class="identity-badge"><i class="bi bi-house-door"></i> Desa Pelemwatu</span>
+            <span class="identity-badge"><i class="bi bi-pin-map"></i> Kecamatan Menganti</span>
+            <span class="identity-badge"><i class="bi bi-building"></i> Kabupaten Gresik</span>
+            <span class="identity-badge"><i class="bi bi-map"></i> Jawa Timur</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#profil-desa" class="btn-primary-custom">
+              <i class="bi bi-compass"></i> Jelajahi Profil Desa
+            </a>
+            <a href="#pengenalan-etalase" class="btn-outline-custom">
+              <i class="bi bi-shop-window"></i> Tentang Etalase
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <i class="bi bi-chevron-double-down d-block mb-1" style="font-size:1.2rem;"></i>
+    Gulir untuk menjelajah
+  </div>
+</section>
+
+<!-- ============================================================
+     PROFIL DESA
+     ============================================================ -->
+<section id="profil-desa" class="py-5">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-badge"><i class="bi bi-building"></i> Profil Desa</span>
+      <h2>Mengenal Desa Pelemwatu</h2>
+      <div class="section-underline"></div>
+      <p>Temukan informasi lengkap mengenai Desa Pelemwatu, mulai dari gambaran umum,
+         lokasi, hingga potensi yang dimiliki masyarakatnya.</p>
+    </div>
+
+    <!-- Tab Nav -->
+    <div class="profil-nav reveal">
+      <button class="profil-nav-btn active" data-tab="tab-tentang">
+        <i class="bi bi-info-circle"></i> Tentang Desa
+      </button>
+      <button class="profil-nav-btn" data-tab="tab-lokasi">
+        <i class="bi bi-geo-alt"></i> Lokasi Desa
+      </button>
+      <button class="profil-nav-btn" data-tab="tab-potensi">
+        <i class="bi bi-star"></i> Potensi Desa
+      </button>
+      <button class="profil-nav-btn" data-tab="tab-galeri">
+        <i class="bi bi-images"></i> Galeri Desa
+      </button>
+      <button class="profil-nav-btn" data-tab="tab-info">
+        <i class="bi bi-file-earmark-text"></i> Informasi Desa
+      </button>
+    </div>
+
+    <!-- TAB: Tentang -->
+    <div class="profil-tab-pane active" id="tab-tentang">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="desa-info-card">
+            <h4><i class="bi bi-info-circle-fill me-2" style="color:var(--clr-orange);"></i>Tentang Desa Pelemwatu</h4>
+            <p>Desa Pelemwatu adalah salah satu desa yang berada di wilayah Kecamatan Menganti, Kabupaten Gresik,
+            Provinsi Jawa Timur. Sebagai bagian dari sistem pemerintahan desa, Desa Pelemwatu memiliki struktur
+            pemerintahan yang dipimpin oleh Kepala Desa beserta perangkat desa yang bertugas melayani masyarakat.</p>
+            <p>Masyarakat Desa Pelemwatu dikenal aktif dalam berbagai kegiatan ekonomi dan sosial. Terdapat beragam
+            usaha, produk, jasa, dan hunian yang dikelola oleh warga sebagai wujud kemandirian dan kreativitas lokal.</p>
+            <p>Melalui EtalasePelemwatu, potensi-potensi lokal ini didokumentasikan dan dipromosikan agar dapat dikenal
+            lebih luas oleh masyarakat sekitar maupun luar daerah.</p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="desa-info-card h-100">
+            <h4><i class="bi bi-card-list me-2" style="color:var(--clr-orange);"></i>Identitas Desa</h4>
+            <table class="table table-sm" style="font-size:.9rem;">
+              <tbody>
+                <tr>
+                  <td style="color:var(--text-light);width:45%;">Nama Desa</td>
+                  <td style="color:var(--clr-blue);font-weight:600;">Pelemwatu</td>
+                </tr>
+                <tr>
+                  <td style="color:var(--text-light);">Kecamatan</td>
+                  <td style="color:var(--clr-blue);font-weight:600;">Menganti</td>
+                </tr>
+                <tr>
+                  <td style="color:var(--text-light);">Kabupaten</td>
+                  <td style="color:var(--clr-blue);font-weight:600;">Gresik</td>
+                </tr>
+                <tr>
+                  <td style="color:var(--text-light);">Provinsi</td>
+                  <td style="color:var(--clr-blue);font-weight:600;">Jawa Timur</td>
+                </tr>
+                <tr>
+                  <td style="color:var(--text-light);">Status</td>
+                  <td><span class="status-badge status-aktif">Desa Aktif</span></td>
+                </tr>
+                <tr>
+                  <td style="color:var(--text-light);">Kepala Desa</td>
+                  <td style="color:var(--text-light);font-style:italic;">[Akan diisi]</td>
+                </tr>
+                <tr>
+                  <td style="color:var(--text-light);">Kode Pos</td>
+                  <td style="color:var(--text-light);font-style:italic;">[Akan diisi]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Lokasi -->
+    <div class="profil-tab-pane" id="tab-lokasi">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="desa-info-card">
+            <h4><i class="bi bi-geo-alt-fill me-2" style="color:var(--clr-orange);"></i>Lokasi Desa Pelemwatu</h4>
+            <div class="kontak-info-block">
+              <div class="kontak-icon" style="background:rgba(242,99,15,.12);">
+                <i class="bi bi-signpost-2" style="color:var(--clr-orange);"></i>
+              </div>
+              <div class="kontak-info-text">
+                <h6>Alamat Resmi</h6>
+                <p>Jl. Raya Pelemwatu No. 128,<br>Kecamatan Menganti,<br>Kabupaten Gresik, Jawa Timur</p>
+              </div>
+            </div>
+            <hr style="border-color:var(--border);">
+            <div class="row g-2">
+              <div class="col-6">
+                <div style="background:var(--clr-bg);border-radius:8px;padding:.9rem;text-align:center;">
+                  <div style="font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.7px;">Kecamatan</div>
+                  <div style="font-weight:700;color:var(--clr-blue);margin-top:.3rem;">Menganti</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="background:var(--clr-bg);border-radius:8px;padding:.9rem;text-align:center;">
+                  <div style="font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.7px;">Kabupaten</div>
+                  <div style="font-weight:700;color:var(--clr-blue);margin-top:.3rem;">Gresik</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="background:var(--clr-bg);border-radius:8px;padding:.9rem;text-align:center;">
+                  <div style="font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.7px;">Provinsi</div>
+                  <div style="font-weight:700;color:var(--clr-blue);margin-top:.3rem;">Jawa Timur</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="background:var(--clr-bg);border-radius:8px;padding:.9rem;text-align:center;">
+                  <div style="font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.7px;">Kode Pos</div>
+                  <div style="color:var(--text-light);font-style:italic;margin-top:.3rem;font-size:.82rem;">[Akan diisi]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="desa-info-card h-100">
+            <h4><i class="bi bi-map me-2" style="color:var(--clr-orange);"></i>Peta Lokasi</h4>
+            <div class="map-placeholder" id="mapPlaceholder" style="cursor:pointer;">
+              <i class="bi bi-map"></i>
+              <span>Peta Lokasi Desa Pelemwatu</span>
+              <small>Integrasi peta interaktif akan tersedia setelah koordinat resmi desa dikonfigurasi.</small>
+            </div>
+            <p class="mt-3 mb-0" style="font-size:.83rem;color:var(--text-light);">
+              <i class="bi bi-info-circle me-1"></i>
+              Area peta di atas merupakan placeholder. Koordinat dan integrasi peta resmi akan ditambahkan oleh pengelola website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Potensi -->
+    <div class="profil-tab-pane" id="tab-potensi">
+      <div class="desa-info-card mb-4">
+        <h4><i class="bi bi-star-fill me-2" style="color:var(--clr-orange);"></i>Potensi Desa Pelemwatu</h4>
+        <p>Masyarakat Desa Pelemwatu memiliki berbagai potensi ekonomi yang mencerminkan kemandirian dan
+        kreativitas warga. Potensi ini mencakup usaha kuliner, layanan jasa, hunian, serta berbagai produk
+        dan barang yang dikelola oleh warga desa.</p>
+        <p class="mb-0" style="color:var(--text-light);font-size:.88rem;">
+          <i class="bi bi-info-circle me-1"></i>
+          Informasi potensi berikut berdasarkan data yang terdaftar di platform EtalasePelemwatu.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="layanan-card">
+            <div class="layanan-icon-wrap" style="background:rgba(242,99,15,.12);">
+              <i class="bi bi-shop" style="color:var(--clr-orange);"></i>
+            </div>
+            <h4>Usaha &amp; Produk</h4>
+            <p>Warga desa memiliki berbagai usaha kuliner dan produk lokal, termasuk dimsum, warung prasmanan, dan frozen food.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="layanan-card">
+            <div class="layanan-icon-wrap" style="background:rgba(9,74,116,.10);">
+              <i class="bi bi-tools" style="color:var(--clr-blue);"></i>
+            </div>
+            <h4>Jasa</h4>
+            <p>Tersedia layanan jasa laundry yang dikelola oleh warga untuk memenuhi kebutuhan masyarakat sehari-hari.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="layanan-card">
+            <div class="layanan-icon-wrap" style="background:rgba(255,194,11,.20);">
+              <i class="bi bi-house" style="color:var(--clr-green);"></i>
+            </div>
+            <h4>Hunian</h4>
+            <p>Warga menyediakan pilihan hunian kost yang nyaman dan terjangkau bagi pendatang maupun warga setempat.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="layanan-card">
+            <div class="layanan-icon-wrap" style="background:rgba(104,147,75,.12);">
+              <i class="bi bi-bag" style="color:var(--clr-green);"></i>
+            </div>
+            <h4>Barang Warga</h4>
+            <p>Kategori ini menampung informasi produk dan barang yang dijual atau disewakan oleh warga Desa Pelemwatu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Galeri -->
+    <div class="profil-tab-pane" id="tab-galeri">
+      <div class="desa-info-card mb-4">
+        <h4><i class="bi bi-images me-2" style="color:var(--clr-orange);"></i>Galeri Desa Pelemwatu</h4>
+        <p class="mb-0">Galeri foto lingkungan, kegiatan masyarakat, dan aktivitas lokal Desa Pelemwatu.
+        Foto asli akan ditampilkan setelah dokumentasi tersedia.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><i class="bi bi-image"></i><span>Lingkungan Desa</span></div>
+        <div class="gallery-item"><i class="bi bi-people"></i><span>Kegiatan Warga</span></div>
+        <div class="gallery-item"><i class="bi bi-shop"></i><span>Usaha Lokal</span></div>
+        <div class="gallery-item"><i class="bi bi-tree"></i><span>Lingkungan Sekitar</span></div>
+        <div class="gallery-item"><i class="bi bi-calendar-event"></i><span>Aktivitas Desa</span></div>
+        <div class="gallery-item"><i class="bi bi-camera"></i><span>Dokumentasi Lainnya</span></div>
+      </div>
+      <p class="mt-3 mb-0" style="font-size:.83rem;color:var(--text-light);">
+        <i class="bi bi-info-circle me-1"></i>
+        Placeholder galeri di atas dapat diganti dengan foto asli lingkungan dan kegiatan Desa Pelemwatu.
+      </p>
+    </div>
+
+    <!-- TAB: Informasi -->
+    <div class="profil-tab-pane" id="tab-info">
+      <div class="alert d-flex align-items-center gap-2 mb-4"
+           style="background:rgba(9,74,116,.07);border-left:4px solid var(--clr-blue);border-radius:8px;color:var(--clr-blue);font-size:.88rem;">
+        <i class="bi bi-info-circle-fill fs-5 flex-shrink-0"></i>
+        <span>Data resmi berikut belum tersedia. Placeholder akan diisi setelah informasi resmi diperoleh dari pemerintah Desa Pelemwatu.</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="info-placeholder-card">
+            <i class="bi bi-telephone-fill"></i>
+            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Kontak Resmi Desa</h6>
+            <p class="mb-0" style="font-size:.85rem;">Nomor telepon dan email resmi kantor desa akan ditampilkan di sini.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-placeholder-card">
+            <i class="bi bi-person-badge"></i>
+            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Perangkat Desa</h6>
+            <p class="mb-0" style="font-size:.85rem;">Nama dan jabatan perangkat desa akan ditampilkan setelah data resmi tersedia.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-placeholder-card">
+            <i class="bi bi-bar-chart"></i>
+            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Data Statistik Desa</h6>
+            <p class="mb-0" style="font-size:.85rem;">Jumlah penduduk, luas wilayah, dan statistik resmi akan diisi oleh pengelola.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-placeholder-card">
+            <i class="bi bi-book"></i>
+            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Sejarah Desa</h6>
+            <p class="mb-0" style="font-size:.85rem;">Informasi sejarah dan asal-usul Desa Pelemwatu akan ditambahkan kemudian.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-placeholder-card">
+            <i class="bi bi-award"></i>
+            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Penghargaan &amp; Prestasi</h6>
+            <p class="mb-0" style="font-size:.85rem;">Prestasi dan penghargaan desa akan ditampilkan jika data tersedia.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-placeholder-card">
+            <i class="bi bi-calendar3"></i>
+            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Agenda &amp; Pengumuman</h6>
+            <p class="mb-0" style="font-size:.85rem;">Agenda kegiatan dan pengumuman resmi desa akan ditampilkan di sini.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /container -->
+</section>
+
+<!-- ============================================================
+     PENGENALAN ETALASEPELEMWATU
+     ============================================================ -->
+<section id="pengenalan-etalase" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-7">
+        <div class="etalase-intro-card h-100 reveal">
+          <span class="section-badge" style="background:rgba(9,74,116,.25);color:#094A74;">
+            <i class="bi bi-shop-window"></i> Platform Digital
+          </span>
+          <h2 class="mt-2" style="color:#F2630F;">Mengenal EtalasePelemwatu</h2>
+          <div class="section-underline" style="background:linear-gradient(90deg,#094A74,rgba(9,74,116,.4));"></div>
+          <p style="color:rgba(255,255,255,.82);" class="mb-4">
+            EtalasePelemwatu merupakan platform digital yang dirancang sebagai media informasi dan
+            promosi potensi lokal masyarakat Desa Pelemwatu. Melalui platform ini, masyarakat dapat
+            menemukan berbagai informasi mengenai usaha, produk, jasa, hunian, dan barang warga
+            dalam satu tempat.
+          </p>
+          <div class="etalase-feature-item">
+            <div class="etalase-feat-icon"><i class="bi bi-megaphone"></i></div>
+            <div class="etalase-feat-text">
+              <h6>Memperkenalkan Potensi Lokal</h6>
+              <p>Memperluas jangkauan informasi potensi lokal kepada masyarakat luas.</p>
+            </div>
+          </div>
+          <div class="etalase-feature-item">
+            <div class="etalase-feat-icon"><i class="bi bi-people"></i></div>
+            <div class="etalase-feat-text">
+              <h6>Membantu Warga Berpromosi</h6>
+              <p>Memberikan ruang bagi warga untuk mempromosikan usaha dan layanan mereka.</p>
+            </div>
+          </div>
+          <div class="etalase-feature-item">
+            <div class="etalase-feat-icon"><i class="bi bi-search"></i></div>
+            <div class="etalase-feat-text">
+              <h6>Memudahkan Pencarian Informasi</h6>
+              <p>Mempermudah masyarakat dalam mencari informasi potensi yang ada di desa.</p>
+            </div>
+          </div>
+          <div class="etalase-feature-item">
+            <div class="etalase-feat-icon"><i class="bi bi-clipboard-data"></i></div>
+            <div class="etalase-feat-text">
+              <h6>Sarana Pendataan Potensi</h6>
+              <p>Menjadi sarana pendataan dan pengelolaan potensi lokal Desa Pelemwatu secara digital.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="#katalog" class="btn-outline-custom"
+               style="color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.4);">
+              <i class="bi bi-grid-3x3-gap"></i> Jelajahi Katalog Potensi
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="etalase-visual reveal">
+          <div class="etalase-logo-big"><i class="bi bi-shop-window"></i></div>
+          <h3>EtalasePelemwatu</h3>
+          <p>Portal Digital Potensi Lokal Desa Pelemwatu, Kecamatan Menganti, Kabupaten Gresik</p>
+          <div class="platform-stats">
+            <div class="platform-stat">
+              <div class="pstat-num">8+</div>
+              <div class="pstat-label">Potensi Terdaftar</div>
+            </div>
+            <div class="platform-stat">
+              <div class="pstat-num">4</div>
+              <div class="pstat-label">Kategori</div>
+            </div>
+            <div class="platform-stat">
+              <div class="pstat-num">2</div>
+              <div class="pstat-label">Mitra Laundry</div>
+            </div>
+            <div class="platform-stat">
+              <div class="pstat-num">1</div>
+              <div class="pstat-label">Desa</div>
+            </div>
+          </div>
+          <a href="daftar-potensi.html" class="btn-primary-custom w-100 justify-content-center mt-2">
+            <i class="bi bi-plus-circle"></i> Daftarkan Potensi Lokal
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATISTIK
+     ============================================================ -->
+<section id="statistik" class="py-5">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-badge"><i class="bi bi-bar-chart"></i> Data Demo</span>
+      <h2>Ringkasan Potensi Lokal</h2>
+      <div class="section-underline"></div>
+      <p>Gambaran ringkas potensi yang telah terdaftar di EtalasePelemwatu.</p>
+    </div>
+    <div class="stat-demo-notice mb-4 reveal">
+      <i class="bi bi-info-circle-fill fs-5"></i>
+      <span><strong>Catatan:</strong> Angka yang ditampilkan adalah data demonstrasi dan bukan merupakan statistik resmi Desa Pelemwatu.</span>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-card reveal">
+          <div class="stat-icon" style="background:rgba(242,99,15,.12);">
+            <i class="bi bi-grid" style="color:var(--clr-orange);"></i>
+          </div>
+          <div class="stat-num" data-target="8">0</div>
+          <div class="stat-label">Total Potensi Lokal</div>
+          <div class="stat-note">Terdaftar di platform</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-card reveal">
+          <div class="stat-icon" style="background:rgba(9,74,116,.10);">
+            <i class="bi bi-shop" style="color:var(--clr-blue);"></i>
+          </div>
+          <div class="stat-num" data-target="3">0</div>
+          <div class="stat-label">Usaha &amp; Produk</div>
+          <div class="stat-note">Kuliner dan produk lokal</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-card reveal">
+          <div class="stat-icon" style="background:rgba(255,194,11,.20);">
+            <i class="bi bi-tools" style="color:var(--clr-green);"></i>
+          </div>
+          <div class="stat-num" data-target="2">0</div>
+          <div class="stat-label">Jasa</div>
+          <div class="stat-note">Layanan laundry warga</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-card reveal">
+          <div class="stat-icon" style="background:rgba(104,147,75,.12);">
+            <i class="bi bi-house" style="color:var(--clr-green);"></i>
+          </div>
+          <div class="stat-num" data-target="2">0</div>
+          <div class="stat-label">Hunian</div>
+          <div class="stat-note">Pilihan kost warga</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     KATALOG POTENSI LOKAL
+     ============================================================ -->
+<section id="katalog" class="py-5">
+  <div class="container">
+    <div class="row align-items-end mb-4 reveal">
+      <div class="col-lg-7">
+        <div class="section-header">
+          <span class="section-badge"><i class="bi bi-grid-3x3-gap"></i> Katalog Potensi</span>
+          <h2>Temukan Potensi Lokal</h2>
+          <div class="section-underline"></div>
+          <p>Berbagai usaha, jasa, hunian, dan produk warga Desa Pelemwatu yang terdaftar di EtalasePelemwatu.</p>
+        </div>
+      </div>
+      <div class="col-lg-5 text-lg-end">
+        <a href="daftar-potensi.html" class="btn-primary-custom">
+          <i class="bi bi-plus-circle"></i> Daftarkan Potensimu
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="katalog-filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="usaha">Usaha &amp; Produk</button>
+      <button class="filter-btn" data-filter="jasa">Jasa</button>
+      <button class="filter-btn" data-filter="hunian">Hunian</button>
+      <button class="filter-btn" data-filter="barang">Barang Warga</button>
+    </div>
+
+    <div class="katalog-grid">
+      <!-- USAHA -->
+      <div class="potensi-card" data-category="usaha">
+        <div class="potensi-card-img img-usaha">🥟</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-usaha"><i class="bi bi-shop me-1"></i>Usaha &amp; Produk</span>
+          <h5>Omah Dimsum</h5>
+          <p>Usaha kuliner yang menyajikan berbagai jenis dimsum pilihan dengan cita rasa khas. Melayani pembelian langsung maupun pemesanan.</p>
+          <button class="btn-detail" data-id="omah-dimsum" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <div class="potensi-card" data-category="usaha">
+        <div class="potensi-card-img img-usaha">🍛</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-usaha"><i class="bi bi-shop me-1"></i>Usaha &amp; Produk</span>
+          <h5>Warung Prasmanan Selarasnasi</h5>
+          <p>Warung makan prasmanan pilihan masyarakat dengan menu masakan rumahan yang beragam setiap harinya.</p>
+          <button class="btn-detail" data-id="warung-prasmanan" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <div class="potensi-card" data-category="usaha">
+        <div class="potensi-card-img img-usaha">🧊</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-usaha"><i class="bi bi-shop me-1"></i>Usaha &amp; Produk</span>
+          <h5>Ratu Frozen Food Pelemwatu</h5>
+          <p>Usaha penjualan produk frozen food berkualitas untuk kebutuhan rumah tangga dan usaha kuliner.</p>
+          <button class="btn-detail" data-id="ratu-frozen" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <!-- JASA -->
+      <div class="potensi-card" data-category="jasa">
+        <div class="potensi-card-img img-jasa">👕</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-jasa"><i class="bi bi-tools me-1"></i>Jasa</span>
+          <h5>Moni Laundry 24 Jam</h5>
+          <p>Layanan jasa laundry yang beroperasi 24 jam untuk memenuhi kebutuhan pencucian pakaian masyarakat.</p>
+          <button class="btn-detail" data-id="moni-laundry" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <div class="potensi-card" data-category="jasa">
+        <div class="potensi-card-img img-jasa">🪙</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-jasa"><i class="bi bi-tools me-1"></i>Jasa</span>
+          <h5>One Laundry Koin</h5>
+          <p>Layanan laundry mandiri berbasis koin yang praktis dan terjangkau bagi warga desa.</p>
+          <button class="btn-detail" data-id="one-laundry" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <!-- HUNIAN -->
+      <div class="potensi-card" data-category="hunian">
+        <div class="potensi-card-img img-hunian">🏠</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-hunian"><i class="bi bi-house me-1"></i>Hunian</span>
+          <h5>My Kost</h5>
+          <p>Hunian kost nyaman dan terjangkau di lingkungan Desa Pelemwatu. Tersedia pilihan kamar yang dapat disesuaikan.</p>
+          <button class="btn-detail" data-id="my-kost" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <div class="potensi-card" data-category="hunian">
+        <div class="potensi-card-img img-hunian">🏡</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-hunian"><i class="bi bi-house me-1"></i>Hunian</span>
+          <h5>RAMA Kost</h5>
+          <p>Pilihan hunian kost dengan fasilitas yang baik di lingkungan desa. Cocok untuk warga dan pendatang baru.</p>
+          <button class="btn-detail" data-id="rama-kost" data-bs-toggle="modal" data-bs-target="#detailModal">
+            <i class="bi bi-eye"></i> Lihat Detail
+          </button>
+        </div>
+      </div>
+
+      <!-- BARANG -->
+      <div class="potensi-card" data-category="barang">
+        <div class="potensi-card-img img-barang">📦</div>
+        <div class="potensi-card-body">
+          <span class="potensi-badge badge-barang"><i class="bi bi-bag me-1"></i>Barang Warga</span>
+          <h5>Barang &amp; Produk Warga</h5>
+          <p>Kategori ini menampung informasi produk dan barang yang dijual oleh warga Desa Pelemwatu.
+             <em style="color:var(--text-light);font-size:.82rem;">[Data ilustratif — akan diisi setelah pendaftaran masuk]</em></p>
+          <button class="btn-detail" id="btnBarangWarga">
+            <i class="bi bi-info-circle"></i> Info
+          </button>
+        </div>
+      </div>
+    </div><!-- /katalog-grid -->
+
+    <div class="text-center mt-5 reveal">
+      <p class="mb-3" style="color:var(--text-mid);">Ingin menampilkan potensi usaha, produk, jasa, atau hunian Anda?</p>
+      <a href="daftar-potensi.html" class="btn-primary-custom">
+        <i class="bi bi-plus-circle-fill"></i> Daftarkan Potensi Lokal
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LAYANAN DIGITAL
+     ============================================================ -->
+<section id="layanan" class="py-5">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-badge"><i class="bi bi-gear"></i> Layanan Digital</span>
+      <h2>Layanan yang Tersedia</h2>
+      <div class="section-underline"></div>
+      <p>EtalasePelemwatu menyediakan layanan digital untuk memudahkan akses informasi dan promosi potensi lokal Desa Pelemwatu.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="layanan-card reveal">
+          <div class="layanan-icon-wrap" style="background:rgba(242,99,15,.12);">
+            <i class="bi bi-pencil-square" style="color:var(--clr-orange);"></i>
+          </div>
+          <h4>Pendaftaran Potensi Lokal</h4>
+          <p>Daftarkan usaha, produk, jasa, hunian, atau barang milik Anda ke dalam katalog potensi Desa Pelemwatu secara mudah dan gratis.</p>
+          <a href="daftar-potensi.html" class="btn-primary-custom">
+            <i class="bi bi-arrow-right-circle"></i> Daftarkan Sekarang
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="layanan-card reveal">
+          <div class="layanan-icon-wrap" style="background:rgba(9,74,116,.10);">
+            <i class="bi bi-search" style="color:var(--clr-blue);"></i>
+          </div>
+          <h4>Informasi Potensi Warga</h4>
+          <p>Temukan informasi lengkap mengenai berbagai potensi lokal yang dimiliki masyarakat Desa Pelemwatu dalam satu katalog digital.</p>
+          <a href="#katalog" class="btn-riviera-custom">
+            <i class="bi bi-grid-3x3-gap"></i> Lihat Katalog
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="layanan-card reveal">
+          <div class="layanan-icon-wrap" style="background:rgba(255,194,11,.20);">
+            <i class="bi bi-telephone" style="color:var(--clr-green);"></i>
+          </div>
+          <h4>Kontak dan Informasi Desa</h4>
+          <p>Hubungi kami untuk informasi lebih lanjut atau pertanyaan seputar Desa Pelemwatu dan platform EtalasePelemwatu.</p>
+          <a href="#kontak-section" class="btn-outline-custom">
+            <i class="bi bi-envelope"></i> Lihat Kontak
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     KONTAK
+     ============================================================ -->
+<section id="kontak-section" class="py-5">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-badge"><i class="bi bi-envelope"></i> Kontak</span>
+      <h2>Kontak &amp; Informasi</h2>
+      <div class="section-underline"></div>
+      <p>Hubungi kami untuk informasi lebih lanjut seputar EtalasePelemwatu dan Desa Pelemwatu.</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5 reveal">
+        <h5 class="mb-4" style="color:var(--clr-blue);">Informasi Kontak</h5>
+        <div class="kontak-info-block">
+          <div class="kontak-icon" style="background:rgba(242,99,15,.12);">
+            <i class="bi bi-geo-alt-fill" style="color:var(--clr-orange);"></i>
+          </div>
+          <div class="kontak-info-text">
+            <h6>Alamat</h6>
+            <p>Jl. Raya Pelemwatu No. 128, Kecamatan Menganti, Kabupaten Gresik, Jawa Timur</p>
+          </div>
+        </div>
+        <div class="kontak-info-block">
+          <div class="kontak-icon" style="background:rgba(9,74,116,.10);">
+            <i class="bi bi-telephone-fill" style="color:var(--clr-blue);"></i>
+          </div>
+          <div class="kontak-info-text">
+            <h6>Telepon</h6>
+            <p class="kontak-placeholder"><i class="bi bi-clock me-1"></i>Akan diisi setelah informasi resmi tersedia</p>
+          </div>
+        </div>
+        <div class="kontak-info-block">
+          <div class="kontak-icon" style="background:rgba(255,194,11,.20);">
+            <i class="bi bi-envelope-fill" style="color:var(--clr-green);"></i>
+          </div>
+          <div class="kontak-info-text">
+            <h6>Email</h6>
+            <p class="kontak-placeholder"><i class="bi bi-clock me-1"></i>Akan diisi setelah informasi resmi tersedia</p>
+          </div>
+        </div>
+        <div class="kontak-info-block">
+          <div class="kontak-icon" style="background:rgba(104,147,75,.12);">
+            <i class="bi bi-clock-fill" style="color:var(--clr-green);"></i>
+          </div>
+          <div class="kontak-info-text">
+            <h6>Jam Operasional</h6>
+            <p>Senin – Jumat, 08.00 – 16.00 WIB</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 reveal">
+        <div class="form-card">
+          <div class="form-card-header">
+            <h4><i class="bi bi-chat-dots me-2"></i>Kirim Pesan</h4>
+          </div>
+          <div class="form-card-body">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Nama Lengkap <span style="color:var(--clr-orange);">*</span></label>
+                  <input type="text" class="form-control" id="cNama" placeholder="Nama Anda" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email <span style="color:var(--clr-orange);">*</span></label>
+                  <input type="email" class="form-control" id="cEmail" placeholder="email@contoh.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Subjek</label>
+                  <select class="form-select">
+                    <option value="">-- Pilih Subjek --</option>
+                    <option>Informasi Desa Pelemwatu</option>
+                    <option>Pendaftaran Potensi Lokal</option>
+                    <option>Pertanyaan tentang EtalasePelemwatu</option>
+                    <option>Lainnya</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Pesan <span style="color:var(--clr-orange);">*</span></label>
+                  <textarea class="form-control" id="cPesan" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-primary-custom w-100 justify-content-center">
+                    <i class="bi bi-send"></i> Kirim Pesan
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="main-footer" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">
+          <i class="bi bi-shop-window me-2" style="color:var(--clr-yellow);"></i>EtalasePelemwatu
+        </div>
+        <p class="footer-desc mt-2">
+          Platform digital untuk mengenal dan mempromosikan potensi lokal masyarakat
+          Desa Pelemwatu, Kecamatan Menganti, Kabupaten Gresik, Jawa Timur.
+        </p>
+        <p class="footer-desc mt-3" style="font-size:.78rem;">&copy; 2026 EtalasePelemwatu &mdash; Platform Digital Desa Pelemwatu</p>
+      </div>
+      <div class="col-sm-4 col-lg-2">
+        <div class="footer-heading">Navigasi</div>
+        <ul class="footer-links">
+          <li><a href="#hero-desa">Beranda</a></li>
+          <li><a href="#profil-desa">Profil Desa</a></li>
+          <li><a href="#pengenalan-etalase">Tentang Etalase</a></li>
+          <li><a href="#katalog">Katalog Potensi</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#kontak-section">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <div class="footer-heading">Layanan</div>
+        <ul class="footer-links">
+          <li><a href="daftar-potensi.html">Pendaftaran Potensi</a></li>
+          <li><a href="#katalog">Katalog Potensi</a></li>
+          <li><a href="#profil-desa">Informasi Desa</a></li>
+          <li><a href="#kontak-section">Kontak Kami</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <div class="footer-heading">Informasi</div>
+        <ul class="footer-links">
+          <li><a href="#pengenalan-etalase">Tentang EtalasePelemwatu</a></li>
+          <li><a href="daftar-potensi.html">Daftarkan Potensimu</a></li>
+          <li><a href="admin.html">Panel Admin</a></li>
+        </ul>
+        <div class="footer-heading mt-4">Alamat</div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.6;">
+          Jl. Raya Pelemwatu No. 128<br>Kec. Menganti, Kab. Gresik<br>Jawa Timur
+        </p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span class="footer-bottom">&copy; 2026 EtalasePelemwatu. Platform Digital Desa Pelemwatu.</span>
+      <span class="footer-bottom">Dikelola oleh Pengelola Desa Pelemwatu</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL DETAIL POTENSI
+     ============================================================ -->
+<div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detail-nama-title">Detail Potensi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="detail-img" class="detail-img-placeholder" style="background:#fff0e8;border-radius:10px;margin-bottom:1.25rem;">
+          <span id="detail-emoji" style="font-size:5rem;line-height:1;">🥟</span>
+        </div>
+        <div class="detail-info-row">
+          <div class="detail-info-item flex-fill">
+            <label>Nama Potensi</label>
+            <p id="detail-nama">—</p>
+          </div>
+          <div class="detail-info-item flex-fill">
+            <label>Kategori</label>
+            <p id="detail-kategori">—</p>
+          </div>
+          <div class="detail-info-item flex-fill">
+            <label>Status</label>
+            <p id="detail-status">—</p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label style="font-size:.78rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;font-weight:600;">Deskripsi</label>
+          <p id="detail-deskripsi" class="mt-1">—</p>
+        </div>
+        <div class="mb-0">
+          <label style="font-size:.78rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;font-weight:600;">Lokasi</label>
+          <p id="detail-lokasi" class="mt-1">—</p>
+        </div>
+        <div class="alert mt-3 mb-0"
+             style="background:rgba(242,99,15,.07);border-left:3px solid var(--clr-orange);border-radius:8px;font-size:.83rem;color:var(--clr-orange);">
+          <i class="bi bi-info-circle me-1"></i>
+          Untuk informasi lebih lanjut, silakan hubungi pengelola EtalasePelemwatu atau kunjungi langsung lokasi.
+        </div>
+      </div>
+      <div class="modal-footer" style="border-top:1px solid var(--border);">
+        <button type="button" class="btn-outline-custom" data-bs-dismiss="modal">Tutup</button>
+        <a href="daftar-potensi.html" class="btn-primary-custom">
+          <i class="bi bi-plus-circle"></i> Daftarkan Potensimu
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fixed Elements -->
+<div id="toastContainer"></div>
+<button id="backToTop" title="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nama = document.getElementById('cNama').value.trim();
+    const email = document.getElementById('cEmail').value.trim();
+    const pesan = document.getElementById('cPesan').value.trim();
+    if (!nama || !email || !pesan) {
+      showToast('Harap isi semua field yang wajib diisi.', 'error'); return;
+    }
+    showToast('Pesan Anda telah diterima. Kami akan menghubungi Anda sesegera mungkin.', 'success');
+    this.reset();
+  });
+
+  // Barang warga info
+  document.getElementById('btnBarangWarga').addEventListener('click', function() {
+    showToast('Belum ada data barang warga yang terdaftar. Daftarkan potensimu sekarang!', 'info');
+  });
+</script>
+</body>
+</html>
