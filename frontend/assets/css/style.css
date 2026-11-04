@@ -308,7 +308,7 @@ p { color: var(--clr-text-mid); }
       rgba(9, 74, 116, 0.38) 68%,
       rgba(9, 74, 116, 0.10) 100%
     ),
-    url('../img/foto-kantor-desa.png');
+    url('../img/foto-kantor-desa.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1251,7 +1251,7 @@ body.form-page { background-color: var(--clr-bg); }
         rgba(9, 74, 116, 0.80) 60%,
         rgba(9, 74, 116, 0.65) 100%
       ),
-      url('../img/foto-kantor-desa.png');
+      url('../img/foto-kantor-desa.jpg');
     background-position: center center;
   }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1308,3 +1308,951 @@ body.form-page { background-color: var(--clr-bg); }
   color: #F2630F !important;
 }
 
+
+/* ============================================================
+   ETALASEPELEMWATU — FINAL COLOR THEME
+   This block changes colors only; layout and behavior stay intact.
+   ============================================================ */
+:root {
+  --clr-orange: #F2630F;
+  --clr-orange-dark: #D4540C;
+  --clr-orange-light: #F47A36;
+  --clr-green: #68934B;
+  --clr-green-dark: #537839;
+  --clr-green-light: #80AD60;
+  --clr-blue: #094A74;
+  --clr-blue-dark: #063553;
+  --clr-blue-light: #0E6199;
+  --clr-yellow: #FFC20B;
+  --clr-white: #FFFFFF;
+  --clr-bg: #F8F5F0;
+  --clr-bg-alt: #EDE8E0;
+  --clr-text: #24313A;
+  --clr-text-mid: #4B5962;
+  --clr-text-light: #74818A;
+  --clr-border: #E2DDD5;
+  --shadow-sm: 0 2px 8px rgba(9,74,116,.08);
+  --shadow-md: 0 6px 24px rgba(9,74,116,.12);
+  --shadow-lg: 0 12px 48px rgba(9,74,116,.16);
+}
+
+/* Shared text and page surfaces */
+body {
+  color: var(--clr-text);
+}
+p, li, label, small, .form-text {
+  color: var(--clr-text-mid);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--clr-blue);
+}
+.text-muted { color: var(--clr-text-light) !important; }
+
+/* Landing page navigation — the ID selector matches the actual navbar */
+#mainNavbar,
+#mainNavbar.scrolled {
+  background-color: var(--clr-orange) !important;
+}
+#mainNavbar .nav-link:hover,
+#mainNavbar .nav-link.active {
+  background-color: rgba(0,0,0,.16);
+}
+#mainNavbar .btn-nav-daftar {
+  background: var(--clr-blue);
+  border-color: var(--clr-blue);
+}
+#mainNavbar .btn-nav-daftar:hover {
+  background: var(--clr-blue-dark) !important;
+  border-color: var(--clr-blue-dark) !important;
+}
+
+/* Village profile, catalog, service and contact section surfaces */
+#profil-desa, #katalog, #kontak-section {
+  background-color: #FFFFFF;
+}
+#statistik, #layanan, body.form-page {
+  background-color: var(--clr-bg);
+}
+
+/* Etalase introduction: cream surface, blue headings, orange icon accents */
+#pengenalan-etalase {
+  background: var(--clr-bg) !important;
+  color: var(--clr-text);
+}
+#pengenalan-etalase::before {
+  opacity: .10;
+}
+#pengenalan-etalase h2,
+#pengenalan-etalase h3,
+#pengenalan-etalase h4,
+#pengenalan-etalase h5,
+#pengenalan-etalase h6,
+#pengenalan-etalase .etalase-feat-text h6,
+#pengenalan-etalase .etalase-visual h3 {
+  color: var(--clr-blue) !important;
+}
+#pengenalan-etalase p,
+#pengenalan-etalase .etalase-feat-text p,
+#pengenalan-etalase .etalase-visual p {
+  color: var(--clr-text-mid) !important;
+}
+#pengenalan-etalase .etalase-intro-card,
+#pengenalan-etalase .etalase-visual {
+  background: #FFFFFF !important;
+  border: 1px solid var(--clr-border) !important;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: none;
+}
+#pengenalan-etalase .etalase-feat-icon,
+#pengenalan-etalase .etalase-logo-big {
+  background: var(--clr-orange) !important;
+  color: #FFFFFF !important;
+}
+#pengenalan-etalase .platform-stat,
+#pengenalan-etalase .stat-card,
+#pengenalan-etalase .stat-box {
+  background: var(--clr-bg) !important;
+  border: 1px solid var(--clr-border);
+}
+#pengenalan-etalase .platform-stat .pstat-num {
+  color: var(--clr-orange) !important;
+}
+#pengenalan-etalase .platform-stat .pstat-label {
+  color: var(--clr-text-light) !important;
+}
+#pengenalan-etalase .section-badge,
+#pengenalan-etalase .etalase-visual .stat-number {
+  color: var(--clr-orange) !important;
+}
+#pengenalan-etalase .btn-outline-custom {
+  color: var(--clr-blue) !important;
+  border-color: var(--clr-blue) !important;
+}
+#pengenalan-etalase .btn-outline-custom:hover {
+  background: var(--clr-blue) !important;
+  color: #FFFFFF !important;
+}
+
+/* Catalog category badges keep distinct category colors and readable text */
+.badge-usaha { background: rgba(242,99,15,.12); color: var(--clr-orange); }
+.badge-jasa { background: rgba(9,74,116,.12); color: var(--clr-blue); }
+.badge-hunian { background: rgba(255,194,11,.24); color: #765900; }
+.badge-barang { background: rgba(104,147,75,.14); color: #496B34; }
+
+/* Buttons and controls */
+.btn-primary-custom,
+.btn-orange {
+  background-color: var(--clr-orange);
+  border-color: var(--clr-orange);
+  color: #FFFFFF;
+}
+.btn-primary-custom:hover,
+.btn-orange:hover {
+  background-color: var(--clr-orange-dark);
+  border-color: var(--clr-orange-dark);
+  color: #FFFFFF;
+}
+.btn-riviera-custom,
+.btn-blue {
+  background-color: var(--clr-blue);
+  border-color: var(--clr-blue);
+  color: #FFFFFF;
+}
+.btn-riviera-custom:hover,
+.btn-blue:hover {
+  background-color: var(--clr-blue-dark);
+  border-color: var(--clr-blue-dark);
+  color: #FFFFFF;
+}
+.form-control, .form-select, textarea {
+  color: var(--clr-text);
+  background-color: #FFFFFF;
+  border-color: var(--clr-border);
+}
+.form-control::placeholder, .form-select::placeholder, textarea::placeholder {
+  color: var(--clr-text-light);
+}
+.form-control:focus, .form-select:focus, textarea:focus {
+  border-color: var(--clr-orange) !important;
+  box-shadow: 0 0 0 .2rem rgba(242,99,15,.14) !important;
+}
+
+/* Form headers retain a formal blue treatment */
+.form-card-header {
+  background: var(--clr-blue);
+  color: #FFFFFF;
+}
+.form-card-header h4 { color: #FFFFFF; }
+
+/* Admin page rules also exist in this global stylesheet */
+body.admin-page {
+  background-color: var(--clr-bg) !important;
+  color: var(--clr-text);
+}
+.admin-page .admin-sidebar {
+  background: linear-gradient(180deg, var(--clr-green) 0%, var(--clr-green-dark) 100%);
+}
+.admin-page .admin-topbar,
+.admin-page .admin-card,
+.admin-page .kpi-card {
+  background-color: #FFFFFF;
+  border-color: var(--clr-border);
+}
+.admin-page .admin-card-header h5,
+.admin-page .admin-topbar-title,
+.admin-page .admin-page-header h2 {
+  color: var(--clr-blue);
+}
+.admin-page .admin-table th {
+  background-color: var(--clr-blue);
+  color: #FFFFFF;
+}
+.admin-page .admin-table td { color: var(--clr-text-mid); }
+.admin-page .admin-table tbody tr:hover {
+  background-color: rgba(242,99,15,.05);
+}
+.admin-page .sidebar-nav-item.active {
+  background: rgba(242,99,15,.22);
+  color: #FFFFFF;
+}
+.admin-page .sidebar-nav-item.active::before {
+  background: var(--clr-orange);
+}
+
+/* Footer stays blue to provide the formal/government feel */
+#footer, footer, .site-footer {
+  background-color: var(--clr-blue);
+}
+
+
+/* ============================================================
+   FINAL FRONTEND COLOR REFINEMENT — PELEMWATU
+   Hero overlay lebih ringan, section cream, tombol sekunder hijau.
+   Biru dipertahankan untuk judul dan footer.
+   Letakkan di bagian paling bawah style.css.
+   ============================================================ */
+
+/* 1. HERO: kurangi overlay biru, foto asli tetap digunakan */
+#hero-desa {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(6, 53, 83, 0.68) 0%,
+      rgba(9, 74, 116, 0.48) 42%,
+      rgba(9, 74, 116, 0.18) 68%,
+      rgba(9, 74, 116, 0.04) 100%
+    ),
+    url('../img/foto-kantor-desa.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Jaga keterbacaan teks hero setelah overlay diringankan */
+#hero-desa .hero-content {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .22);
+}
+#hero-desa .hero-badge,
+#hero-desa .identity-badge {
+  background: rgba(20, 35, 25, .34);
+  border-color: rgba(255, 255, 255, .42);
+}
+
+/* 2. PROFIL DESA dan area pengenalan memakai latar cream */
+#profil-desa,
+#pengenalan-etalase {
+  background: #F8F5F0 !important;
+  color: #24313A;
+}
+#profil-desa .desa-info-card,
+#profil-desa .etalase-intro-card,
+#profil-desa .etalase-visual {
+  background: #FFFFFF;
+  border-color: #E2DDD5;
+}
+#profil-desa .profil-nav {
+  border-bottom-color: #E2DDD5;
+}
+#pengenalan-etalase::before {
+  background: radial-gradient(
+    circle at 80% 50%,
+    rgba(104, 147, 75, .10) 0%,
+    transparent 60%
+  );
+  opacity: 1;
+}
+#pengenalan-etalase h2,
+#pengenalan-etalase h3,
+#pengenalan-etalase h4,
+#pengenalan-etalase h5,
+#pengenalan-etalase h6,
+#profil-desa h2,
+#profil-desa h3,
+#profil-desa h4,
+#profil-desa h5,
+#profil-desa h6 {
+  color: var(--clr-blue);
+}
+#pengenalan-etalase p,
+#pengenalan-etalase li,
+#profil-desa p {
+  color: var(--clr-text-mid);
+}
+#pengenalan-etalase .etalase-intro-card,
+#pengenalan-etalase .etalase-visual {
+  background: #FFFFFF !important;
+  border: 1px solid var(--clr-border) !important;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: none;
+}
+#pengenalan-etalase .etalase-feat-icon,
+#pengenalan-etalase .etalase-logo-big {
+  background: var(--clr-orange) !important;
+  color: #FFFFFF !important;
+}
+
+/* 3. NAVBAR tetap oranye */
+#mainNavbar,
+#mainNavbar.scrolled {
+  background-color: var(--clr-orange) !important;
+}
+
+/* Tombol daftar di navbar memakai hijau agar biru tidak mendominasi */
+#mainNavbar .btn-nav-daftar {
+  background: var(--clr-green) !important;
+  border-color: var(--clr-green) !important;
+  color: #FFFFFF !important;
+}
+#mainNavbar .btn-nav-daftar:hover {
+  background: var(--clr-green-dark) !important;
+  border-color: var(--clr-green-dark) !important;
+}
+
+/* 4. Tombol sekunder memakai hijau */
+.btn-riviera-custom,
+.btn-blue,
+.btn-secondary-custom,
+#pengenalan-etalase .btn-outline-custom {
+  background-color: var(--clr-green);
+  border-color: var(--clr-green);
+  color: #FFFFFF !important;
+}
+.btn-riviera-custom:hover,
+.btn-blue:hover,
+.btn-secondary-custom:hover,
+#pengenalan-etalase .btn-outline-custom:hover {
+  background-color: var(--clr-green-dark) !important;
+  border-color: var(--clr-green-dark) !important;
+  color: #FFFFFF !important;
+}
+
+/* Outline sekunder hijau; hover menjadi hijau solid */
+.btn-outline-custom {
+  color: var(--clr-green);
+  border-color: var(--clr-green);
+}
+.btn-outline-custom:hover {
+  background-color: var(--clr-green);
+  border-color: var(--clr-green);
+  color: #FFFFFF;
+}
+
+/* Ikon aksen tetap oranye/hijau, bukan bidang biru besar */
+.etalase-feat-icon,
+.info-placeholder-card i {
+  color: var(--clr-green);
+}
+
+/* 5. Biru dibatasi untuk judul, elemen teks formal, dan footer.
+   Aturan ini hanya untuk halaman publik, bukan dashboard admin. */
+body:not(.admin-page) h1,
+body:not(.admin-page) h2,
+body:not(.admin-page) h3,
+body:not(.admin-page) h4,
+body:not(.admin-page) h5,
+body:not(.admin-page) h6,
+body:not(.admin-page) .section-header h2,
+body:not(.admin-page) .desa-info-card h4 {
+  color: var(--clr-blue);
+}
+body:not(.admin-page) #main-footer,
+body:not(.admin-page) #footer,
+body:not(.admin-page) footer,
+body:not(.admin-page) .site-footer {
+  background: linear-gradient(
+    135deg,
+    var(--clr-blue-dark) 0%,
+    var(--clr-blue) 100%
+  ) !important;
+}
+
+/* Hindari class utilitas biru membuat tombol/area publik kembali dominan biru */
+body:not(.admin-page) .bg-blue {
+  background-color: var(--clr-green) !important;
+}
+body:not(.admin-page) .text-blue {
+  color: var(--clr-blue) !important;
+}
+
+/* Formulir publik: header formal tetap rapi tanpa bidang biru dominan */
+body:not(.admin-page) .form-card-header {
+  background: var(--clr-green);
+  color: #FFFFFF;
+}
+body:not(.admin-page) .form-card-header h4 {
+  color: #FFFFFF;
+}
+
+/* Mobile: overlay dibuat sedikit lebih merata agar teks tetap terbaca */
+@media (max-width: 767px) {
+  #hero-desa {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(6, 53, 83, .62) 0%,
+        rgba(9, 74, 116, .42) 55%,
+        rgba(9, 74, 116, .20) 100%
+      ),
+      url('../img/foto-kantor-desa.jpg');
+    background-position: center center;
+  }
+}
+
+
+/* ============================================================
+   HERO READABILITY FIX — KONTRAS TEKS
+   Letakkan di paling bawah style.css (menimpa aturan hero sebelumnya).
+   Foto kantor desa berwarna kuning + banyak tulisan, jadi overlay
+   dibuat lebih pekat di sisi kiri (area teks) lalu memudar ke kanan
+   sehingga foto tetap terlihat.
+   ============================================================ */
+
+/* 1. Overlay: kiri pekat (teks), kanan ringan (foto), bawah gelap (tombol & hint) */
+#hero-desa {
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(6, 53, 83, 0.80) 0%,
+      rgba(6, 53, 83, 0.00) 28%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(6, 53, 83, 0.94) 0%,
+      rgba(6, 53, 83, 0.88) 34%,
+      rgba(9, 74, 116, 0.62) 55%,
+      rgba(9, 74, 116, 0.22) 78%,
+      rgba(9, 74, 116, 0.08) 100%
+    ),
+    url('../img/foto-kantor-desa.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* 2. Teks: putih bersih + bayangan lembut */
+#hero-desa .hero-content {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
+}
+#hero-desa h1 {
+  color: #FFFFFF;
+}
+/* Oranye sedikit lebih terang agar kontras di atas biru tua */
+#hero-desa h1 span {
+  color: #FF8A3D !important;
+}
+.hero-desc {
+  color: #FFFFFF;
+  max-width: 540px;
+}
+
+/* 3. Badge lokasi & identitas: latar gelap solid-ish */
+#hero-desa .hero-badge,
+#hero-desa .identity-badge {
+  background: rgba(6, 53, 83, .82);
+  border-color: rgba(255, 255, 255, .55);
+  color: #FFFFFF;
+  text-shadow: none;
+  backdrop-filter: blur(6px);
+}
+
+/* 4. Tombol hero: oranye lebih gelap agar teks putih lolos kontras */
+#hero-desa .hero-content .btn-primary-custom,
+#hero-desa .hero-content .btn-outline-custom,
+#hero-desa .hero-content .btn-riviera-custom {
+  background-color: #D4540C;
+  border-color: #D4540C;
+  color: #FFFFFF;
+  text-shadow: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+}
+#hero-desa .hero-content .btn-primary-custom:hover,
+#hero-desa .hero-content .btn-outline-custom:hover,
+#hero-desa .hero-content .btn-riviera-custom:hover {
+  background-color: #B84708;
+  border-color: #B84708;
+}
+
+/* 5. "Gulir untuk menjelajah" */
+.hero-scroll-hint {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .8);
+}
+
+/* 6. Tablet & mobile: overlay merata dari atas ke bawah */
+@media (max-width: 991px) {
+  #hero-desa {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(6, 53, 83, 0.90) 0%,
+        rgba(6, 53, 83, 0.82) 60%,
+        rgba(6, 53, 83, 0.72) 100%
+      ),
+      url('../img/foto-kantor-desa.jpg');
+  }
+}
+
+
+/* ============================================================
+   PALET FINAL — IDENTITAS DESA (HIJAU · KUNING · ORANYE)
+   Biru hanya sebagai "tinta resmi": judul & footer.
+   Proporsi: krem/putih 60% · hijau 20% · biru 10% · oranye 8% · kuning 2%
+   Letakkan di paling bawah style.css (menimpa aturan sebelumnya).
+   ============================================================ */
+
+:root {
+  /* Versi "aman kontras" untuk teks kecil / tombol dengan teks putih (≥ 4.5:1) */
+  --clr-orange-aa:  #C44D09;
+  --clr-orange-aa-dark: #A83F06;
+  --clr-green-aa:   #537839;
+  --clr-green-aa-dark: #3F5D2B;
+  --clr-forest:     #183012;
+}
+
+/* ── 1. NAVBAR: putih resmi, oranye hanya untuk aksi ── */
+#mainNavbar,
+#mainNavbar.scrolled {
+  background-color: #FFFFFF !important;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%) 1;
+  box-shadow: 0 2px 14px rgba(9, 74, 116, .12);
+}
+#mainNavbar.scrolled {
+  box-shadow: 0 4px 20px rgba(9, 74, 116, .18);
+}
+#mainNavbar .logo-placeholder {
+  background: var(--clr-orange-aa);
+  color: #FFFFFF;
+  border-color: rgba(196, 77, 9, .25);
+}
+#mainNavbar .brand-name { color: var(--clr-blue-dark); }
+#mainNavbar .brand-sub  { color: var(--clr-green-aa); font-weight: 600; }
+
+#mainNavbar .nav-link {
+  color: var(--clr-blue-dark) !important;
+  font-weight: 600;
+}
+#mainNavbar .nav-link::after { background-color: var(--clr-orange); }
+#mainNavbar .nav-link:hover,
+#mainNavbar .nav-link.active {
+  color: var(--clr-blue-dark) !important;
+  background-color: rgba(104, 147, 75, .14);
+}
+/* Satu-satunya tombol oranye di navbar */
+#mainNavbar .btn-nav-daftar {
+  background: var(--clr-orange-aa) !important;
+  border-color: var(--clr-orange-aa) !important;
+  color: #FFFFFF !important;
+}
+#mainNavbar .btn-nav-daftar:hover {
+  background: var(--clr-orange-aa-dark) !important;
+  border-color: var(--clr-orange-aa-dark) !important;
+}
+#mainNavbar .navbar-toggler { border-color: rgba(9, 74, 116, .45) !important; }
+#mainNavbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(9,74,116,.95)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+/* Menu mobile yang terbuka tetap berlatar putih */
+@media (max-width: 991px) {
+  #mainNavbar .navbar-collapse { background: #FFFFFF; }
+}
+
+/* ── 2. HERO: overlay hijau tua (identitas desa), bukan biru ── */
+#hero-desa {
+  background-image:
+    linear-gradient(0deg, rgba(24, 48, 18, .80) 0%, rgba(24, 48, 18, 0) 28%),
+    linear-gradient(
+      90deg,
+      rgba(24, 48, 18, .94) 0%,
+      rgba(24, 48, 18, .88) 34%,
+      rgba(31, 61, 23, .62) 55%,
+      rgba(31, 61, 23, .22) 78%,
+      rgba(31, 61, 23, .08) 100%
+    ),
+    url('../img/foto-kantor-desa.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#hero-desa .hero-badge,
+#hero-desa .identity-badge {
+  background: rgba(24, 48, 18, .82);
+  border-color: rgba(255, 255, 255, .55);
+}
+/* Tombol utama: oranye. Tombol kedua: outline putih transparan */
+#hero-desa .hero-content .btn-primary-custom {
+  background-color: var(--clr-orange-aa);
+  border-color: var(--clr-orange-aa);
+  color: #FFFFFF;
+}
+#hero-desa .hero-content .btn-primary-custom:hover {
+  background-color: var(--clr-orange-aa-dark);
+  border-color: var(--clr-orange-aa-dark);
+}
+#hero-desa .hero-content .btn-riviera-custom,
+#hero-desa .hero-content .btn-outline-custom {
+  background-color: rgba(255, 255, 255, .12);
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(4px);
+}
+#hero-desa .hero-content .btn-riviera-custom:hover,
+#hero-desa .hero-content .btn-outline-custom:hover {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: var(--clr-green-aa-dark) !important;
+}
+@media (max-width: 991px) {
+  #hero-desa {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(24, 48, 18, .90) 0%,
+        rgba(24, 48, 18, .82) 60%,
+        rgba(24, 48, 18, .72) 100%
+      ),
+      url('../img/foto-kantor-desa.jpg');
+  }
+}
+
+/* ── 3. TOMBOL & TEKS KECIL: varian aman kontras ── */
+.btn-primary-custom,
+.btn-orange {
+  background-color: var(--clr-orange-aa);
+  border-color: var(--clr-orange-aa);
+}
+.btn-primary-custom:hover,
+.btn-orange:hover {
+  background-color: var(--clr-orange-aa-dark);
+  border-color: var(--clr-orange-aa-dark);
+}
+/* Tombol sekunder = hijau tua */
+.btn-riviera-custom,
+.btn-blue,
+.btn-secondary-custom,
+#pengenalan-etalase .btn-outline-custom {
+  background-color: var(--clr-green-aa);
+  border-color: var(--clr-green-aa);
+}
+.btn-riviera-custom:hover,
+.btn-blue:hover,
+.btn-secondary-custom:hover,
+#pengenalan-etalase .btn-outline-custom:hover {
+  background-color: var(--clr-green-aa-dark) !important;
+  border-color: var(--clr-green-aa-dark) !important;
+}
+.btn-outline-custom {
+  color: var(--clr-green-aa);
+  border-color: var(--clr-green-aa);
+}
+.btn-outline-custom:hover {
+  background-color: var(--clr-green-aa);
+  border-color: var(--clr-green-aa);
+}
+/* Angka statistik oranye versi aman kontras */
+.stat-num,
+#pengenalan-etalase .platform-stat .pstat-num {
+  color: var(--clr-orange-aa) !important;
+}
+/* Label kategori */
+.badge-usaha  { color: #B8470A; }
+.badge-hunian { background: rgba(255, 194, 11, .28); color: #6B5000; }
+.badge-barang { color: var(--clr-green-aa); }
+/* Header formulir publik: hijau tua */
+body:not(.admin-page) .form-card-header {
+  background: var(--clr-green-aa);
+}
+
+/* ── 4. FOOTER: biru tua resmi + garis identitas 3 warna ── */
+body:not(.admin-page) #main-footer,
+body:not(.admin-page) footer,
+body:not(.admin-page) .site-footer {
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%) 1;
+}
+.footer-links a { color: rgba(255, 255, 255, .82); }
+.footer-bottom  { color: rgba(255, 255, 255, .72); }
+
+
+/* ============================================================
+   PEWARNAAN SELURUH HALAMAN — RITME SECTION
+   Hijau tua (hero) → putih → krem → putih → HIJAU TUA (statistik)
+   → krem → putih → biru tua (footer).
+   Semua penyesuaian lewat CSS; index.html tidak perlu diubah.
+   ============================================================ */
+
+/* 0. PERBAIKAN: index.html memakai var(--text-light), var(--text-mid), var(--border)
+      yang sebelumnya tidak terdefinisi (teks jadi ikut warna induk). Dibuat alias. */
+:root {
+  --text-light: var(--clr-text-light);
+  --text-mid:   var(--clr-text-mid);
+  --border:     var(--clr-border);
+}
+
+/* 1. Garis bawah judul section = tanda tangan 3 warna desa */
+.section-underline {
+  background: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%);
+}
+#pengenalan-etalase .section-underline {
+  background: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%) !important;
+}
+
+/* 2. TENTANG ETALASE (krem): badge hijau, bukan campuran biru+oranye */
+#pengenalan-etalase .section-badge {
+  background: rgba(104, 147, 75, .16) !important;
+  color: var(--clr-green-aa-dark) !important;
+}
+
+/* 3. STATISTIK: pita hijau tua, angka kuning */
+#statistik {
+  background: linear-gradient(135deg, #1F3D17 0%, #2F4A1F 45%, #3F5D2B 100%);
+}
+#statistik .section-header .section-badge {
+  background: rgba(255, 194, 11, .16);
+  color: var(--clr-yellow);
+}
+#statistik .section-header h2 { color: #FFFFFF; }
+#statistik .section-header p  { color: rgba(255, 255, 255, .86); }
+#statistik .stat-demo-notice {
+  background: rgba(255, 255, 255, .10);
+  border-color: rgba(255, 255, 255, .28);
+  color: #FFFFFF;
+}
+#statistik .stat-card {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .20);
+  box-shadow: none;
+  backdrop-filter: blur(4px);
+}
+#statistik .stat-card:hover {
+  background: rgba(255, 255, 255, .14);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
+}
+#statistik .stat-icon { background: rgba(255, 255, 255, .14) !important; }
+#statistik .stat-icon i { color: var(--clr-yellow) !important; }
+#statistik .stat-num   { color: var(--clr-yellow) !important; }
+#statistik .stat-label { color: #FFFFFF; }
+#statistik .stat-note  { color: rgba(255, 255, 255, .78); }
+
+/* 4. IKON BERGANTIAN oranye · hijau · kuning (menimpa warna inline di HTML) */
+#layanan .row > div:nth-child(3n+1) .layanan-icon-wrap { background: rgba(242, 99, 15, .13) !important; }
+#layanan .row > div:nth-child(3n+2) .layanan-icon-wrap { background: rgba(104, 147, 75, .18) !important; }
+#layanan .row > div:nth-child(3n+3) .layanan-icon-wrap { background: rgba(255, 194, 11, .28) !important; }
+#layanan .row > div:nth-child(3n+1) .layanan-icon-wrap i { color: var(--clr-orange-aa) !important; }
+#layanan .row > div:nth-child(3n+2) .layanan-icon-wrap i { color: var(--clr-green-aa)  !important; }
+#layanan .row > div:nth-child(3n+3) .layanan-icon-wrap i { color: #8A6500 !important; }
+
+/* Ikon kontak: grup .kontak-info-block (tiap blok punya 1 ikon) */
+#kontak-section .kontak-info-block:nth-of-type(4n+1) .kontak-icon { background: rgba(242, 99, 15, .13) !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+2) .kontak-icon { background: rgba(104, 147, 75, .18) !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+3) .kontak-icon { background: rgba(255, 194, 11, .28) !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+4) .kontak-icon { background: rgba(104, 147, 75, .18) !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+1) .kontak-icon i { color: var(--clr-orange-aa) !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+2) .kontak-icon i { color: var(--clr-green-aa)  !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+3) .kontak-icon i { color: #8A6500 !important; }
+#kontak-section .kontak-info-block:nth-of-type(4n+4) .kontak-icon i { color: var(--clr-green-aa)  !important; }
+
+/* Ikon kategori di tab Potensi (profil desa): cocokkan dengan badge katalog */
+#tab-potensi .layanan-icon-wrap:has(.bi-house) i { color: #8A6500 !important; }
+
+/* Hover kartu layanan: hijau (oranye dicadangkan untuk aksi) */
+.layanan-card:hover { border-color: var(--clr-green); }
+
+/* 5. KATALOG: aksi sekunder hijau, satu CTA oranye di atas */
+.filter-btn:hover { border-color: var(--clr-green); color: var(--clr-green-aa); }
+.filter-btn.active {
+  background: var(--clr-green-aa);
+  border-color: var(--clr-green-aa);
+  color: #FFFFFF;
+}
+.btn-detail {
+  border-color: var(--clr-green-aa);
+  color: var(--clr-green-aa);
+}
+.btn-detail:hover {
+  background: var(--clr-green-aa);
+  border-color: var(--clr-green-aa);
+  color: #FFFFFF;
+}
+/* Latar gambar kartu disamakan dengan warna badge kategorinya */
+.img-usaha  { background: linear-gradient(135deg, #fff0e8, #fdd8b8); }               /* oranye */
+.img-jasa   { background: linear-gradient(135deg, #e8f0f8, #c8d8f0); }               /* biru   */
+.img-hunian { background: linear-gradient(135deg, #fff8e0, #ffe9a6); }               /* kuning */
+.img-barang { background: linear-gradient(135deg, #f0f5ea, #d5e8c4); }               /* hijau  */
+
+/* 6. Tautan teks umum di area terang: hijau tua */
+#kontak-section a:not(.btn-primary-custom):not(.btn-riviera-custom):not(.btn-outline-custom) {
+  color: var(--clr-green-aa);
+}
+
+
+/* ============================================================
+   STATISTIK — HIJAU TUA + FOTO DI BALIKNYA
+   Ganti foto: ubah url(...) di baris "background-image" di bawah ini.
+   Saran: pakai foto BERBEDA dari hero (sawah, kegiatan warga, balai desa).
+   Seberapa jelas fotonya: ubah angka alpha overlay (makin kecil = foto makin jelas).
+   ============================================================ */
+#statistik {
+  position: relative;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(16, 36, 12, .90) 0%,
+      rgba(16, 36, 12, .84) 30%,
+      rgba(16, 36, 12, .74) 55%,
+      rgba(16, 36, 12, .80) 100%
+    ),
+    url('../img/foto-warung-desa.jpg');
+  background-size: cover;
+  background-position: center 65%;
+  background-repeat: no-repeat;
+  background-color: #1F3D17; /* cadangan bila foto gagal dimuat */
+}
+/* Kotak catatan & subjudul: lebih gelap agar terbaca di atas foto */
+#statistik .stat-demo-notice {
+  background: rgba(16, 36, 12, .72);
+  border-color: rgba(255, 255, 255, .30);
+}
+#statistik .section-header p {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .75);
+}
+/* Efek parallax ringan hanya di layar lebar (di mobile sering patah-patah) */
+@media (min-width: 992px) {
+  #statistik { background-attachment: scroll, fixed; }
+}
+/* Kartu sedikit lebih pekat agar angka tetap jelas di atas foto */
+#statistik .stat-card {
+  background: rgba(18, 38, 13, .62);
+  border-color: rgba(255, 255, 255, .30);
+  backdrop-filter: blur(6px);
+}
+#statistik .stat-card:hover { background: rgba(18, 38, 13, .78); }
+#statistik .section-header h2,
+#statistik .section-header p,
+#statistik .stat-label,
+#statistik .stat-note { text-shadow: 0 1px 6px rgba(0, 0, 0, .45); }
+
+
+/* Toast: garis tepi memakai palet desa (sebelumnya hijau/merah bawaan Bootstrap) */
+.custom-toast.success { border-left-color: var(--clr-green-aa); }
+.custom-toast.error   { border-left-color: #B02A37; }
+.custom-toast.warning { border-left-color: var(--clr-yellow-dark); }
+.custom-toast.info    { border-left-color: var(--clr-blue); }
+
+
+/* ============================================================
+   HEADER KARTU (Panduan / Ketentuan / Butuh Bantuan) — TEKS PUTIH
+   Judul memakai h5/h6 sehingga tidak terkena aturan ".form-card-header h4",
+   dan ikut warna gelap bawaan body. Aturan ini memaksa putih untuk
+   semua tag di dalam header berlatar biru/hijau.
+   ============================================================ */
+.form-card-header,
+.form-card-header h1, .form-card-header h2, .form-card-header h3,
+.form-card-header h4, .form-card-header h5, .form-card-header h6,
+.form-card-header i, .form-card-header span,
+.form-card-header small, .form-card-header p, .form-card-header strong,
+.info-card-header, .info-card-header h5, .info-card-header h6, .info-card-header i,
+.sidebar-card-header, .sidebar-card-header h5, .sidebar-card-header h6, .sidebar-card-header i {
+  color: #FFFFFF !important;
+}
+/* ikon di header sedikit kuning sebagai aksen (kuning hanya di latar gelap) */
+.form-card-header > i,
+.form-card-header h4 > i, .form-card-header h5 > i, .form-card-header h6 > i {
+  color: var(--clr-yellow) !important;
+}
+
+
+/* ============================================================
+   PERBAIKAN halaman daftar-potensi.html
+   Penyebab teks hitam: HTML memakai var(--white) yang belum terdefinisi,
+   sehingga color/background jadi tidak valid (teks ikut warna gelap bawaan,
+   kartu transparan). Cukup definisikan variabelnya.
+   ============================================================ */
+:root { --white: var(--clr-white); }
+
+/* Nomor panduan: oranye versi aman kontras + angka putih */
+.step-guide-num {
+  background: var(--clr-orange-aa);
+  color: #FFFFFF;
+}
+/* Ikon centang "Ketentuan" & status berhasil: hijau desa (sebelumnya #28a745 bawaan Bootstrap) */
+.info-sidebar-card .bi-check-circle-fill,
+#successState .bi-check-circle-fill {
+  color: var(--clr-green-aa) !important;
+}
+/* Ikon kategori Hunian: kuning tua di atas latar kuning muda (sebelumnya hijau di atas kuning) */
+.kat-icon:has(.bi-house) i { color: #8A6500 !important; }
+/* Ikon kategori Barang Warga tetap hijau tua agar terbaca */
+.kat-icon:has(.bi-bag) i { color: var(--clr-green-aa) !important; }
+
+
+/* ============================================================
+   HEADER HALAMAN FORM (daftar-potensi.html) — FOTO + OVERLAY HIJAU TUA
+   Ganti foto: ubah url(...) pada baris "background-image" di bawah
+   (ada 2 tempat: utama dan versi mobile).
+   Makin besar angka alpha (mis. .90) = makin gelap / foto makin samar.
+   ============================================================ */
+.form-page-header {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(16, 36, 12, .92) 0%,
+      rgba(16, 36, 12, .82) 40%,
+      rgba(24, 48, 18, .52) 72%,
+      rgba(24, 48, 18, .30) 100%
+    ),
+    url('../img/foto-daftar-potensi.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-color: #1F3D17; /* cadangan bila foto gagal dimuat */
+  /* Navbar fixed (±92px) menumpuk di atas header, jadi ruang atas dihitung di sini */
+  padding: calc(92px + 2.5rem) 0 3rem;
+}
+/* Hilangkan jarak 80px bawaan di HTML (inline) yang menyisakan celah putih di bawah navbar */
+.form-page-content { padding-top: 0 !important; }
+/* Judul putih: sebelumnya kalah oleh aturan global "h1 biru" sehingga biru di atas oranye */
+body.form-page .form-page-header h1 {
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+body.form-page .form-page-header p {
+  color: #FFFFFF;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .6);
+  max-width: 720px;
+}
+.form-breadcrumb a    { color: rgba(255, 255, 255, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .5); }
+.form-breadcrumb span { color: rgba(255, 255, 255, .80); }
+
+@media (max-width: 991px) {
+  .form-page-header {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(16, 36, 12, .88) 0%,
+        rgba(16, 36, 12, .78) 100%
+      ),
+      url('../img/foto-daftar-potensi.jpg');
+  }
+}
