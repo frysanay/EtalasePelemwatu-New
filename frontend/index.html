@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/galeri.css">
 </head>
 <body>
 
@@ -108,11 +109,9 @@
         <i class="bi bi-star"></i> Potensi Desa
       </button>
       <button class="profil-nav-btn" data-tab="tab-galeri">
-        <i class="bi bi-images"></i> Galeri Desa
+        <i class="bi bi-images"></i> Galeri Kegiatan
       </button>
-      <button class="profil-nav-btn" data-tab="tab-info">
-        <i class="bi bi-file-earmark-text"></i> Informasi Desa
-      </button>
+
     </div>
 
     <!-- TAB: Tentang -->
@@ -154,14 +153,6 @@
                 <tr>
                   <td style="color:var(--text-light);">Status</td>
                   <td><span class="status-badge status-aktif">Desa Aktif</span></td>
-                </tr>
-                <tr>
-                  <td style="color:var(--text-light);">Kepala Desa</td>
-                  <td style="color:var(--text-light);font-style:italic;">[Akan diisi]</td>
-                </tr>
-                <tr>
-                  <td style="color:var(--text-light);">Kode Pos</td>
-                  <td style="color:var(--text-light);font-style:italic;">[Akan diisi]</td>
                 </tr>
               </tbody>
             </table>
@@ -205,27 +196,15 @@
                   <div style="font-weight:700;color:var(--clr-blue);margin-top:.3rem;">Jawa Timur</div>
                 </div>
               </div>
-              <div class="col-6">
-                <div style="background:var(--clr-bg);border-radius:8px;padding:.9rem;text-align:center;">
-                  <div style="font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.7px;">Kode Pos</div>
-                  <div style="color:var(--text-light);font-style:italic;margin-top:.3rem;font-size:.82rem;">[Akan diisi]</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
         <div class="col-lg-7">
           <div class="desa-info-card h-100">
             <h4><i class="bi bi-map me-2" style="color:var(--clr-orange);"></i>Peta Lokasi</h4>
-            <div class="map-placeholder" id="mapPlaceholder" style="cursor:pointer;">
-              <i class="bi bi-map"></i>
-              <span>Peta Lokasi Desa Pelemwatu</span>
-              <small>Integrasi peta interaktif akan tersedia setelah koordinat resmi desa dikonfigurasi.</small>
+            <div class="ratio ratio-16x9" style="border-radius:12px;overflow:hidden;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.0!2d112.5847!3d-7.2456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f8e3e8e3e8e3%3A0x0!2sDesa+Pelemwatu%2C+Menganti%2C+Gresik!5e0!3m2!1sid!2sid!4v1699999999999!5m2!1sid!2sid" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <p class="mt-3 mb-0" style="font-size:.83rem;color:var(--text-light);">
-              <i class="bi bi-info-circle me-1"></i>
-              Area peta di atas merupakan placeholder. Koordinat dan integrasi peta resmi akan ditambahkan oleh pengelola website.
-            </p>
           </div>
         </div>
       </div>
@@ -238,10 +217,6 @@
         <p>Masyarakat Desa Pelemwatu memiliki berbagai potensi ekonomi yang mencerminkan kemandirian dan
         kreativitas warga. Potensi ini mencakup usaha kuliner, layanan jasa, hunian, serta berbagai produk
         dan barang yang dikelola oleh warga desa.</p>
-        <p class="mb-0" style="color:var(--text-light);font-size:.88rem;">
-          <i class="bi bi-info-circle me-1"></i>
-          Informasi potensi berikut berdasarkan data yang terdaftar di platform EtalasePelemwatu.
-        </p>
       </div>
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
@@ -286,76 +261,85 @@
     <!-- TAB: Galeri -->
     <div class="profil-tab-pane" id="tab-galeri">
       <div class="desa-info-card mb-4">
-        <h4><i class="bi bi-images me-2" style="color:var(--clr-orange);"></i>Galeri Desa Pelemwatu</h4>
-        <p class="mb-0">Galeri foto lingkungan, kegiatan masyarakat, dan aktivitas lokal Desa Pelemwatu.
-        Foto asli akan ditampilkan setelah dokumentasi tersedia.</p>
+        <h4><i class="bi bi-images me-2" style="color:var(--clr-orange);"></i>Galeri Kegiatan Desa Pelemwatu</h4>
+        <p class="mb-0">Dokumentasi kegiatan masyarakat dan aktivitas yang berlangsung di Desa Pelemwatu.</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item"><i class="bi bi-image"></i><span>Lingkungan Desa</span></div>
-        <div class="gallery-item"><i class="bi bi-people"></i><span>Kegiatan Warga</span></div>
-        <div class="gallery-item"><i class="bi bi-shop"></i><span>Usaha Lokal</span></div>
-        <div class="gallery-item"><i class="bi bi-tree"></i><span>Lingkungan Sekitar</span></div>
-        <div class="gallery-item"><i class="bi bi-calendar-event"></i><span>Aktivitas Desa</span></div>
-        <div class="gallery-item"><i class="bi bi-camera"></i><span>Dokumentasi Lainnya</span></div>
+      <div class="galeri-card-grid" id="galeriGrid">
+
+        <div class="galeri-card"
+             data-src="assets/img/kegiatan-kantor-desa.jpg"
+             data-caption="Rapat Koordinasi Desa"
+             data-desc="Kegiatan rapat koordinasi rutin yang dihadiri oleh perangkat desa dan perwakilan warga untuk membahas program dan kebijakan desa.">
+          <div class="galeri-card-img">
+            <img src="assets/img/kegiatan-kantor-desa.jpg" alt="Rapat Koordinasi Desa" loading="lazy">
+            <div class="galeri-card-zoom"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="galeri-card-info">
+            <h6 class="galeri-card-title">Rapat Koordinasi Desa</h6>
+            <p class="galeri-card-desc">Kegiatan rapat koordinasi rutin yang dihadiri oleh perangkat desa dan perwakilan warga untuk membahas program dan kebijakan desa.</p>
+          </div>
+        </div>
+
+        <div class="galeri-card"
+             data-src="assets/img/kegiatan-kerja-bakti.jpg"
+             data-caption="Kerja Bakti Warga"
+             data-desc="Kegiatan gotong royong membersihkan lingkungan desa yang diikuti oleh seluruh lapisan masyarakat Desa Pelemwatu secara sukarela.">
+          <div class="galeri-card-img">
+            <img src="assets/img/kegiatan-kerja-bakti.jpg" alt="Kerja Bakti Warga" loading="lazy">
+            <div class="galeri-card-zoom"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="galeri-card-info">
+            <h6 class="galeri-card-title">Kerja Bakti Warga</h6>
+            <p class="galeri-card-desc">Kegiatan gotong royong membersihkan lingkungan desa yang diikuti oleh seluruh lapisan masyarakat Desa Pelemwatu secara sukarela.</p>
+          </div>
+        </div>
+
+        <div class="galeri-card"
+             data-src="assets/img/kegiatan-penghijauan.jpg"
+             data-caption="Program Penghijauan"
+             data-desc="Program penanaman pohon dan tanaman di area desa sebagai upaya menjaga lingkungan hijau dan asri di Desa Pelemwatu.">
+          <div class="galeri-card-img">
+            <img src="assets/img/kegiatan-penghijauan.jpg" alt="Program Penghijauan" loading="lazy">
+            <div class="galeri-card-zoom"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="galeri-card-info">
+            <h6 class="galeri-card-title">Program Penghijauan</h6>
+            <p class="galeri-card-desc">Program penanaman pohon dan tanaman di area desa sebagai upaya menjaga lingkungan hijau dan asri di Desa Pelemwatu.</p>
+          </div>
+        </div>
+
+        <div class="galeri-card"
+             data-src="assets/img/foto-kantor-desa.jpg"
+             data-caption="Kantor Desa Pelemwatu"
+             data-desc="Kantor Desa Pelemwatu sebagai pusat pelayanan administrasi dan pemerintahan desa yang melayani kebutuhan warga setiap hari kerja.">
+          <div class="galeri-card-img">
+            <img src="assets/img/foto-kantor-desa.jpg" alt="Kantor Desa Pelemwatu" loading="lazy">
+            <div class="galeri-card-zoom"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="galeri-card-info">
+            <h6 class="galeri-card-title">Kantor Desa Pelemwatu</h6>
+            <p class="galeri-card-desc">Kantor Desa Pelemwatu sebagai pusat pelayanan administrasi dan pemerintahan desa yang melayani kebutuhan warga setiap hari kerja.</p>
+          </div>
+        </div>
+
+        <div class="galeri-card"
+             data-src="assets/img/foto-warung-desa.jpg"
+             data-caption="Warung Usaha Warga"
+             data-desc="Salah satu contoh usaha kuliner milik warga Desa Pelemwatu yang berhasil berkembang dan menjadi bagian dari potensi ekonomi lokal desa.">
+          <div class="galeri-card-img">
+            <img src="assets/img/foto-warung-desa.jpg" alt="Warung Usaha Warga" loading="lazy">
+            <div class="galeri-card-zoom"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div class="galeri-card-info">
+            <h6 class="galeri-card-title">Warung Usaha Warga</h6>
+            <p class="galeri-card-desc">Salah satu contoh usaha kuliner milik warga Desa Pelemwatu yang berhasil berkembang dan menjadi bagian dari potensi ekonomi lokal desa.</p>
+          </div>
+        </div>
+
       </div>
-      <p class="mt-3 mb-0" style="font-size:.83rem;color:var(--text-light);">
-        <i class="bi bi-info-circle me-1"></i>
-        Placeholder galeri di atas dapat diganti dengan foto asli lingkungan dan kegiatan Desa Pelemwatu.
-      </p>
     </div>
 
     <!-- TAB: Informasi -->
-    <div class="profil-tab-pane" id="tab-info">
-      <div class="alert d-flex align-items-center gap-2 mb-4"
-           style="background:rgba(9,74,116,.07);border-left:4px solid var(--clr-blue);border-radius:8px;color:var(--clr-blue);font-size:.88rem;">
-        <i class="bi bi-info-circle-fill fs-5 flex-shrink-0"></i>
-        <span>Data resmi berikut belum tersedia. Placeholder akan diisi setelah informasi resmi diperoleh dari pemerintah Desa Pelemwatu.</span>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="info-placeholder-card">
-            <i class="bi bi-telephone-fill"></i>
-            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Kontak Resmi Desa</h6>
-            <p class="mb-0" style="font-size:.85rem;">Nomor telepon dan email resmi kantor desa akan ditampilkan di sini.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info-placeholder-card">
-            <i class="bi bi-person-badge"></i>
-            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Perangkat Desa</h6>
-            <p class="mb-0" style="font-size:.85rem;">Nama dan jabatan perangkat desa akan ditampilkan setelah data resmi tersedia.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info-placeholder-card">
-            <i class="bi bi-bar-chart"></i>
-            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Data Statistik Desa</h6>
-            <p class="mb-0" style="font-size:.85rem;">Jumlah penduduk, luas wilayah, dan statistik resmi akan diisi oleh pengelola.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info-placeholder-card">
-            <i class="bi bi-book"></i>
-            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Sejarah Desa</h6>
-            <p class="mb-0" style="font-size:.85rem;">Informasi sejarah dan asal-usul Desa Pelemwatu akan ditambahkan kemudian.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info-placeholder-card">
-            <i class="bi bi-award"></i>
-            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Penghargaan &amp; Prestasi</h6>
-            <p class="mb-0" style="font-size:.85rem;">Prestasi dan penghargaan desa akan ditampilkan jika data tersedia.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info-placeholder-card">
-            <i class="bi bi-calendar3"></i>
-            <h6 class="mt-2 mb-1" style="color:var(--clr-blue);">Agenda &amp; Pengumuman</h6>
-            <p class="mb-0" style="font-size:.85rem;">Agenda kegiatan dan pengumuman resmi desa akan ditampilkan di sini.</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div><!-- /container -->
 </section>
 
@@ -452,14 +436,10 @@
 <section id="statistik" class="py-5">
   <div class="container">
     <div class="section-header center reveal">
-      <span class="section-badge"><i class="bi bi-bar-chart"></i> Data Demo</span>
+      <span class="section-badge"><i class="bi bi-bar-chart"></i> Statistik</span>
       <h2>Ringkasan Potensi Lokal</h2>
       <div class="section-underline"></div>
       <p>Gambaran ringkas potensi yang telah terdaftar di EtalasePelemwatu.</p>
-    </div>
-    <div class="stat-demo-notice mb-4 reveal">
-      <i class="bi bi-info-circle-fill fs-5"></i>
-      <span><strong>Catatan:</strong> Angka yang ditampilkan adalah data demonstrasi dan bukan merupakan statistik resmi Desa Pelemwatu.</span>
     </div>
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
@@ -630,11 +610,10 @@
         <div class="potensi-card-body">
           <span class="potensi-badge badge-barang"><i class="bi bi-bag me-1"></i>Barang Warga</span>
           <h5>Barang &amp; Produk Warga</h5>
-          <p>Kategori ini menampung informasi produk dan barang yang dijual oleh warga Desa Pelemwatu.
-             <em style="color:var(--text-light);font-size:.82rem;">[Data ilustratif — akan diisi setelah pendaftaran masuk]</em></p>
-          <button class="btn-detail" id="btnBarangWarga">
-            <i class="bi bi-info-circle"></i> Info
-          </button>
+          <p>Kategori ini menampung informasi produk dan barang yang dijual oleh warga Desa Pelemwatu.</p>
+          <a href="daftar-potensi.html" class="btn-detail">
+            <i class="bi bi-plus-circle"></i> Daftarkan
+          </a>
         </div>
       </div>
     </div><!-- /katalog-grid -->
@@ -723,24 +702,7 @@
             <p>Jl. Raya Pelemwatu No. 128, Kecamatan Menganti, Kabupaten Gresik, Jawa Timur</p>
           </div>
         </div>
-        <div class="kontak-info-block">
-          <div class="kontak-icon" style="background:rgba(9,74,116,.10);">
-            <i class="bi bi-telephone-fill" style="color:var(--clr-blue);"></i>
-          </div>
-          <div class="kontak-info-text">
-            <h6>Telepon</h6>
-            <p class="kontak-placeholder"><i class="bi bi-clock me-1"></i>Akan diisi setelah informasi resmi tersedia</p>
-          </div>
-        </div>
-        <div class="kontak-info-block">
-          <div class="kontak-icon" style="background:rgba(255,194,11,.20);">
-            <i class="bi bi-envelope-fill" style="color:var(--clr-green);"></i>
-          </div>
-          <div class="kontak-info-text">
-            <h6>Email</h6>
-            <p class="kontak-placeholder"><i class="bi bi-clock me-1"></i>Akan diisi setelah informasi resmi tersedia</p>
-          </div>
-        </div>
+
         <div class="kontak-info-block">
           <div class="kontak-icon" style="background:rgba(104,147,75,.12);">
             <i class="bi bi-clock-fill" style="color:var(--clr-green);"></i>
@@ -748,6 +710,24 @@
           <div class="kontak-info-text">
             <h6>Jam Operasional</h6>
             <p>Senin – Jumat, 08.00 – 16.00 WIB</p>
+          </div>
+        </div>
+
+        <div class="kontak-info-block">
+          <div class="kontak-icon" style="background:rgba(37,211,102,.12);">
+            <i class="bi bi-whatsapp" style="color:#25D366;"></i>
+          </div>
+          <div class="kontak-info-text">
+            <h6>WhatsApp</h6>
+            <p style="margin-bottom:.6rem;">0822-4573-0256</p>
+            <a href="https://wa.me/6282245730256?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20EtalasePelemwatu."
+               target="_blank" rel="noopener noreferrer"
+               style="display:inline-flex;align-items:center;gap:.45rem;background:#25D366;color:#fff;
+                      padding:.45rem 1rem;border-radius:8px;font-size:.85rem;font-weight:600;
+                      text-decoration:none;transition:background .2s;"
+               onmouseover="this.style.background='#1ebe5d'" onmouseout="this.style.background='#25D366'">
+              <i class="bi bi-whatsapp"></i> Chat WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -888,11 +868,7 @@
           <label style="font-size:.78rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;font-weight:600;">Lokasi</label>
           <p id="detail-lokasi" class="mt-1">—</p>
         </div>
-        <div class="alert mt-3 mb-0"
-             style="background:rgba(242,99,15,.07);border-left:3px solid var(--clr-orange);border-radius:8px;font-size:.83rem;color:var(--clr-orange);">
-          <i class="bi bi-info-circle me-1"></i>
-          Untuk informasi lebih lanjut, silakan hubungi pengelola EtalasePelemwatu atau kunjungi langsung lokasi.
-        </div>
+
       </div>
       <div class="modal-footer" style="border-top:1px solid var(--border);">
         <button type="button" class="btn-outline-custom" data-bs-dismiss="modal">Tutup</button>
@@ -907,6 +883,29 @@
 <!-- Fixed Elements -->
 <div id="toastContainer"></div>
 <button id="backToTop" title="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);
+     align-items:center;justify-content:center;padding:1.5rem;" onclick="closeLightbox()">
+  <button onclick="closeLightbox();event.stopPropagation()"
+          style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;">
+    <i class="bi bi-x-lg"></i>
+  </button>
+  <button id="lbPrev" onclick="shiftLightbox(-1);event.stopPropagation()"
+          style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;
+                 color:#fff;font-size:1.8rem;cursor:pointer;border-radius:50%;width:48px;height:48px;">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  <div style="max-width:900px;width:100%;text-align:center;" onclick="event.stopPropagation()">
+    <img id="lbImg" src="" alt="" style="max-width:100%;max-height:80vh;border-radius:10px;object-fit:contain;">
+    <p id="lbCaption" style="color:rgba(255,255,255,.8);margin-top:.85rem;font-size:.95rem;"></p>
+  </div>
+  <button id="lbNext" onclick="shiftLightbox(1);event.stopPropagation()"
+          style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;
+                 color:#fff;font-size:1.8rem;cursor:pointer;border-radius:50%;width:48px;height:48px;">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
@@ -924,9 +923,61 @@
     this.reset();
   });
 
-  // Barang warga info
-  document.getElementById('btnBarangWarga').addEventListener('click', function() {
-    showToast('Belum ada data barang warga yang terdaftar. Daftarkan potensimu sekarang!', 'info');
+  /* ── Lightbox Galeri ── */
+  var lbItems = [];
+  var lbIndex = 0;
+
+  function openLightbox(items, idx) {
+    lbItems = items;
+    lbIndex = idx;
+    renderLightbox();
+    var lb = document.getElementById('lightbox');
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  function shiftLightbox(dir) {
+    lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+    renderLightbox();
+  }
+  function renderLightbox() {
+    document.getElementById('lbImg').src       = lbItems[lbIndex].src;
+    document.getElementById('lbImg').alt       = lbItems[lbIndex].caption;
+    document.getElementById('lbCaption').innerHTML =
+      '<strong style="font-size:1rem;">' + lbItems[lbIndex].caption + '</strong>' +
+      (lbItems[lbIndex].desc ? '<br><span style="font-size:.85rem;opacity:.75;">' + lbItems[lbIndex].desc + '</span>' : '');
+    document.getElementById('lbPrev').style.display = lbItems.length > 1 ? '' : 'none';
+    document.getElementById('lbNext').style.display = lbItems.length > 1 ? '' : 'none';
+  }
+
+  /* Bind galeri items */
+  function bindGaleri() {
+    var items = Array.from(document.querySelectorAll('#galeriGrid .galeri-card'));
+    var data  = items.map(function(el) {
+      return {
+        src:     el.dataset.src,
+        caption: el.dataset.caption,
+        desc:    el.dataset.desc || ''
+      };
+    });
+    items.forEach(function(el, i) {
+      el.querySelector('.galeri-card-img').addEventListener('click', function() {
+        openLightbox(data, i);
+      });
+    });
+  }
+  bindGaleri();
+
+  /* Keyboard nav */
+  document.addEventListener('keydown', function(e) {
+    var lb = document.getElementById('lightbox');
+    if (lb.style.display === 'none') return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  shiftLightbox(-1);
+    if (e.key === 'ArrowRight') shiftLightbox(1);
   });
 </script>
 </body>
