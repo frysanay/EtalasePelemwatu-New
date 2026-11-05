@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/admin.css">
   <link rel="stylesheet" href="assets/css/galeri.css">
+  <script>
+    if (localStorage.getItem('adminLoggedIn') !== 'true') {
+      window.location.replace('index.html?action=login');
+    }
+  </script>
 </head>
 <body class="admin-page">
 
@@ -54,6 +59,9 @@
     <a href="index.html" class="sidebar-nav-item" style="text-decoration:none;">
       <i class="bi bi-house-door"></i><span>Kembali ke Website</span>
     </a>
+    <button type="button" class="sidebar-nav-item text-danger border-0 bg-transparent w-100 text-start" id="sidebarNavLogout" style="cursor:pointer;">
+      <i class="bi bi-box-arrow-right text-danger"></i><span class="text-danger fw-semibold">Keluar (Logout)</span>
+    </button>
   </nav>
   <div class="sidebar-footer">
     <div class="sidebar-user">
@@ -62,6 +70,9 @@
         <span class="uname">Administrator</span>
         <span class="urole">Admin Desa</span>
       </div>
+      <button type="button" class="btn-logout-sidebar" id="btnLogoutSidebar" title="Keluar / Logout">
+        <i class="bi bi-box-arrow-right"></i>
+      </button>
     </div>
   </div>
 </aside>
@@ -87,6 +98,10 @@
         <i class="bi bi-person-circle fs-5"></i>
         <span class="d-none d-sm-inline fw-semibold">Admin</span>
       </div>
+      <button type="button" class="btn btn-sm btn-outline-danger ms-2 d-flex align-items-center gap-1" id="btnLogoutTopbar" title="Keluar dari Panel Admin" style="font-size:.8rem;padding:.3rem .75rem;border-radius:6px;">
+        <i class="bi bi-box-arrow-right"></i>
+        <span class="d-none d-md-inline">Logout</span>
+      </button>
     </div>
   </div>
 
@@ -861,13 +876,35 @@ document.querySelectorAll('.form-check-input[type=checkbox]').forEach(function(c
 var searchInput  = document.getElementById('searchPotensi');
 var filterSelect = document.getElementById('filterKategori');
 function filterTable(){
-  var q   = searchInput  ? searchInput.value.toLowerCase() : '';
-  var kat = filterSelect ? filterSelect.value : 'all';
-  document.querySelectorAll('#tabelPotensi tbody tr').forEach(function(row){
-    var name = row.cells[1].textContent.toLowerCase();
+  var q   = searchInput  ? searchInput.value.toLowerCase().trim() : '';
+  var sel = filterSelect ? filterSelect.value : 'all';
+  var visibleRows = 0;
+  var rows = document.querySelectorAll('#tabelPotensi tbody tr:not(.empty-row)');
+  rows.forEach(function(row){
+    var name = row.cells[1] ? row.cells[1].textContent.toLowerCase() : '';
     var cat  = row.dataset.kat || '';
-    row.style.display = (name.includes(q) && (kat==='all'||cat===kat)) ? '' : 'none';
+    var matchSearch = !q || name.includes(q) || cat.includes(q);
+    var matchCat = (sel === 'all' || cat === sel);
+    if (matchSearch && matchCat) {
+      row.style.display = '';
+      visibleRows++;
+    } else {
+      row.style.display = 'none';
+    }
   });
+
+  var emptyRow = document.querySelector('#tabelPotensi tbody tr.empty-row');
+  if (visibleRows === 0) {
+    if (!emptyRow) {
+      emptyRow = document.createElement('tr');
+      emptyRow.className = 'empty-row text-center';
+      emptyRow.innerHTML = '<td colspan="6" class="py-4 text-muted"><i class="bi bi-search me-2"></i>Tidak ada potensi yang cocok dengan pencarian</td>';
+      document.querySelector('#tabelPotensi tbody').appendChild(emptyRow);
+    }
+    emptyRow.style.display = '';
+  } else if (emptyRow) {
+    emptyRow.style.display = 'none';
+  }
 }
 if (searchInput)  searchInput.addEventListener('input',  filterTable);
 if (filterSelect) filterSelect.addEventListener('change',filterTable);
@@ -995,5 +1032,6 @@ document.getElementById('btnSimpanJudulGaleri').addEventListener('click', functi
   showAdminToast('Judul dan deskripsi foto berhasil diperbarui.', 'success');
 });
 </script>
+<script src="assets/js/auth.js"></script>
 </body>
 </html>

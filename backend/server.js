@@ -1,4 +1,4 @@
-const express = require("express");
+﻿const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -45,6 +45,64 @@ app.get("/api/categories", async (req, res) => {
     res.status(500).json({
       status: "error",
       message: "Gagal mengambil data kategori",
+    });
+  }
+});
+
+
+// Route login admin
+app.post("/api/login", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({
+        status: "error",
+        message: "Username dan kata sandi wajib diisi",
+      });
+    }
+
+    // Cek ke database users jika tabel tersedia
+    try {
+      const userCheck = await db.query(
+        "SELECT id, name, email, password FROM users WHERE email = $1 OR name = $1 LIMIT 1",
+        [username]
+      );
+      if (userCheck.rows.length > 0) {
+        const user = userCheck.rows[0];
+        if (user.password === password) {
+          return res.json({
+            status: "success",
+            message: "Login berhasil",
+            user: { id: user.id, name: user.name, role: "admin" },
+          });
+        }
+      }
+    } catch (dbErr) {
+      // Database query fallback
+    }
+
+    // Kredensial default admin
+    if (
+      (username === "admin" || username === "admin@pelemwatu.desa.id") &&
+      password === "admin123"
+    ) {
+      return res.json({
+        status: "success",
+        message: "Login berhasil sebagai Administrator",
+        user: { id: 1, name: "Administrator Desa", role: "admin" },
+      });
+    }
+
+    return res.status(401).json({
+      status: "error",
+      message: "Username atau kata sandi tidak sesuai",
+    });
+  } catch (error) {
+    console.error("Gagal proses login:", error.message);
+    res.status(500).json({
+      status: "error",
+      message: "Terjadi kesalahan pada server saat login",
     });
   }
 });

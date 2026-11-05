@@ -1,4 +1,4 @@
-/**
+﻿/**
  * EtalasePelemwatu — Main JavaScript
  * Landing Page Interactions
  */
@@ -111,21 +111,138 @@ function initProfilTabs() {
 function initKatalogFilter() {
   const filterBtns = $$('.filter-btn');
   const cards = $$('.potensi-card');
+  const searchInput = document.getElementById('katalogSearch');
+  const clearBtn = document.getElementById('katalogSearchClear');
+  const resultInfo = document.getElementById('katalogSearchResultInfo');
+  const resultText = document.getElementById('searchResultText');
+  const emptyState = document.getElementById('katalogEmptyState');
+  const emptyMsg = document.getElementById('emptyStateMsg');
+  const resetBtn = document.getElementById('btnResetFilterSearch');
+  const emptyResetBtn = document.getElementById('btnResetEmptyState');
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, m => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[m]);
+  }
+
+  function applyFilters() {
+    let visibleCount = 0;
+    const query = searchQuery.trim().toLowerCase();
+
+    cards.forEach(card => {
+      const category = card.dataset.category || '';
+      const title = card.querySelector('h5')?.textContent.toLowerCase() || '';
+      const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+      const badge = card.querySelector('.potensi-badge')?.textContent.toLowerCase() || '';
+
+      const matchCategory = (currentCategory === 'all' || category === currentCategory);
+      const matchSearch = (!query || title.includes(query) || desc.includes(query) || badge.includes(query));
+
+      if (matchCategory && matchSearch) {
+        card.style.display = '';
+        card.style.animation = 'fadeInUp .35s ease';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Toggle clear button on search input
+    if (clearBtn) {
+      clearBtn.style.display = query ? 'flex' : 'none';
+    }
+
+    // Toggle empty state
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+        if (emptyMsg) {
+          if (query && currentCategory !== 'all') {
+            const catName = document.querySelector('.filter-btn.active')?.textContent.trim() || currentCategory;
+            emptyMsg.textContent = `Tidak ditemukan potensi dalam kategori "${catName}" dengan kata kunci "${query}".`;
+          } else if (query) {
+            emptyMsg.textContent = `Tidak ditemukan potensi dengan kata kunci "${query}".`;
+          } else {
+            emptyMsg.textContent = 'Belum ada data potensi pada kategori ini.';
+          }
+        }
+      } else {
+        emptyState.style.display = 'none';
+      }
+    }
+
+    // Update result info text
+    if (resultInfo && resultText) {
+      if (query || currentCategory !== 'all') {
+        resultInfo.style.display = 'flex';
+        let html = `Menampilkan <strong>${visibleCount}</strong> potensi`;
+        if (query) {
+          html += ` untuk kata kunci "<em>${escapeHtml(query)}</em>"`;
+        }
+        if (currentCategory !== 'all') {
+          const catName = document.querySelector('.filter-btn.active')?.textContent.trim() || currentCategory;
+          html += ` dalam kategori <strong>${escapeHtml(catName)}</strong>`;
+        }
+        resultText.innerHTML = html;
+      } else {
+        resultInfo.style.display = 'none';
+      }
+    }
+  }
+
+  // Category buttons
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const cat = btn.dataset.filter;
-      cards.forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
-          card.style.display = '';
-          card.style.animation = 'fadeInUp .4s ease';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      currentCategory = btn.dataset.filter;
+      applyFilters();
     });
   });
+
+  // Search input typing
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      applyFilters();
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchQuery = '';
+        applyFilters();
+      }
+    });
+  }
+
+  // Clear search input button
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchQuery = '';
+        searchInput.focus();
+        applyFilters();
+      }
+    });
+  }
+
+  // Reset all filters & search
+  function resetAll() {
+    if (searchInput) searchInput.value = '';
+    searchQuery = '';
+    currentCategory = 'all';
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+    applyFilters();
+  }
+
+  if (resetBtn) resetBtn.addEventListener('click', resetAll);
+  if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAll);
 }
 
 // ── Katalog Detail Modal ──────────────────────────────────────

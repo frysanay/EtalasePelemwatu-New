@@ -75,9 +75,16 @@
         <li class="nav-item"><a class="nav-link" href="index.html#layanan">Layanan</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#kontak-section">Kontak</a></li>
       </ul>
-      <span class="nav-link btn-nav-daftar ms-lg-3 mt-2 mt-lg-0" style="opacity:.85;cursor:default;">
-        <i class="bi bi-plus-circle-fill me-1"></i> Daftarkan Potensimu
-      </span>
+      <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0 ms-lg-3 flex-wrap">
+        <span class="nav-link btn-nav-daftar" style="opacity:.92;cursor:default;">
+          <i class="bi bi-plus-circle-fill me-1"></i> Daftarkan Potensimu
+        </span>
+        <div id="navAdminWrap">
+          <button type="button" class="btn-nav-admin" data-bs-toggle="modal" data-bs-target="#modalLoginAdmin">
+            <i class="bi bi-person-lock me-1"></i> Login Admin
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -689,5 +696,65 @@ var btt = document.getElementById('backToTop');
 window.addEventListener('scroll', function(){ btt.classList.toggle('show', window.scrollY > 400); }, { passive: true });
 btt.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
 </script>
+<!-- ============================================================
+     MODAL LOGIN ADMIN
+     ============================================================ -->
+<div class="modal fade modal-login-admin" id="modalLoginAdmin" tabindex="-1" aria-labelledby="modalLoginAdminLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+    <div class="modal-content">
+      <div class="modal-header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+          <div class="login-icon-badge">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <div>
+            <h5 class="modal-title fw-bold mb-0" id="modalLoginAdminLabel" style="color:var(--clr-blue);font-size:1.1rem;">Login Administrator</h5>
+            <small class="text-muted" style="font-size:.78rem;">Portal EtalasePelemwatu</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form id="formLoginAdmin" novalidate>
+        <div class="modal-body p-4">
+          <div id="loginAlertBox" class="alert alert-danger py-2 px-3 mb-3 d-none" style="font-size:.84rem;">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i> <span id="loginAlertMsg">Username atau kata sandi tidak sesuai.</span>
+          </div>
+
+          <div class="mb-3">
+            <label for="adminUsername" class="form-label fw-semibold" style="color:var(--clr-blue);font-size:.88rem;">Username / Email</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white border-end-0" style="color:var(--clr-text-light);">
+                <i class="bi bi-person"></i>
+              </span>
+              <input type="text" class="form-control border-start-0" id="adminUsername" placeholder="Masukkan username atau email" required autocomplete="username">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="adminPassword" class="form-label fw-semibold" style="color:var(--clr-blue);font-size:.88rem;">Kata Sandi</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white border-end-0" style="color:var(--clr-text-light);">
+                <i class="bi bi-key"></i>
+              </span>
+              <input type="password" class="form-control border-start-0 border-end-0" id="adminPassword" placeholder="Masukkan kata sandi" required autocomplete="current-password">
+              <button class="btn btn-outline-secondary border-start-0" type="button" id="btnTogglePassword" style="background:#fff;border-color:var(--clr-border);">
+                <i class="bi bi-eye" id="eyeIcon"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-top-0 pt-0 px-4 pb-4">
+          <button type="submit" class="btn-primary-custom w-100 justify-content-center" id="btnSubmitLogin" style="height:44px;">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Masuk ke Panel Admin
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/auth.js"></script>
 </body>
 </html>

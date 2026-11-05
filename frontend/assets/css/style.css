@@ -1,4 +1,4 @@
-/* =============================================================
+﻿/* =============================================================
    EtalasePelemwatu — Global Stylesheet
    Palette: Orange #F2630F | Green #68934B | Blue #094A74 | Yellow #FFC20B
    ============================================================= */
@@ -645,12 +645,102 @@ p { color: var(--clr-text-mid); }
    KATALOG
    ============================================================ */
 #katalog { background-color: var(--clr-white); }
+
+.katalog-toolbar {
+  margin-bottom: 2.2rem;
+}
+
+.katalog-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.katalog-search-box .search-icon {
+  position: absolute;
+  left: 1.1rem;
+  color: var(--clr-text-light);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: color var(--transition);
+}
+
+.katalog-search-box .form-control {
+  padding-left: 2.75rem;
+  padding-right: 2.6rem;
+  height: 44px;
+  border-radius: 50px;
+  border: 2px solid var(--clr-border);
+  font-size: .88rem;
+  background-color: var(--clr-bg);
+  transition: all var(--transition);
+}
+
+.katalog-search-box .form-control:focus {
+  border-color: var(--clr-blue);
+  background-color: var(--clr-white);
+  box-shadow: 0 0 0 4px rgba(9, 74, 116, 0.12);
+}
+
+.katalog-search-box:focus-within .search-icon {
+  color: var(--clr-blue);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: .9rem;
+  background: none;
+  border: none;
+  color: var(--clr-text-light);
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition);
+}
+
+.search-clear-btn:hover {
+  color: var(--clr-orange);
+}
+
+.search-result-info {
+  font-size: .85rem;
+  color: var(--clr-text-mid);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: .5rem .85rem;
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-border);
+}
+
+.btn-link-reset {
+  background: none;
+  border: none;
+  color: var(--clr-orange);
+  font-weight: 600;
+  font-size: .82rem;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-link-reset:hover {
+  color: var(--clr-blue);
+  text-decoration: underline;
+}
+
 .katalog-filter-bar {
   display: flex;
-  gap: .6rem;
+  gap: .5rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
 }
+
 .filter-btn {
   background: var(--clr-bg);
   border: 2px solid var(--clr-border);
@@ -667,6 +757,46 @@ p { color: var(--clr-text-mid); }
   background: var(--clr-orange);
   border-color: var(--clr-orange);
   color: var(--clr-white);
+}
+
+.katalog-empty-state {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: var(--clr-bg);
+  border: 1.5px dashed var(--clr-border);
+  border-radius: var(--radius-lg);
+  grid-column: 1 / -1;
+}
+
+.katalog-empty-state .empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(9, 74, 116, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.katalog-empty-state .empty-icon i {
+  font-size: 1.8rem;
+  color: var(--clr-blue);
+}
+
+.katalog-empty-state h5 {
+  font-size: 1.15rem;
+  color: var(--clr-blue);
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+
+.katalog-empty-state p {
+  font-size: .88rem;
+  color: var(--clr-text-mid);
+  max-width: 440px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.5;
 }
 
 .katalog-grid {
@@ -2255,4 +2385,95 @@ body.form-page .form-page-header p {
       ),
       url('../img/foto-daftar-potensi.jpg');
   }
+}
+/* ============================================================
+   ADMIN AUTHENTICATION & LOGIN MODAL
+   ============================================================ */
+.btn-nav-admin {
+  background: transparent;
+  color: var(--clr-blue) !important;
+  border: 1.5px solid var(--clr-blue);
+  padding: .48rem 1.05rem !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600 !important;
+  font-size: .84rem !important;
+  transition: all var(--transition);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-nav-admin::after { display: none !important; }
+.btn-nav-admin:hover {
+  background: var(--clr-blue) !important;
+  color: #FFFFFF !important;
+  border-color: var(--clr-blue) !important;
+  transform: translateY(-1px);
+}
+.btn-nav-admin.is-logged-in {
+  background: rgba(9, 74, 116, 0.08);
+  color: var(--clr-blue) !important;
+  border-color: var(--clr-blue);
+}
+.btn-nav-admin.is-logged-in:hover {
+  background: var(--clr-blue) !important;
+  color: #FFFFFF !important;
+}
+
+/* Modal Login Admin */
+.modal-login-admin .modal-content {
+  border-radius: var(--radius-lg);
+  border: none;
+  box-shadow: 0 16px 40px rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.modal-login-admin .modal-header {
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  padding: 1.25rem 1.5rem;
+}
+.modal-login-admin .login-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(242, 99, 15, 0.12);
+  color: var(--clr-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+.modal-login-admin .form-control {
+  border: 1.5px solid var(--clr-border);
+  padding: .65rem .9rem;
+  font-size: .9rem;
+  border-radius: var(--radius);
+}
+.modal-login-admin .form-control:focus {
+  border-color: var(--clr-blue);
+  box-shadow: 0 0 0 3px rgba(9, 74, 116, 0.12);
+}
+.modal-login-admin .input-group-text {
+  border: 1.5px solid var(--clr-border);
+  color: var(--clr-text-mid);
+}
+
+.btn-logout-sidebar {
+  margin-left: auto;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, .85);
+  border-radius: 8px;
+  padding: .35rem .6rem;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-logout-sidebar:hover {
+  background: #B02A37;
+  border-color: #B02A37;
+  color: #FFFFFF;
 }
