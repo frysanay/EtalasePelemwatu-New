@@ -54,3 +54,16 @@ CREATE TABLE IF NOT EXISTS potensi_images (
         FOREIGN KEY (potensi_id)
         REFERENCES potensi(id)
 );
+
+-- Seed Data Kategori Awal
+INSERT INTO categories (name, description) VALUES
+('Usaha & Produk', 'Usaha kuliner, kerajinan, dan produk olahan warga desa'),
+('Jasa', 'Layanan jasa dan keahlian masyarakat desa'),
+('Hunian', 'Kost, kontrakan, dan akomodasi tempat tinggal di desa'),
+('Barang Warga', 'Barang dan produk yang dijual atau disewakan warga desa')
+ON CONFLICT DO NOTHING;
+
+-- Seed Akun Admin Bawaan (Default)
+INSERT INTO users (name, email, password) VALUES
+('Administrator Desa', 'admin@pelemwatu.desa.id', 'admin123')
+ON CONFLICT DO NOTHING;
