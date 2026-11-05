@@ -705,6 +705,26 @@
     foto.src = 'assets/img/potensi/' + id + '.jpg';
   });
 
+  /* Pengaman modal detail: bila modal terbuka dua kali oleh dua skrip (data-bs-toggle + main.js),
+     backdrop ganda tertinggal dan body tetap terkunci setelah ditutup. Rapikan saat modal dibuka/ditutup. */
+  (function () {
+    var modalEl = document.getElementById('detailModal');
+    modalEl.addEventListener('shown.bs.modal', function () {
+      var bd = document.querySelectorAll('.modal-backdrop');
+      for (var i = 1; i < bd.length; i++) bd[i].remove();
+    });
+    modalEl.addEventListener('hidden.bs.modal', function () {
+      var inst = bootstrap.Modal.getInstance(modalEl);
+      if (inst) inst.dispose();
+      document.querySelectorAll('.modal-backdrop').forEach(function (b) { b.remove(); });
+      document.body.classList.remove('modal-open');
+      document.body.style.removeProperty('overflow');
+      document.body.style.removeProperty('padding-right');
+      document.body.removeAttribute('data-bs-overflow');
+      document.body.removeAttribute('data-bs-padding-right');
+    });
+  })();
+
   /* ── Lightbox Galeri ── */
   var lbItems = [];
   var lbIndex = 0;
