@@ -16,10 +16,34 @@ app.use(express.json());
 
 // Melayani file statis frontend langsung dari port 3000
 app.use(express.static(path.join(__dirname, "../frontend")));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+const uploadRoutes = require("./routes/upload");
+app.use("/api/upload", uploadRoutes);
 
 // Routes API Potensi & Auth
 app.use("/api/potensi", potensiRoutes);
 app.use("/api/auth", authRoutes);
+// Middleware untuk proteksi route admin menggunakan JWT
+const authMiddleware = require('./middleware/auth');
+
+// Admin‑protected routes
+app.use('/api/categories', authMiddleware, categoryRoutes);
+app.use('/api/admins', authMiddleware, adminRoutes);
+app.use('/api/messages', authMiddleware, messageRoutes);
+app.use('/api/potensi-review', authMiddleware, reviewRoutes);
+app.use('/api/stats', authMiddleware, statsRoutes);
+
+// Additional admin routes
+const categoryRoutes = require("./routes/categories");
+const adminRoutes = require("./routes/admins");
+const messageRoutes = require("./routes/messages");
+const reviewRoutes = require("./routes/potensi_review");
+const statsRoutes = require("./routes/stats");
+app.use("/api/categories", categoryRoutes);
+app.use("/api/admins", adminRoutes);
+app.use("/api/messages", messageRoutes);
+app.use("/api/potensi-review", reviewRoutes);
+app.use("/api/stats", statsRoutes);
 
 // Route pengecekan server
 app.get("/api/status", (req, res) => {
