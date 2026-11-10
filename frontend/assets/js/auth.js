@@ -110,15 +110,6 @@
       });
     }
 
-    // Autofill akun demo di modal
-    const autoFillBtn = document.getElementById('btnAutoFillModalDemo');
-    if (autoFillBtn && usernameInput && passwordInput) {
-      autoFillBtn.addEventListener('click', () => {
-        usernameInput.value = 'admin@pelemwatu.desa.id';
-        passwordInput.value = 'admin123';
-        usernameInput.focus();
-      });
-    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

@@ -167,36 +167,7 @@
     .btn-toggle-password:hover {
       color: var(--clr-blue);
     }
-    .demo-credential-box {
-      background: rgba(9, 74, 116, 0.05);
-      border: 1px dashed rgba(9, 74, 116, 0.25);
-      border-radius: var(--radius);
-      padding: 0.85rem 1rem;
-      margin-bottom: 1.35rem;
-      font-size: 0.82rem;
-      color: var(--clr-blue);
-    }
-    .demo-credential-box .demo-title {
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.4rem;
-    }
-    .demo-badge-fill {
-      background: var(--clr-orange);
-      color: #fff;
-      font-size: 0.7rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 20px;
-      cursor: pointer;
-      border: none;
-      font-weight: 600;
-      transition: background 0.2s ease;
-    }
-    .demo-badge-fill:hover {
-      background: var(--clr-orange-dark);
-    }
+
     .btn-submit-login {
       background: var(--clr-orange);
       color: #fff;
@@ -300,19 +271,6 @@
         <span id="authAlertText">Pesan pemberitahuan</span>
       </div>
 
-      <!-- Demo Credential Helper -->
-      <div class="demo-credential-box">
-        <div class="demo-title">
-          <span><i class="bi bi-key-fill me-1 text-orange"></i>Akun Default / Demo</span>
-          <button type="button" class="demo-badge-fill" id="btnAutoFillDemo">
-            <i class="bi bi-magic me-1"></i>Isi Otomatis
-          </button>
-        </div>
-        <div class="d-flex justify-content-between text-muted" style="font-size:0.78rem;">
-          <span>Email: <strong>admin@pelemwatu.desa.id</strong></span>
-          <span>Password: <strong>admin123</strong></span>
-        </div>
-      </div>
 
       <!-- Form Login -->
       <form id="adminLoginForm" novalidate>
@@ -391,7 +349,6 @@
       const alertBox = document.getElementById('authAlert');
       const alertIcon = document.getElementById('authAlertIcon');
       const alertText = document.getElementById('authAlertText');
-      const btnAutoFill = document.getElementById('btnAutoFillDemo');
       const btnTogglePassword = document.getElementById('btnTogglePassword');
       const togglePasswordIcon = document.getElementById('togglePasswordIcon');
       const btnHelpPass = document.getElementById('btnHelpPass');
@@ -421,17 +378,9 @@
         }
       }
 
-      // Tombol Isi Otomatis Akun Demo
-      btnAutoFill.addEventListener('click', function () {
-        emailInput.value = 'admin@pelemwatu.desa.id';
-        passwordInput.value = 'admin123';
-        emailInput.focus();
-        showAlert('Kredensial demo berhasil dimasukkan. Silakan klik "Masuk ke Panel Admin".', 'info');
-      });
-
       // Bantuan Sandi
       btnHelpPass.addEventListener('click', function () {
-        showAlert('Gunakan kredensial default admin: admin@pelemwatu.desa.id / admin123', 'info');
+        showAlert('Silakan hubungi administrator utama desa untuk pemulihan akun.', 'info');
       });
 
       // Toggle Password Visibility

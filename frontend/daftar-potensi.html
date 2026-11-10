@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,50 @@
   <meta name="description" content="Formulir pendaftaran potensi lokal Desa Pelemwatu. Daftarkan usaha, produk, jasa, atau hunian Anda.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
-  <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .kategori-card {
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      cursor: pointer;
+      transition: all .3s ease;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: var(--white);
+    }
+    .kategori-card:hover { border-color: var(--clr-orange); background: rgba(242,99,15,.03); }
+    .kategori-card.selected {
+      border-color: var(--clr-orange);
+      background: rgba(242,99,15,.06);
+      box-shadow: 0 0 0 3px rgba(242,99,15,.12);
+    }
+    .kategori-card .kat-icon {
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .kategori-card .kat-info h6 { font-size: .9rem; color: var(--clr-blue); margin-bottom: .15rem; }
+    .kategori-card .kat-info small { font-size: .78rem; color: var(--text-light); }
+    .kategori-card input[type="radio"] { display: none; }
+    #photoPreview { display: none; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
+    #photoPreview img { width:80px;height:80px;object-fit:cover;border-radius:8px;border:2px solid var(--border); }
+    .upload-area.dragover { border-color:var(--clr-orange);background:rgba(242,99,15,.05); }
+    .info-sidebar-card { background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:1.25rem;box-shadow:var(--shadow-sm); }
+    .info-sidebar-card-header { background:var(--clr-blue);padding:.9rem 1.25rem;color:var(--white);font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.5rem; }
+    .info-sidebar-card-body { padding:1.25rem; }
+    .step-guide-item { display:flex;gap:.75rem;margin-bottom:.9rem;align-items:flex-start; }
+    .step-guide-item:last-child { margin-bottom:0; }
+    .step-guide-num { width:26px;height:26px;background:var(--clr-orange);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex-shrink:0; }
+    .step-guide-text { font-size:.88rem;color:var(--clr-blue);padding-top:.2rem; }
+    .inline-err { display:none;background:rgba(220,53,69,.1);border:1px solid rgba(220,53,69,.3);border-radius:8px;padding:.65rem 1rem;color:#842029;font-size:.85rem;align-items:center;gap:.5rem;margin-top:1rem; }
+    .form-page-content { padding-top:80px; }
+  </style>
 </head>
-<body class="lp">
+<body class="form-page">
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
@@ -24,370 +62,446 @@
         <span class="brand-sub">Desa Pelemwatu</span>
       </div>
     </a>
-    <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Buka menu">
+    <button class="navbar-toggler ms-auto me-2" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenuForm">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navMenu">
+    <div class="collapse navbar-collapse" id="navMenuForm">
       <ul class="navbar-nav mx-auto gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html#hero-desa">Beranda</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#profil-desa">Profil Desa</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html#tentang-etalase">Tentang Etalase</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#pengenalan-etalase">Tentang Etalase</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#katalog">Katalog Potensi</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#layanan">Layanan</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#kontak-section">Kontak</a></li>
       </ul>
+      <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0 ms-lg-3 flex-wrap">
+        <span class="nav-link btn-nav-daftar" style="opacity:.92;cursor:default;">
+          <i class="bi bi-plus-circle-fill me-1"></i> Daftarkan Potensimu
+        </span>
+        <div id="navAdminWrap">
+          <button type="button" class="btn-nav-admin" data-bs-toggle="modal" data-bs-target="#modalLoginAdmin">
+            <i class="bi bi-person-lock me-1"></i> Login Admin
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
-<main>
-<header class="daftar-hero">
-  <img class="daftar-hero-bg" src="assets/img/foto-daftar-potensi.jpg" alt="" onerror="this.remove()">
-  <div class="container">
-    <nav class="jejak" aria-label="Jejak halaman">
-      <a href="index.html">Beranda</a>
-      <span aria-hidden="true">/</span>
-      <span>Daftarkan potensi</span>
-    </nav>
-    <div class="kepala">
-      <h1>Daftarkan potensi lokal</h1>
-      <p>Isi formulir berikut untuk mendaftarkan usaha, produk, jasa, hunian, atau barang milik Anda ke katalog EtalasePelemwatu. Pendaftaran gratis.</p>
+<div class="form-page-content">
+  <!-- PAGE HEADER -->
+  <div class="form-page-header">
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="form-breadcrumb">
+        <a href="index.html"><i class="bi bi-house me-1"></i>Beranda</a>
+        <span><i class="bi bi-chevron-right" style="font-size:.7rem;"></i></span>
+        <span style="color:var(--clr-yellow);">Daftarkan Potensi</span>
+      </div>
+      <h1><i class="bi bi-pencil-square me-2" style="color:var(--clr-yellow);"></i>Daftarkan Potensi Lokal</h1>
+      <p>Isi formulir berikut untuk mendaftarkan usaha, produk, jasa, hunian, atau barang milik Anda ke dalam katalog EtalasePelemwatu. Pendaftaran bersifat gratis.</p>
     </div>
   </div>
-</header>
 
-<section class="daftar-isi">
-  <div class="container">
-    <div class="row g-5">
+  <!-- MAIN -->
+  <div class="container py-5">
+    <div class="row g-4">
 
-      <!-- FORMULIR -->
+      <!-- LEFT: FORM -->
       <div class="col-lg-8">
-        <div class="form-daftar">
 
-          <!-- Langkah -->
-          <ol class="form-steps" id="stepIndicator">
-            <li class="step-item active" id="stepItem1">
-              <span class="step-circle" id="stepCircle1">1</span>
-              <span class="step-label">Identitas dan kategori</span>
-            </li>
-            <li class="step-item" id="stepItem2">
-              <span class="step-circle" id="stepCircle2">2</span>
-              <span class="step-label">Detail potensi</span>
-            </li>
-            <li class="step-item" id="stepItem3">
-              <span class="step-circle" id="stepCircle3">3</span>
-              <span class="step-label">Konfirmasi</span>
-            </li>
-          </ol>
+        <!-- Step Indicator -->
+        <div class="form-steps mb-4" id="stepIndicator">
+          <div class="step-item active" id="stepItem1">
+            <div class="step-circle" id="stepCircle1">1</div>
+            <div class="step-label">Informasi Potensi</div>
+          </div>
+          <div class="step-item" id="stepItem2">
+            <div class="step-circle" id="stepCircle2">2</div>
+            <div class="step-label">Detail &amp; Deskripsi</div>
+          </div>
+          <div class="step-item" id="stepItem3">
+            <div class="step-circle" id="stepCircle3">3</div>
+            <div class="step-label">Konfirmasi</div>
+          </div>
+        </div>
 
-          <form id="pendaftaranForm" novalidate>
+        <!-- Form Card -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <h4><i class="bi bi-clipboard-text me-2"></i>Formulir Pendaftaran Potensi</h4>
+          </div>
+          <div class="form-card-body">
+            <form id="pendaftaranForm" novalidate>
 
-            <!-- LANGKAH 1 -->
-            <div class="form-step-pane active" id="step-pane-1">
-              <h2 class="form-judul">Identitas pendaftar</h2>
-              <p class="form-catatan">Kolom bertanda <span class="wajib">*</span> wajib diisi.</p>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="f-nama">Nama lengkap <span class="wajib">*</span></label>
-                  <input type="text" class="form-control" id="f-nama" placeholder="Nama Anda" required>
+              <!-- STEP 1 -->
+              <div class="form-step-pane active" id="step-pane-1">
+                <div class="form-section-title"><i class="bi bi-person-circle"></i> Identitas Pendaftar</div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nama Lengkap <span class="required-mark">*</span></label>
+                    <input type="text" class="form-control" id="f-nama" placeholder="Masukkan nama lengkap Anda" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">NIK</label>
+                    <input type="text" class="form-control" id="f-nik" placeholder="16 digit NIK (opsional)" maxlength="16">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Nomor Telepon <span class="required-mark">*</span></label>
+                    <input type="tel" class="form-control" id="f-telp" placeholder="Contoh: 08123456789" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="f-email" placeholder="email@contoh.com (opsional)">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Alamat Rumah <span class="required-mark">*</span></label>
+                    <textarea class="form-control" id="f-alamat" rows="2"
+                              placeholder="Alamat lengkap di Desa Pelemwatu" required></textarea>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="f-nik">NIK</label>
-                  <input type="text" class="form-control" id="f-nik" placeholder="16 digit (boleh dikosongkan)" maxlength="16" inputmode="numeric">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="f-telp">Nomor telepon <span class="wajib">*</span></label>
-                  <input type="tel" class="form-control" id="f-telp" placeholder="Contoh: 08123456789" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="f-email">Email</label>
-                  <input type="email" class="form-control" id="f-email" placeholder="email@contoh.com (boleh dikosongkan)">
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="f-alamat">Alamat rumah <span class="wajib">*</span></label>
-                  <textarea class="form-control" id="f-alamat" rows="2" placeholder="Alamat lengkap di Desa Pelemwatu" required></textarea>
-                </div>
-              </div>
 
-              <h2 class="form-judul mt-5">Kategori potensi <span class="wajib">*</span></h2>
-              <p class="form-catatan">Pilih kategori yang paling sesuai.</p>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="kategori-card" id="kat-usaha">
-                    <input type="radio" name="kategori" value="usaha">
-                    <span class="kat-titik titik-usaha" aria-hidden="true"></span>
-                    <span class="kat-info">
-                      <h6>Usaha &amp; Produk</h6>
-                      <small>Warung, toko, kuliner, produk lokal</small>
-                    </span>
+                <div class="form-section-title mt-4"><i class="bi bi-tag"></i> Kategori Potensi</div>
+                <p style="font-size:.88rem;color:var(--text-mid);" class="mb-3">
+                  Pilih kategori yang paling sesuai. <span class="required-mark">*</span>
+                </p>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="kategori-card" id="kat-usaha">
+                      <input type="radio" name="kategori" value="usaha">
+                      <div class="kat-icon" style="background:rgba(242,99,15,.12);">
+                        <i class="bi bi-shop" style="color:var(--clr-orange);"></i>
+                      </div>
+                      <div class="kat-info">
+                        <h6>Usaha &amp; Produk</h6>
+                        <small>Warung, toko, kuliner, produk lokal</small>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="kategori-card" id="kat-jasa">
+                      <input type="radio" name="kategori" value="jasa">
+                      <div class="kat-icon" style="background:rgba(9,74,116,.12);">
+                        <i class="bi bi-tools" style="color:var(--clr-blue);"></i>
+                      </div>
+                      <div class="kat-info">
+                        <h6>Jasa</h6>
+                        <small>Laundry, servis, les, dan jasa lainnya</small>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="kategori-card" id="kat-hunian">
+                      <input type="radio" name="kategori" value="hunian">
+                      <div class="kat-icon" style="background:rgba(255,194,11,.20);">
+                        <i class="bi bi-house" style="color:var(--clr-green);"></i>
+                      </div>
+                      <div class="kat-info">
+                        <h6>Hunian</h6>
+                        <small>Kost, kontrakan, sewa kamar</small>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="kategori-card" id="kat-barang">
+                      <input type="radio" name="kategori" value="barang">
+                      <div class="kat-icon" style="background:rgba(104,147,75,.12);">
+                        <i class="bi bi-bag" style="color:var(--clr-green);"></i>
+                      </div>
+                      <div class="kat-info">
+                        <h6>Barang Warga</h6>
+                        <small>Penjualan barang &amp; produk warga</small>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="inline-err" id="err1">
+                  <i class="bi bi-exclamation-circle-fill flex-shrink-0"></i>
+                  <span id="err1msg">Periksa kembali data Anda.</span>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                  <button type="button" class="btn-primary-custom" id="btnNext1">
+                    Lanjutkan <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </div><!-- /step-pane-1 -->
+
+              <!-- STEP 2 -->
+              <div class="form-step-pane" id="step-pane-2">
+                <div class="form-section-title"><i class="bi bi-info-circle"></i> Informasi Potensi</div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nama Potensi / Usaha <span class="required-mark">*</span></label>
+                    <input type="text" class="form-control" id="f-nama-potensi"
+                           placeholder="Nama usaha, produk, atau jasa Anda" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Jenis / Subkategori</label>
+                    <input type="text" class="form-control" id="f-jenis"
+                           placeholder="Contoh: Laundry kiloan, Kost putra">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Deskripsi <span class="required-mark">*</span></label>
+                    <textarea class="form-control" id="f-deskripsi" rows="4"
+                              placeholder="Jelaskan potensi Anda secara singkat dan jelas..." required></textarea>
+                    <div class="form-text">Minimal 20 karakter.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Alamat / Lokasi Potensi</label>
+                    <input type="text" class="form-control" id="f-lokasi"
+                           placeholder="Alamat usaha jika berbeda dari rumah">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Jam Operasional</label>
+                    <input type="text" class="form-control" id="f-jam"
+                           placeholder="Contoh: Senin–Sabtu, 08.00–20.00 WIB">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Kontak Usaha</label>
+                    <input type="tel" class="form-control" id="f-kontak-usaha"
+                           placeholder="Nomor yang dapat dihubungi calon pelanggan">
+                  </div>
+                </div>
+
+                <div class="form-section-title mt-4"><i class="bi bi-camera"></i> Foto Dokumentasi</div>
+                <p style="font-size:.88rem;color:var(--text-mid);" class="mb-3">
+                  Upload foto yang relevan (opsional, maks. 3 foto).
+                </p>
+                <div class="upload-area" id="uploadArea">
+                  <i class="bi bi-cloud-upload d-block mb-2" style="font-size:2.5rem;color:var(--clr-green);"></i>
+                  <p style="margin:0;color:var(--text-mid);font-size:.9rem;">Klik untuk memilih foto atau seret ke sini</p>
+                  <small style="color:var(--text-light);">Format: JPG, PNG, WebP. Maks. 5MB per foto.</small>
+                  <input type="file" id="fileInput" accept="image/*" multiple style="display:none;">
+                </div>
+                <div id="photoPreview"></div>
+
+                <div class="inline-err" id="err2">
+                  <i class="bi bi-exclamation-circle-fill flex-shrink-0"></i>
+                  <span id="err2msg">Periksa kembali data Anda.</span>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-outline-custom" id="btnPrev2">
+                    <i class="bi bi-arrow-left me-1"></i> Kembali
+                  </button>
+                  <button type="button" class="btn-primary-custom" id="btnNext2">
+                    Lanjutkan <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </div><!-- /step-pane-2 -->
+
+              <!-- STEP 3 -->
+              <div class="form-step-pane" id="step-pane-3">
+                <div class="form-section-title"><i class="bi bi-check2-circle"></i> Konfirmasi Data</div>
+                <p style="font-size:.9rem;color:var(--text-mid);" class="mb-4">
+                  Periksa kembali data Anda sebelum mengirim pendaftaran.
+                </p>
+                <div class="preview-card mb-4">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="preview-label">Nama Pendaftar</div>
+                      <div class="preview-value" id="prev-nama">—</div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="preview-label">Nomor Telepon</div>
+                      <div class="preview-value" id="prev-telp">—</div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="preview-label">Kategori Potensi</div>
+                      <div class="preview-value" id="prev-kategori">—</div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="preview-label">Nama Potensi / Usaha</div>
+                      <div class="preview-value" id="prev-potensi">—</div>
+                    </div>
+                    <div class="col-12">
+                      <div class="preview-label">Deskripsi</div>
+                      <div class="preview-value" id="prev-deskripsi" style="font-size:.9rem;font-weight:400;color:var(--text-mid);">—</div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="preview-label">Lokasi</div>
+                      <div class="preview-value" id="prev-lokasi">—</div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="preview-label">Jam Operasional</div>
+                      <div class="preview-value" id="prev-jam">—</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="alert mb-3"
+                     style="background:rgba(9,74,116,.07);border-left:3px solid var(--clr-blue);border-radius:8px;font-size:.85rem;color:var(--clr-blue);">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Setelah dikirim, pendaftaran Anda akan ditinjau oleh pengelola EtalasePelemwatu. Anda akan dihubungi melalui nomor telepon yang didaftarkan.
+                </div>
+
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="agreeCheck">
+                  <label class="form-check-label" for="agreeCheck" style="font-size:.9rem;color:var(--text-mid);">
+                    Saya menyatakan bahwa data yang saya isi adalah <strong>benar</strong> dan merupakan
+                    potensi lokal yang nyata di <strong>Desa Pelemwatu</strong>.
                   </label>
                 </div>
-                <div class="col-md-6">
-                  <label class="kategori-card" id="kat-jasa">
-                    <input type="radio" name="kategori" value="jasa">
-                    <span class="kat-titik titik-jasa" aria-hidden="true"></span>
-                    <span class="kat-info">
-                      <h6>Jasa</h6>
-                      <small>Laundry, servis, les, dan jasa lainnya</small>
-                    </span>
-                  </label>
-                </div>
-                <div class="col-md-6">
-                  <label class="kategori-card" id="kat-hunian">
-                    <input type="radio" name="kategori" value="hunian">
-                    <span class="kat-titik titik-hunian" aria-hidden="true"></span>
-                    <span class="kat-info">
-                      <h6>Hunian</h6>
-                      <small>Kost, kontrakan, sewa kamar</small>
-                    </span>
-                  </label>
-                </div>
-                <div class="col-md-6">
-                  <label class="kategori-card" id="kat-barang">
-                    <input type="radio" name="kategori" value="barang">
-                    <span class="kat-titik titik-barang" aria-hidden="true"></span>
-                    <span class="kat-info">
-                      <h6>Barang Warga</h6>
-                      <small>Penjualan barang &amp; produk warga</small>
-                    </span>
-                  </label>
-                </div>
-              </div>
 
-              <div class="inline-err" id="err1" role="alert"><span id="err1msg">Periksa kembali data Anda.</span></div>
-              <div class="aksi-form aksi-akhir">
-                <button type="button" class="tombol" id="btnNext1">Lanjutkan</button>
+                <div class="inline-err" id="err3">
+                  <i class="bi bi-exclamation-circle-fill flex-shrink-0"></i>
+                  <span id="err3msg">Periksa kembali data Anda.</span>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-outline-custom" id="btnPrev3">
+                    <i class="bi bi-arrow-left me-1"></i> Kembali
+                  </button>
+                  <button type="button" class="btn-primary-custom" id="btnSubmit">
+                    <i class="bi bi-send me-1"></i> Kirim Pendaftaran
+                  </button>
+                </div>
+              </div><!-- /step-pane-3 -->
+
+            </form>
+
+            <!-- SUCCESS STATE -->
+            <div id="successState" style="display:none;">
+              <div class="success-state">
+                <div class="success-icon">
+                  <i class="bi bi-check-circle-fill" style="color:#28a745;font-size:2.8rem;"></i>
+                </div>
+                <h3 style="color:var(--clr-blue);">Pendaftaran Berhasil Dikirim!</h3>
+                <p style="color:var(--text-mid);max-width:440px;margin:0 auto 1rem;">
+                  Terima kasih telah mendaftarkan potensi lokal Anda. Tim pengelola EtalasePelemwatu akan
+                  meninjau pendaftaran Anda dan menghubungi Anda melalui nomor telepon yang telah didaftarkan.
+                </p>
+                <p style="font-size:.88rem;color:var(--text-light);margin-bottom:2rem;">
+                  Nomor referensi: <strong id="refNumber" style="color:var(--clr-orange);">#EP-0000</strong>
+                </p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                  <a href="index.html" class="btn-riviera-custom">
+                    <i class="bi bi-house"></i> Kembali ke Beranda
+                  </a>
+                  <button type="button" class="btn-outline-custom" id="btnDaftarLagi">
+                    <i class="bi bi-plus-circle"></i> Daftarkan Potensi Lain
+                  </button>
+                </div>
               </div>
             </div>
 
-            <!-- LANGKAH 2 -->
-            <div class="form-step-pane" id="step-pane-2">
-              <h2 class="form-judul">Informasi potensi</h2>
-              <p class="form-catatan">Kolom bertanda <span class="wajib">*</span> wajib diisi.</p>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="f-nama-potensi">Nama potensi / usaha <span class="wajib">*</span></label>
-                  <input type="text" class="form-control" id="f-nama-potensi" placeholder="Nama usaha, produk, atau jasa Anda" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="f-jenis">Jenis / subkategori</label>
-                  <input type="text" class="form-control" id="f-jenis" placeholder="Contoh: Laundry kiloan, Kost putra">
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="f-deskripsi">Deskripsi <span class="wajib">*</span></label>
-                  <textarea class="form-control" id="f-deskripsi" rows="4" placeholder="Jelaskan potensi Anda secara singkat dan jelas" required></textarea>
-                  <div class="form-text">Minimal 20 karakter.</div>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="f-lokasi">Alamat / lokasi potensi</label>
-                  <input type="text" class="form-control" id="f-lokasi" placeholder="Isi jika berbeda dari alamat rumah">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="f-jam">Jam operasional</label>
-                  <input type="text" class="form-control" id="f-jam" placeholder="Contoh: Senin–Sabtu, 08.00–20.00 WIB">
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="f-kontak-usaha">Kontak usaha</label>
-                  <input type="tel" class="form-control" id="f-kontak-usaha" placeholder="Nomor yang dapat dihubungi calon pelanggan">
-                </div>
-              </div>
+          </div><!-- /form-card-body -->
+        </div><!-- /form-card -->
+      </div><!-- /col-lg-8 -->
 
-              <h2 class="form-judul mt-5">Foto dokumentasi</h2>
-              <p class="form-catatan">Opsional, maksimal 3 foto.</p>
-              <div class="upload-area" id="uploadArea" tabindex="0" role="button" aria-label="Pilih foto">
-                <strong>Klik untuk memilih foto</strong> atau seret ke sini
-                <small>JPG, PNG, atau WebP. Maksimal 5 MB per foto.</small>
-                <input type="file" id="fileInput" accept="image/*" multiple hidden>
-              </div>
-              <div id="photoPreview"></div>
-
-              <div class="inline-err" id="err2" role="alert"><span id="err2msg">Periksa kembali data Anda.</span></div>
-              <div class="aksi-form">
-                <button type="button" class="btn-outline-custom" id="btnPrev2">Kembali</button>
-                <button type="button" class="tombol" id="btnNext2">Lanjutkan</button>
-              </div>
-            </div>
-
-            <!-- LANGKAH 3 -->
-            <div class="form-step-pane" id="step-pane-3">
-              <h2 class="form-judul">Konfirmasi data</h2>
-              <p class="form-catatan">Periksa kembali data Anda sebelum mengirim pendaftaran.</p>
-
-              <dl class="ringkasan">
-                <div>
-                  <dt>Nama pendaftar</dt>
-                  <dd id="prev-nama">—</dd>
-                </div>
-                <div>
-                  <dt>Nomor telepon</dt>
-                  <dd id="prev-telp">—</dd>
-                </div>
-                <div>
-                  <dt>Kategori potensi</dt>
-                  <dd id="prev-kategori">—</dd>
-                </div>
-                <div>
-                  <dt>Nama potensi / usaha</dt>
-                  <dd id="prev-potensi">—</dd>
-                </div>
-                <div class="penuh">
-                  <dt>Deskripsi</dt>
-                  <dd id="prev-deskripsi">—</dd>
-                </div>
-                <div>
-                  <dt>Lokasi</dt>
-                  <dd id="prev-lokasi">—</dd>
-                </div>
-                <div>
-                  <dt>Jam operasional</dt>
-                  <dd id="prev-jam">—</dd>
-                </div>
-              </dl>
-
-              <p class="catatan-kirim">Setelah dikirim, pendaftaran Anda akan ditinjau oleh pengelola EtalasePelemwatu. Anda akan dihubungi melalui nomor telepon yang didaftarkan.</p>
-
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="agreeCheck">
-                <label class="form-check-label" for="agreeCheck">
-                  Saya menyatakan bahwa data yang saya isi adalah benar dan merupakan potensi lokal yang nyata di Desa Pelemwatu.
-                </label>
-              </div>
-
-              <div class="inline-err" id="err3" role="alert"><span id="err3msg">Periksa kembali data Anda.</span></div>
-              <div class="aksi-form">
-                <button type="button" class="btn-outline-custom" id="btnPrev3">Kembali</button>
-                <button type="button" class="tombol" id="btnSubmit">Kirim pendaftaran</button>
-              </div>
-            </div>
-
-          </form>
-
-          <!-- BERHASIL -->
-          <div id="successState" class="berhasil" style="display:none;">
-            <h2 class="form-judul">Pendaftaran terkirim</h2>
-            <p>Terima kasih telah mendaftarkan potensi lokal Anda. Pengelola EtalasePelemwatu akan meninjau pendaftaran Anda dan menghubungi Anda melalui nomor telepon yang telah didaftarkan.</p>
-            <p class="nomor-ref">Nomor referensi: <strong id="refNumber">#EP-0000</strong></p>
-            <div class="aksi-form aksi-awal">
-              <a href="index.html" class="tombol">Kembali ke beranda</a>
-              <button type="button" class="btn-outline-custom" id="btnDaftarLagi">Daftarkan potensi lain</button>
+      <!-- RIGHT: SIDEBAR -->
+      <div class="col-lg-4">
+        <div style="position:sticky;top:100px;">
+          <div class="info-sidebar-card">
+            <div class="info-sidebar-card-header"><i class="bi bi-journal-text"></i> Panduan Pendaftaran</div>
+            <div class="info-sidebar-card-body">
+              <div class="step-guide-item"><div class="step-guide-num">1</div><div class="step-guide-text">Isi data identitas pendaftar dengan benar.</div></div>
+              <div class="step-guide-item"><div class="step-guide-num">2</div><div class="step-guide-text">Pilih kategori potensi yang sesuai.</div></div>
+              <div class="step-guide-item"><div class="step-guide-num">3</div><div class="step-guide-text">Lengkapi informasi dan deskripsi potensi.</div></div>
+              <div class="step-guide-item"><div class="step-guide-num">4</div><div class="step-guide-text">Upload foto dokumentasi (opsional).</div></div>
+              <div class="step-guide-item"><div class="step-guide-num">5</div><div class="step-guide-text">Konfirmasi data dan kirim pendaftaran.</div></div>
+              <div class="step-guide-item"><div class="step-guide-num">6</div><div class="step-guide-text">Tunggu verifikasi dari pengelola EtalasePelemwatu.</div></div>
             </div>
           </div>
-
+          <div class="info-sidebar-card">
+            <div class="info-sidebar-card-header"><i class="bi bi-shield-check"></i> Ketentuan Pendaftaran</div>
+            <div class="info-sidebar-card-body">
+              <ul style="list-style:none;padding:0;margin:0;">
+                <li style="display:flex;gap:.6rem;margin-bottom:.75rem;font-size:.87rem;color:var(--clr-blue);">
+                  <i class="bi bi-check-circle-fill mt-1" style="color:#28a745;flex-shrink:0;"></i>
+                  <span>Hanya untuk warga Desa Pelemwatu.</span>
+                </li>
+                <li style="display:flex;gap:.6rem;margin-bottom:.75rem;font-size:.87rem;color:var(--clr-blue);">
+                  <i class="bi bi-check-circle-fill mt-1" style="color:#28a745;flex-shrink:0;"></i>
+                  <span>Data harus valid dan dapat diverifikasi.</span>
+                </li>
+                <li style="display:flex;gap:.6rem;margin-bottom:.75rem;font-size:.87rem;color:var(--clr-blue);">
+                  <i class="bi bi-check-circle-fill mt-1" style="color:#28a745;flex-shrink:0;"></i>
+                  <span>Foto harus sesuai dengan potensi yang didaftarkan.</span>
+                </li>
+                <li style="display:flex;gap:.6rem;font-size:.87rem;color:var(--clr-blue);">
+                  <i class="bi bi-check-circle-fill mt-1" style="color:#28a745;flex-shrink:0;"></i>
+                  <span>Pendaftaran bersifat <strong>gratis</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-sidebar-card">
+            <div class="info-sidebar-card-header"><i class="bi bi-question-circle"></i> Butuh Bantuan?</div>
+            <div class="info-sidebar-card-body">
+              <p style="font-size:.87rem;color:var(--clr-blue);margin-bottom:1rem;">
+                Hubungi pengelola EtalasePelemwatu atau datangi kantor Desa Pelemwatu untuk bantuan pengisian formulir.
+              </p>
+              <div style="background:var(--clr-bg);border-radius:8px;padding:.85rem;font-size:.84rem;color:var(--clr-blue);margin-bottom:.6rem;">
+                <i class="bi bi-geo-alt me-1" style="color:var(--clr-orange);"></i>
+                Jl. Raya Pelemwatu No. 128, Kec. Menganti, Kab. Gresik
+              </div>
+              <div style="background:var(--clr-bg);border-radius:8px;padding:.85rem;font-size:.84rem;color:var(--clr-blue);margin-bottom:.6rem;">
+                <i class="bi bi-clock me-1" style="color:var(--clr-orange);"></i>
+                Senin – Jumat, 08.00 – 16.00 WIB
+              </div>
+              <a href="https://wa.me/6282245730256?text=Halo%2C%20saya%20butuh%20bantuan%20pengisian%20formulir%20EtalasePelemwatu."
+                 target="_blank" rel="noopener noreferrer"
+                 class="w-100 justify-content-center mt-3"
+                 style="display:flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;
+                        padding:.6rem 1rem;border-radius:8px;font-size:.85rem;font-weight:600;
+                        text-decoration:none;border:none;">
+                <i class="bi bi-whatsapp"></i> Chat WhatsApp
+              </a>
+              <a href="index.html#kontak-section" class="btn-outline-custom w-100 justify-content-center mt-2" style="font-size:.85rem;">
+                <i class="bi bi-envelope"></i> Lihat Info Kontak
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- SAMPING -->
-      <div class="col-lg-4">
-        <aside class="samping">
-          <section>
-            <h3>Panduan pendaftaran</h3>
-            <ol>
-              <li>Isi data identitas pendaftar dengan benar.</li>
-              <li>Pilih kategori potensi yang sesuai.</li>
-              <li>Lengkapi informasi dan deskripsi potensi.</li>
-              <li>Unggah foto dokumentasi (opsional).</li>
-              <li>Konfirmasi data dan kirim pendaftaran.</li>
-              <li>Tunggu verifikasi dari pengelola EtalasePelemwatu.</li>
-            </ol>
-          </section>
-
-          <section>
-            <h3>Ketentuan</h3>
-            <ul>
-              <li>Hanya untuk warga Desa Pelemwatu.</li>
-              <li>Data harus valid dan dapat diverifikasi.</li>
-              <li>Foto harus sesuai dengan potensi yang didaftarkan.</li>
-              <li>Pendaftaran bersifat gratis.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h3>Butuh bantuan?</h3>
-            <p>Hubungi pengelola atau datangi kantor Desa Pelemwatu untuk bantuan mengisi formulir.</p>
-            <dl class="kontak-info">
-              <div>
-                <dt>Alamat</dt>
-                <dd>Jl. Raya Pelemwatu No. 128, Kec. Menganti, Kab. Gresik</dd>
-              </div>
-              <div>
-                <dt>Jam operasional</dt>
-                <dd>Senin–Jumat, 08.00–16.00 WIB</dd>
-              </div>
-            </dl>
-            <div class="aksi-samping">
-              <a class="tombol-wa" href="https://wa.me/6282245730256?text=Halo%2C%20saya%20butuh%20bantuan%20pengisian%20formulir%20EtalasePelemwatu." target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-whatsapp"></i> Chat WhatsApp
-              </a>
-              <a class="btn-outline-custom" href="index.html#kontak-section">Lihat info kontak</a>
-            </div>
-          </section>
-        </aside>
-      </div>
-
-    </div>
-  </div>
-</section>
-</main>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /form-page-content -->
 
 <!-- FOOTER -->
-<footer id="main-footer">
+<footer id="main-footer" class="py-4">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="footer-brand">EtalasePelemwatu</div>
-        <p class="footer-desc mt-2">
-          Platform digital untuk mengenal dan mempromosikan potensi lokal warga Desa Pelemwatu,
-          Kecamatan Menganti, Kabupaten Gresik, Jawa Timur.
+    <div class="row g-3 align-items-center">
+      <div class="col-md-6">
+        <div class="footer-brand" style="font-size:1rem;">
+          <i class="bi bi-shop-window me-2" style="color:var(--clr-yellow);"></i>EtalasePelemwatu
+        </div>
+        <p class="footer-desc mt-1" style="font-size:.8rem;">
+          Platform Digital Potensi Lokal Desa Pelemwatu, Kec. Menganti, Kab. Gresik, Jawa Timur.
         </p>
       </div>
-      <div class="col-sm-4 col-lg-2">
-        <div class="footer-heading">Navigasi</div>
-        <ul class="footer-links">
-          <li><a href="index.html#hero-desa">Beranda</a></li>
-          <li><a href="index.html#profil-desa">Profil Desa</a></li>
-          <li><a href="index.html#tentang-etalase">Tentang Etalase</a></li>
-          <li><a href="index.html#katalog">Katalog Potensi</a></li>
-          <li><a href="index.html#layanan">Layanan</a></li>
+      <div class="col-md-6 text-md-end">
+        <ul class="footer-links d-flex gap-3 justify-content-md-end flex-wrap" style="margin:0;">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#katalog">Katalog</a></li>
           <li><a href="index.html#kontak-section">Kontak</a></li>
+          <li><a href="admin.html">Admin</a></li>
         </ul>
-      </div>
-      <div class="col-sm-4 col-lg-3">
-        <div class="footer-heading">Layanan</div>
-        <ul class="footer-links">
-          <li><a href="daftar-potensi.html">Pendaftaran Potensi</a></li>
-          <li><a href="index.html#katalog">Katalog Potensi</a></li>
-          <li><a href="index.html#profil-desa">Informasi Desa</a></li>
-          <li><a href="admin.html">Panel Admin</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-4 col-lg-3">
-        <div class="footer-heading">Alamat</div>
-        <p class="footer-alamat">Jl. Raya Pelemwatu No. 128<br>Kec. Menganti, Kab. Gresik<br>Jawa Timur</p>
       </div>
     </div>
+
     <hr class="footer-divider">
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <span class="footer-bottom">&copy; 2026 EtalasePelemwatu. Platform Digital Desa Pelemwatu.</span>
-      <span class="footer-bottom">Dikelola oleh Pengelola Desa Pelemwatu</span>
-    </div>
+    <div class="footer-bottom">&copy; 2026 EtalasePelemwatu. Platform Digital Desa Pelemwatu.</div>
   </div>
 </footer>
 
+<div id="toastContainer"></div>
 <button id="backToTop" title="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 'use strict';
 
-/* ── Pesan galat inline ── */
+/* ── Inline Error Helper ── */
 function showErr(num, msg) {
   var el = document.getElementById('err' + num);
   var m  = document.getElementById('err' + num + 'msg');
   if (m) m.textContent = msg;
-  if (el) { el.style.display = 'block'; setTimeout(function(){ el.style.display = 'none'; }, 4000); }
+  if (el) { el.style.display = 'flex'; setTimeout(function(){ el.style.display='none'; }, 4000); }
 }
 
-/* ── Langkah ── */
+/* ── Step UI ── */
 var currentStep = 1;
 
 function updateStepUI(step) {
@@ -399,7 +513,7 @@ function updateStepUI(step) {
     var circle = document.getElementById('stepCircle' + i);
     if (!item || !circle) continue;
     item.classList.remove('active', 'done');
-    if (i < step)        { item.classList.add('done');   circle.textContent = '✓'; }
+    if (i < step)        { item.classList.add('done');   circle.innerHTML = '<i class="bi bi-check2"></i>'; }
     else if (i === step) { item.classList.add('active'); circle.textContent = i; }
     else                 { circle.textContent = i; }
   }
@@ -410,35 +524,35 @@ function goToStep(step) {
   currentStep = step;
   document.getElementById('successState').style.display    = 'none';
   document.getElementById('pendaftaranForm').style.display = '';
-  document.getElementById('stepIndicator').style.display   = '';
+  document.getElementById('stepIndicator').style.display   = 'flex';
   updateStepUI(step);
   if (step === 3) fillPreview();
 }
 
-/* ── Validasi ── */
+/* ── Validation ── */
 function validateStep1() {
   var nama   = document.getElementById('f-nama').value.trim();
   var telp   = document.getElementById('f-telp').value.trim();
   var alamat = document.getElementById('f-alamat').value.trim();
   var kat    = document.querySelector('input[name="kategori"]:checked');
-  if (!nama)   { showErr(1, 'Nama lengkap wajib diisi.');  document.getElementById('f-nama').focus();   return false; }
-  if (!telp)   { showErr(1, 'Nomor telepon wajib diisi.'); document.getElementById('f-telp').focus();   return false; }
-  if (!alamat) { showErr(1, 'Alamat rumah wajib diisi.');  document.getElementById('f-alamat').focus(); return false; }
-  if (!kat)    { showErr(1, 'Silakan pilih kategori potensi.'); return false; }
+  if (!nama)   { showErr(1, 'Nama lengkap wajib diisi.');      document.getElementById('f-nama').focus();   return false; }
+  if (!telp)   { showErr(1, 'Nomor telepon wajib diisi.');     document.getElementById('f-telp').focus();   return false; }
+  if (!alamat) { showErr(1, 'Alamat rumah wajib diisi.');      document.getElementById('f-alamat').focus(); return false; }
+  if (!kat)    { showErr(1, 'Silakan pilih kategori potensi.');                                               return false; }
   return true;
 }
 function validateStep2() {
   var namaP = document.getElementById('f-nama-potensi').value.trim();
   var desk  = document.getElementById('f-deskripsi').value.trim();
-  if (!namaP)           { showErr(2, 'Nama potensi/usaha wajib diisi.'); document.getElementById('f-nama-potensi').focus(); return false; }
-  if (!desk)            { showErr(2, 'Deskripsi wajib diisi.');          document.getElementById('f-deskripsi').focus();    return false; }
-  if (desk.length < 20) { showErr(2, 'Deskripsi minimal 20 karakter.');  document.getElementById('f-deskripsi').focus();    return false; }
+  if (!namaP)         { showErr(2, 'Nama potensi/usaha wajib diisi.'); document.getElementById('f-nama-potensi').focus(); return false; }
+  if (!desk)          { showErr(2, 'Deskripsi wajib diisi.');          document.getElementById('f-deskripsi').focus();    return false; }
+  if (desk.length < 20) { showErr(2, 'Deskripsi minimal 20 karakter.');  document.getElementById('f-deskripsi').focus(); return false; }
   return true;
 }
 
-/* ── Ringkasan ── */
+/* ── Preview ── */
 function fillPreview() {
-  var g = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  var g = function(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; };
   var kat    = document.querySelector('input[name="kategori"]:checked');
   var katLbl = kat ? kat.closest('.kategori-card').querySelector('h6').textContent : '—';
   document.getElementById('prev-nama').textContent      = g('f-nama') || '—';
@@ -450,7 +564,7 @@ function fillPreview() {
   document.getElementById('prev-jam').textContent       = g('f-jam')    || '(Tidak diisi)';
 }
 
-/* ── Tombol ── */
+/* ── Buttons ── */
 document.getElementById('btnNext1').addEventListener('click', function(){ if (validateStep1()) goToStep(2); });
 document.getElementById('btnPrev2').addEventListener('click', function(){ goToStep(1); });
 document.getElementById('btnNext2').addEventListener('click', function(){ if (validateStep2()) goToStep(3); });
@@ -464,7 +578,7 @@ document.getElementById('btnSubmit').addEventListener('click', async function ()
 
   const btnSubmit = this;
   btnSubmit.disabled = true;
-  btnSubmit.textContent = 'Mengirim…';
+  btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Mengirim...';
 
   try {
     const kategori = document.querySelector('input[name="kategori"]:checked');
@@ -519,7 +633,7 @@ document.getElementById('btnSubmit').addEventListener('click', async function ()
     showErr(3, error.message || 'Terjadi kesalahan saat mengirim data.');
   } finally {
     btnSubmit.disabled = false;
-    btnSubmit.textContent = 'Kirim pendaftaran';
+    btnSubmit.innerHTML = '<i class="bi bi-send me-1"></i> Kirim Pendaftaran';
   }
 });
 
@@ -528,10 +642,13 @@ document.getElementById('btnDaftarLagi').addEventListener('click', function(){
   document.querySelectorAll('.kategori-card').forEach(function(c){ c.classList.remove('selected'); });
   var prev = document.getElementById('photoPreview');
   prev.style.display = 'none'; prev.innerHTML = '';
+  document.getElementById('successState').style.display    = 'none';
+  document.getElementById('pendaftaranForm').style.display = '';
+  document.getElementById('stepIndicator').style.display   = 'flex';
   goToStep(1);
 });
 
-/* ── Kartu kategori ── */
+/* ── Kategori Cards ── */
 document.querySelectorAll('.kategori-card').forEach(function(card){
   card.addEventListener('click', function(){
     document.querySelectorAll('.kategori-card').forEach(function(c){ c.classList.remove('selected'); });
@@ -541,14 +658,11 @@ document.querySelectorAll('.kategori-card').forEach(function(card){
   });
 });
 
-/* ── Unggah foto ── */
+/* ── File Upload ── */
 var uploadArea = document.getElementById('uploadArea');
 var fileInput  = document.getElementById('fileInput');
 
 uploadArea.addEventListener('click', function(){ fileInput.click(); });
-uploadArea.addEventListener('keydown', function(e){
-  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
-});
 uploadArea.addEventListener('dragover', function(e){ e.preventDefault(); this.classList.add('dragover'); });
 uploadArea.addEventListener('dragleave', function(){ this.classList.remove('dragover'); });
 uploadArea.addEventListener('drop', function(e){
@@ -564,17 +678,83 @@ function handleFiles(files) {
     if (!file.type.startsWith('image/')) return;
     var reader = new FileReader();
     reader.onload = function(e){
-      var img = document.createElement('img'); img.src = e.target.result; img.alt = 'Pratinjau foto';
+      var img = document.createElement('img'); img.src = e.target.result;
       preview.appendChild(img);
     };
     reader.readAsDataURL(file);
   });
 }
 
-/* ── Kembali ke atas ── */
+/* ── Navbar scroll ── */
+window.addEventListener('scroll', function(){
+  var nav = document.getElementById('mainNavbar');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ── Back to Top ── */
 var btt = document.getElementById('backToTop');
 window.addEventListener('scroll', function(){ btt.classList.toggle('show', window.scrollY > 400); }, { passive: true });
 btt.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
 </script>
+<!-- ============================================================
+     MODAL LOGIN ADMIN
+     ============================================================ -->
+<div class="modal fade modal-login-admin" id="modalLoginAdmin" tabindex="-1" aria-labelledby="modalLoginAdminLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+    <div class="modal-content">
+      <div class="modal-header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+          <div class="login-icon-badge">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <div>
+            <h5 class="modal-title fw-bold mb-0" id="modalLoginAdminLabel" style="color:var(--clr-blue);font-size:1.1rem;">Login Administrator</h5>
+            <small class="text-muted" style="font-size:.78rem;">Portal EtalasePelemwatu</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form id="formLoginAdmin" novalidate>
+        <div class="modal-body p-4">
+          <div id="loginAlertBox" class="alert alert-danger py-2 px-3 mb-3 d-none" style="font-size:.84rem;">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i> <span id="loginAlertMsg">Username atau kata sandi tidak sesuai.</span>
+          </div>
+
+          <div class="mb-3">
+            <label for="adminUsername" class="form-label fw-semibold" style="color:var(--clr-blue);font-size:.88rem;">Username / Email</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white border-end-0" style="color:var(--clr-text-light);">
+                <i class="bi bi-person"></i>
+              </span>
+              <input type="text" class="form-control border-start-0" id="adminUsername" placeholder="Masukkan username atau email" required autocomplete="username">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="adminPassword" class="form-label fw-semibold" style="color:var(--clr-blue);font-size:.88rem;">Kata Sandi</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white border-end-0" style="color:var(--clr-text-light);">
+                <i class="bi bi-key"></i>
+              </span>
+              <input type="password" class="form-control border-start-0 border-end-0" id="adminPassword" placeholder="Masukkan kata sandi" required autocomplete="current-password">
+              <button class="btn btn-outline-secondary border-start-0" type="button" id="btnTogglePassword" style="background:#fff;border-color:var(--clr-border);">
+                <i class="bi bi-eye" id="eyeIcon"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-top-0 pt-0 px-4 pb-4">
+          <button type="submit" class="btn-primary-custom w-100 justify-content-center" id="btnSubmitLogin" style="height:44px;">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Masuk ke Panel Admin
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/auth.js"></script>
 </body>
 </html>
