@@ -65,6 +65,11 @@
     if (confirm('Apakah Anda yakin ingin keluar dari panel admin?')) {
       localStorage.removeItem('adminLoggedIn');
       localStorage.removeItem('adminUser');
+      localStorage.removeItem('ep_admin_session');
+      sessionStorage.removeItem('ep_admin_session');
+      try {
+        fetch('http://localhost:3000/api/auth/logout', { method: 'POST' }).catch(() => {});
+      } catch (err) {}
       
       // If currently on admin page, redirect to index
       if (window.location.pathname.endsWith('admin.html')) {
@@ -102,6 +107,16 @@
         if (eyeIcon) {
           eyeIcon.className = isPass ? 'bi bi-eye-slash' : 'bi bi-eye';
         }
+      });
+    }
+
+    // Autofill akun demo di modal
+    const autoFillBtn = document.getElementById('btnAutoFillModalDemo');
+    if (autoFillBtn && usernameInput && passwordInput) {
+      autoFillBtn.addEventListener('click', () => {
+        usernameInput.value = 'admin@pelemwatu.desa.id';
+        passwordInput.value = 'admin123';
+        usernameInput.focus();
       });
     }
 
@@ -167,6 +182,7 @@
       if (loginSuccess) {
         localStorage.setItem('adminLoggedIn', 'true');
         localStorage.setItem('adminUser', JSON.stringify(userData));
+        localStorage.setItem('ep_admin_session', JSON.stringify({ isLoggedIn: true, user: userData, token: 'session-' + Date.now() }));
 
         submitBtn.innerHTML = '<i class="bi bi-check-circle me-1"></i> Login Berhasil!';
         submitBtn.classList.remove('btn-primary-custom');
