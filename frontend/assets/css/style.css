@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 /* =============================================================
-   EtalasePelemwatu — Global Stylesheet
-   Standar Portal Resmi Pemerintah Desa Pelemwatu
-   Palette: Deep Navy #094A74 | Green #1B7A43 | Terracotta #C2410C | Amber #D97706
+   EtalasePelemwatu � Global Stylesheet
+   Palette: Orange #F2630F | Green #68934B | Blue #094A74 | Yellow #FFC20B
    ============================================================= */
 
-/* ── Root Variables ── */
+/* -- Root Variables -- */
 :root {
   /* Primary */
-  --clr-orange:       #C2410C;
-  --clr-orange-dark:  #9A3412;
-  --clr-orange-light: #EA580C;
+  --clr-orange:       #F2630F;
+  --clr-orange-dark:  #D4540C;
+  --clr-orange-light: #F47A36;
 
   /* Secondary */
-  --clr-green:        #1B7A43;
-  --clr-green-dark:   #145E33;
-  --clr-green-light:  #22C55E;
+  --clr-green:        #68934B;
+  --clr-green-dark:   #537839;
+  --clr-green-light:  #80AD60;
 
   /* Supporting */
   --clr-blue:         #094A74;
@@ -24,31 +23,31 @@
   --clr-blue-light:   #0E6199;
 
   /* Highlight */
-  --clr-yellow:       #D97706;
-  --clr-yellow-dark:  #B45309;
+  --clr-yellow:       #FFC20B;
+  --clr-yellow-dark:  #E0AA08;
 
   /* Neutrals */
   --clr-white:        #FFFFFF;
-  --clr-bg:           #F8FAFC;
-  --clr-bg-alt:       #F1F5F9;
-  --clr-text:         #0F172A;
-  --clr-text-mid:     #334155;
-  --clr-text-light:   #64748B;
-  --clr-border:       #E2E8F0;
+  --clr-bg:           #F8F5F0;
+  --clr-bg-alt:       #EDE8E0;
+  --clr-text:         #1A1A1A;
+  --clr-text-mid:     #4A4A4A;
+  --clr-text-light:   #7A7A7A;
+  --clr-border:       #DDE0E5;
 
-  /* Shadows - Subtle Government Elevation */
-  --shadow-sm:  0 1px 3px rgba(0,0,0,.06);
-  --shadow-md:  0 4px 12px rgba(0,0,0,.08);
-  --shadow-lg:  0 10px 24px rgba(0,0,0,.10);
+  /* Shadows */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,.08);
+  --shadow-md:  0 4px 16px rgba(0,0,0,.12);
+  --shadow-lg:  0 10px 36px rgba(0,0,0,.16);
 
   /* Misc */
   --radius:     6px;
-  --radius-lg:  8px;
-  --transition: .2s ease;
-  --font-main:  'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --radius-lg:  10px;
+  --transition: .3s ease;
+  --font-main:  'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 
-/* ── Reset & Base ── */
+/* -- Reset & Base -- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -67,6 +66,7 @@ a:hover { color: var(--clr-orange-dark); }
 img { max-width: 100%; height: auto; display: block; }
 
 h1,h2,h3,h4,h5,h6 {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   line-height: 1.3;
   color: var(--clr-blue);
@@ -74,7 +74,7 @@ h1,h2,h3,h4,h5,h6 {
 
 p { color: var(--clr-text-mid); }
 
-/* ── Utility ── */
+/* -- Utility -- */
 .text-orange   { color: var(--clr-orange) !important; }
 .text-blue     { color: var(--clr-blue) !important; }
 .text-green    { color: var(--clr-green) !important; }
@@ -84,7 +84,7 @@ p { color: var(--clr-text-mid); }
 .bg-orange     { background-color: var(--clr-orange) !important; }
 .section-divider { border: none; border-top: 2px solid var(--clr-orange-light); opacity: .3; margin: 0; }
 
-/* ── Buttons ── */
+/* -- Buttons -- */
 .btn-primary-custom {
   background-color: var(--clr-orange);
   color: var(--clr-white);
@@ -103,8 +103,6 @@ p { color: var(--clr-text-mid); }
   background-color: var(--clr-orange-dark);
   border-color: var(--clr-orange-dark);
   color: var(--clr-white);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(242,99,15,.40);
 }
 
 .btn-outline-custom {
@@ -124,8 +122,6 @@ p { color: var(--clr-text-mid); }
 .btn-outline-custom:hover {
   background-color: var(--clr-orange);
   color: var(--clr-white);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(242,99,15,.28);
 }
 
 .btn-riviera-custom {
@@ -146,11 +142,9 @@ p { color: var(--clr-text-mid); }
   background-color: var(--clr-blue-dark);
   border-color: var(--clr-blue-dark);
   color: var(--clr-white);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(9,74,116,.35);
 }
 
-/* ── Section Common ── */
+/* -- Section Common -- */
 .section-header { margin-bottom: 3rem; }
 .section-header .section-badge {
   display: inline-flex;
@@ -163,7 +157,7 @@ p { color: var(--clr-text-mid); }
   text-transform: uppercase;
   letter-spacing: 1.2px;
   padding: .35rem .9rem;
-  border-radius: 50px;
+  border-radius: 6px;
   margin-bottom: .9rem;
 }
 .section-header h2 {
@@ -181,7 +175,7 @@ p { color: var(--clr-text-mid); }
 .section-underline {
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--clr-orange), var(--clr-yellow));
+  background: var(--clr-orange);
   border-radius: 4px;
   margin: .6rem 0 1.2rem;
 }
@@ -191,16 +185,16 @@ p { color: var(--clr-text-mid); }
    NAVBAR
    ============================================================ */
 #mainNavbar {
-  background-color: var(--clr-orange) !important;
-  padding: .6rem 0;
-  box-shadow: 0 2px 16px rgba(242,99,15,.35);
+  background-color: var(--clr-white) !important;
+  padding: .5rem 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
   transition: all var(--transition);
   z-index: 1050;
 }
 #mainNavbar.scrolled {
-  padding: .35rem 0;
-  background-color: var(--clr-orange-dark) !important;
-  box-shadow: 0 4px 24px rgba(212,84,12,.45);
+  padding: .3rem 0;
+  background-color: var(--clr-white) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
 }
 
 .navbar-brand-wrap {
@@ -210,65 +204,64 @@ p { color: var(--clr-text-mid); }
   text-decoration: none;
 }
 .logo-placeholder {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--clr-white);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--clr-green);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--clr-orange);
+  color: var(--clr-white);
   font-weight: 800;
   font-size: 1rem;
   flex-shrink: 0;
-  border: 2px solid rgba(255,255,255,.6);
+  border: none;
 }
 .brand-text-wrap { line-height: 1.2; }
 .brand-name {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--clr-white);
+  color: var(--clr-blue);
   display: block;
 }
 .brand-sub {
   font-size: .7rem;
-  color: rgba(255,255,255,.80);
+  color: var(--clr-text-mid);
   font-weight: 500;
   display: block;
   letter-spacing: .5px;
 }
 
 #mainNavbar .nav-link {
-  color: rgba(255,255,255,.90) !important;
-  font-weight: 500;
+  color: var(--clr-text) !important;
+  font-weight: 600;
   font-size: .88rem;
   padding: .45rem .75rem !important;
-  border-radius: 6px;
+  border-radius: 0;
   transition: all var(--transition);
   position: relative;
+  letter-spacing: .2px;
 }
 #mainNavbar .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 50%;
-  width: 0; height: 2px;
-  background-color: var(--clr-yellow);
-  border-radius: 2px;
+  bottom: -2px; left: 0;
+  width: 0; height: 3px;
+  background-color: var(--clr-orange);
   transition: all var(--transition);
-  transform: translateX(-50%);
 }
 #mainNavbar .nav-link:hover,
 #mainNavbar .nav-link.active {
-  color: var(--clr-white) !important;
-  background-color: rgba(0,0,0,.15);
+  color: var(--clr-orange) !important;
+  background-color: transparent;
 }
 #mainNavbar .nav-link:hover::after,
-#mainNavbar .nav-link.active::after { width: 60%; }
+#mainNavbar .nav-link.active::after { width: 100%; }
 
 .btn-nav-daftar {
-  background: var(--clr-blue);
+  background: var(--clr-orange);
   color: var(--clr-white) !important;
-  border: 2px solid var(--clr-blue);
+  border: 2px solid var(--clr-orange);
   padding: .5rem 1.2rem !important;
   border-radius: var(--radius) !important;
   font-weight: 700 !important;
@@ -278,44 +271,41 @@ p { color: var(--clr-text-mid); }
 }
 .btn-nav-daftar::after { display: none !important; }
 .btn-nav-daftar:hover {
-  background: var(--clr-blue-dark) !important;
+  background: var(--clr-orange-dark) !important;
   color: var(--clr-white) !important;
-  border-color: var(--clr-blue-dark) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0,0,0,.20);
+  border-color: var(--clr-orange-dark) !important;
 }
 
 .navbar-toggler {
-  border: 2px solid rgba(255,255,255,.5) !important;
+  border: 2px solid var(--clr-border) !important;
   border-radius: 8px !important;
   padding: .35rem .6rem !important;
 }
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,.9)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26,26,26,.9)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* ============================================================
-   HERO — PENGENALAN DESA — FULL-BLEED PHOTO BACKGROUND
+   HERO � PENGENALAN DESA � FULL-BLEED PHOTO BACKGROUND
    ============================================================ */
 #hero-desa {
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   background-image:
     linear-gradient(
-      90deg,
-      rgba(6, 53, 83, 0.93) 0%,
-      rgba(9, 74, 116, 0.82) 42%,
-      rgba(9, 74, 116, 0.38) 68%,
-      rgba(9, 74, 116, 0.10) 100%
+      rgba(6, 20, 40, 0.68) 0%,
+      rgba(6, 20, 40, 0.68) 100%
     ),
     url('../img/foto-kantor-desa.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  text-align: center;
 }
 
 /* Full-height row for content alignment */
@@ -324,14 +314,16 @@ p { color: var(--clr-text-mid); }
   width: 100%;
 }
 
-/* Content column: left side with padding */
+/* Content column: centered */
 .hero-content-col {
-  padding: 140px 3rem 80px 3rem;
+  padding: 140px 2rem 80px 2rem;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: center;
 }
 
-.hero-content { position: relative; z-index: 2; }
+.hero-content { position: relative; z-index: 2; max-width: 820px; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -344,29 +336,35 @@ p { color: var(--clr-text-mid); }
   text-transform: uppercase;
   letter-spacing: 1.5px;
   padding: .4rem 1rem;
-  border-radius: 50px;
-  margin-bottom: 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1.4rem;
 }
 #hero-desa h1 {
   color: var(--clr-white);
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
-#hero-desa h1 span { color: var(--clr-orange); }
+#hero-desa h1 span { color: var(--clr-yellow); }
 .hero-desc {
-  color: rgba(255,255,255,.90);
+  color: rgba(255,255,255,.88);
   font-size: 1.08rem;
   line-height: 1.75;
-  margin-bottom: 1.8rem;
-  max-width: 520px;
+  margin-bottom: 2rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero-identity-badges {
   display: flex;
   flex-wrap: wrap;
   gap: .7rem;
   margin-bottom: 2rem;
+  justify-content: center;
 }
 .identity-badge {
   display: inline-flex;
@@ -390,12 +388,7 @@ p { color: var(--clr-text-mid); }
   color: rgba(255,255,255,.55);
   font-size: .8rem;
   text-align: center;
-  animation: bounceY 2s infinite;
   z-index: 2;
-}
-@keyframes bounceY {
-  0%,100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(-10px); }
 }
 
 /* ============================================================
@@ -558,11 +551,11 @@ p { color: var(--clr-text-mid); }
 .etalase-logo-big {
   width: 100px; height: 100px;
   background: linear-gradient(135deg, var(--clr-orange), var(--clr-orange-light));
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   font-size: 2.8rem;
   color: var(--clr-white);
-  box-shadow: 0 8px 30px rgba(242,99,15,.50);
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
   margin: 0 auto;
 }
 .etalase-visual h3 { color: var(--clr-white); font-size: 1.6rem; }
@@ -612,12 +605,12 @@ p { color: var(--clr-text-mid); }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--clr-orange), var(--clr-yellow));
+  background: var(--clr-orange);
 }
-.stat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.stat-card:hover { border-color: var(--clr-orange); box-shadow: var(--shadow-md); }
 .stat-icon {
   width: 60px; height: 60px;
-  border-radius: 14px;
+  border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1rem;
   font-size: 1.5rem;
@@ -672,7 +665,7 @@ p { color: var(--clr-text-mid); }
   padding-left: 2.75rem;
   padding-right: 2.6rem;
   height: 44px;
-  border-radius: 50px;
+  border-radius: 6px;
   border: 2px solid var(--clr-border);
   font-size: .88rem;
   background-color: var(--clr-bg);
@@ -748,12 +741,17 @@ p { color: var(--clr-text-mid); }
   background: var(--clr-bg);
   border: 2px solid var(--clr-border);
   color: var(--clr-text-mid);
-  padding: .45rem 1.1rem;
-  border-radius: 50px;
+  padding: 0 1.1rem;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
   font-size: .85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
+  box-sizing: border-box;
 }
 .filter-btn:hover { border-color: var(--clr-orange); color: var(--clr-orange); }
 .filter-btn.active {
@@ -804,80 +802,103 @@ p { color: var(--clr-text-mid); }
 
 .katalog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
 .potensi-card {
   background: var(--clr-white);
-  border: 1px solid var(--clr-border);
+  border: none;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
 }
-.potensi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.potensi-card:hover { box-shadow: var(--shadow-md); }
+
+/* Photo image - fills card top */
 .potensi-card-img {
   width: 100%;
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  position: relative;
+  aspect-ratio: 4/3;
   overflow: hidden;
+  border-radius: var(--radius-lg);
+  position: relative;
 }
+.potensi-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-lg);
+  transition: transform .4s ease;
+}
+.potensi-card:hover .potensi-card-img img { transform: scale(1.04); }
+
+/* Card body below photo */
 .potensi-card-body {
-  padding: 1.2rem;
+  padding: .9rem .1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-.potensi-badge {
+
+/* Outlined name tag - reference style pill */
+.potensi-name-tag {
+  display: inline-block;
+  border: 1.5px solid var(--clr-orange);
+  color: var(--clr-orange);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  padding: .22rem .75rem;
+  border-radius: 50px;
+  margin-bottom: .65rem;
+  width: fit-content;
+}
+
+/* Old badge - hidden, replaced by name-tag */
+.potensi-badge { display: none; }
+.badge-usaha, .badge-jasa, .badge-hunian, .badge-barang { display: none; }
+
+.potensi-card-body h5 { font-size: .95rem; color: var(--clr-blue); margin-bottom: .4rem; }
+.potensi-card-body p  { font-size: .82rem; color: var(--clr-text-mid); flex: 1; margin-bottom: .8rem; line-height: 1.6; }
+.btn-detail {
+  background: transparent;
+  border: none;
+  color: var(--clr-orange);
+  padding: 0;
+  border-radius: 0;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color var(--transition);
   display: inline-flex;
   align-items: center;
   gap: .3rem;
-  padding: .25rem .7rem;
-  border-radius: 50px;
-  font-size: .73rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  margin-bottom: .6rem;
-  width: fit-content;
-}
-.badge-usaha   { background: rgba(242,99,15,.12);  color: var(--clr-orange); }
-.badge-jasa    { background: rgba(9,74,116,.12);   color: var(--clr-blue); }
-.badge-hunian  { background: rgba(255,194,11,.22); color: var(--clr-yellow-dark); }
-.badge-barang  { background: rgba(104,147,75,.14); color: var(--clr-green); }
-
-.potensi-card-body h5 { font-size: 1rem; color: var(--clr-blue); margin-bottom: .4rem; }
-.potensi-card-body p  { font-size: .85rem; color: var(--clr-text-mid); flex: 1; margin-bottom: 1rem; }
-.btn-detail {
-  background: transparent;
-  border: 1.5px solid var(--clr-orange);
-  color: var(--clr-orange);
-  padding: .45rem 1rem;
-  border-radius: var(--radius);
-  font-size: .83rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
   width: fit-content;
   margin-top: auto;
+  text-decoration: none;
 }
-.btn-detail:hover { background: var(--clr-orange); color: var(--clr-white); }
+.btn-detail:hover { color: var(--clr-orange-dark); }
 
-/* ── Card img backgrounds per category ── */
-.img-usaha   { background: linear-gradient(135deg, #fff0e8, #fdd8b8); }
-.img-jasa    { background: linear-gradient(135deg, #e8f0f8, #c8d8f0); }
-.img-hunian  { background: linear-gradient(135deg, #f0f5ea, #d5e8c4); }
-.img-barang  { background: linear-gradient(135deg, #fff8e8, #ffeab5); }
+/* Card img backgrounds (legacy) */
+.img-usaha, .img-jasa, .img-hunian, .img-barang { background: var(--clr-bg-alt); }
+
+/* Quick tag buttons */
+.quick-tag-btn {
+  font-size: .75rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 15px;
+  background: transparent;
+  color: var(--clr-text-mid);
+  padding: .15rem .65rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+.quick-tag-btn:hover { border-color: var(--clr-orange); color: var(--clr-orange); }
 
 /* ============================================================
    LAYANAN
@@ -893,7 +914,7 @@ p { color: var(--clr-text-mid); }
   text-align: center;
   height: 100%;
 }
-.layanan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--clr-orange); }
+.layanan-card:hover { border-color: var(--clr-orange); box-shadow: var(--shadow-md); }
 .layanan-icon-wrap {
   width: 80px; height: 80px;
   border-radius: var(--radius-lg);
@@ -981,7 +1002,7 @@ p { color: var(--clr-text-mid); }
   z-index: 999;
 }
 #backToTop.show { opacity: 1; pointer-events: auto; }
-#backToTop:hover { background: var(--clr-orange-dark); transform: translateY(-3px); }
+#backToTop:hover { background: var(--clr-orange-dark); }
 
 /* ============================================================
    TOAST
@@ -1112,7 +1133,7 @@ body.admin-page { background-color: #f0f2f5; }
   font-size: .65rem;
   font-weight: 700;
   padding: .15rem .5rem;
-  border-radius: 50px;
+  border-radius: 6px;
 }
 
 .sidebar-footer { padding: 1.25rem 1.5rem; border-top: 1px solid rgba(255,255,255,.12); }
@@ -1169,7 +1190,7 @@ body.admin-page { background-color: #f0f2f5; }
 .kpi-card:hover { box-shadow: var(--shadow-md); }
 .kpi-icon {
   width: 56px; height: 56px;
-  border-radius: 14px;
+  border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem;
   flex-shrink: 0;
@@ -1206,7 +1227,7 @@ body.admin-page { background-color: #f0f2f5; }
 
 .status-badge {
   padding: .28rem .75rem;
-  border-radius: 50px;
+  border-radius: 6px;
   font-size: .73rem;
   font-weight: 700;
 }
@@ -1236,9 +1257,8 @@ body.form-page { background-color: var(--clr-bg); }
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 40px;
-  background: var(--clr-bg);
-  border-radius: 40px 40px 0 0;
+  height: 3px;
+  background: rgba(0,0,0,.12);
 }
 .form-page-header h1 { color: var(--clr-white); font-size: clamp(1.5rem, 3vw, 2.2rem); }
 .form-page-header p  { color: rgba(255,255,255,.85); }
@@ -1366,7 +1386,7 @@ body.form-page { background-color: var(--clr-bg); }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1199px) {
-  .katalog-grid { grid-template-columns: repeat(2, 1fr); }
+  .katalog-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 991px) {
@@ -1397,7 +1417,7 @@ body.form-page { background-color: var(--clr-bg); }
 }
 
 @media (max-width: 767px) {
-  .katalog-grid { grid-template-columns: 1fr; }
+  .katalog-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .profil-nav-btn { padding: .6rem .9rem; font-size: .8rem; }
   .form-steps { gap: 0; }
@@ -1413,7 +1433,7 @@ body.form-page { background-color: var(--clr-bg); }
 }
 
 /* ============================================================
-   HERO BUTTON OVERRIDES — ORANGE BUTTONS SCOPED TO HERO
+   HERO BUTTON OVERRIDES � ORANGE BUTTONS SCOPED TO HERO
    ============================================================ */
 
 /* Hero buttons: orange */
@@ -1432,8 +1452,6 @@ body.form-page { background-color: var(--clr-bg); }
   background-color: #D4540C;
   color: #FFFFFF;
   border-color: #D4540C;
-  box-shadow: 0 6px 18px rgba(242, 99, 15, 0.40);
-  transform: translateY(-2px);
 }
 
 /* Hero title highlight: orange */
@@ -1443,7 +1461,7 @@ body.form-page { background-color: var(--clr-bg); }
 
 
 /* ============================================================
-   ETALASEPELEMWATU — FINAL COLOR THEME
+   ETALASEPELEMWATU � FINAL COLOR THEME
    This block changes colors only; layout and behavior stay intact.
    ============================================================ */
 :root {
@@ -1481,7 +1499,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .text-muted { color: var(--clr-text-light) !important; }
 
-/* Landing page navigation — the ID selector matches the actual navbar */
+/* Landing page navigation � the ID selector matches the actual navbar */
 #mainNavbar,
 #mainNavbar.scrolled {
   background-color: var(--clr-orange) !important;
@@ -1515,20 +1533,7 @@ h1, h2, h3, h4, h5, h6 {
 #pengenalan-etalase::before {
   opacity: .10;
 }
-#pengenalan-etalase h2,
-#pengenalan-etalase h3,
-#pengenalan-etalase h4,
-#pengenalan-etalase h5,
-#pengenalan-etalase h6,
-#pengenalan-etalase .etalase-feat-text h6,
-#pengenalan-etalase .etalase-visual h3 {
-  color: var(--clr-blue) !important;
-}
-#pengenalan-etalase p,
-#pengenalan-etalase .etalase-feat-text p,
-#pengenalan-etalase .etalase-visual p {
-  color: var(--clr-text-mid) !important;
-}
+/* Legacy #pengenalan-etalase heading/p color rules — !important removed so split-content override works */
 #pengenalan-etalase .etalase-intro-card,
 #pengenalan-etalase .etalase-visual {
   background: #FFFFFF !important;
@@ -1659,7 +1664,7 @@ body.admin-page {
 
 
 /* ============================================================
-   FINAL FRONTEND COLOR REFINEMENT — PELEMWATU
+   FINAL FRONTEND COLOR REFINEMENT � PELEMWATU
    Hero overlay lebih ringan, section cream, tombol sekunder hijau.
    Biru dipertahankan untuk judul dan footer.
    Letakkan di bagian paling bawah style.css.
@@ -1853,7 +1858,7 @@ body:not(.admin-page) .form-card-header h4 {
 
 
 /* ============================================================
-   HERO READABILITY FIX — KONTRAS TEKS
+   HERO READABILITY FIX � KONTRAS TEKS
    Letakkan di paling bawah style.css (menimpa aturan hero sebelumnya).
    Foto kantor desa berwarna kuning + banyak tulisan, jadi overlay
    dibuat lebih pekat di sisi kiri (area teks) lalu memudar ke kanan
@@ -1948,14 +1953,14 @@ body:not(.admin-page) .form-card-header h4 {
 
 
 /* ============================================================
-   PALET FINAL — IDENTITAS DESA (HIJAU · KUNING · ORANYE)
+   PALET FINAL � IDENTITAS DESA (HIJAU � KUNING � ORANYE)
    Biru hanya sebagai "tinta resmi": judul & footer.
-   Proporsi: krem/putih 60% · hijau 20% · biru 10% · oranye 8% · kuning 2%
+   Proporsi: krem/putih 60% � hijau 20% � biru 10% � oranye 8% � kuning 2%
    Letakkan di paling bawah style.css (menimpa aturan sebelumnya).
    ============================================================ */
 
 :root {
-  /* Versi "aman kontras" untuk teks kecil / tombol dengan teks putih (≥ 4.5:1) */
+  /* Versi "aman kontras" untuk teks kecil / tombol dengan teks putih (= 4.5:1) */
   --clr-orange-aa:  #C44D09;
   --clr-orange-aa-dark: #A83F06;
   --clr-green-aa:   #537839;
@@ -1963,7 +1968,7 @@ body:not(.admin-page) .form-card-header h4 {
   --clr-forest:     #183012;
 }
 
-/* ── 1. NAVBAR: putih resmi, oranye hanya untuk aksi ── */
+/* -- 1. NAVBAR: putih resmi, oranye hanya untuk aksi -- */
 #mainNavbar,
 #mainNavbar.scrolled {
   background-color: #FFFFFF !important;
@@ -2011,7 +2016,7 @@ body:not(.admin-page) .form-card-header h4 {
   #mainNavbar .navbar-collapse { background: #FFFFFF; }
 }
 
-/* ── 2. HERO: overlay hijau tua (identitas desa), bukan biru ── */
+/* -- 2. HERO: overlay hijau tua (identitas desa), bukan biru -- */
 #hero-desa {
   background-image:
     linear-gradient(0deg, rgba(24, 48, 18, .80) 0%, rgba(24, 48, 18, 0) 28%),
@@ -2069,7 +2074,7 @@ body:not(.admin-page) .form-card-header h4 {
   }
 }
 
-/* ── 3. TOMBOL & TEKS KECIL: varian aman kontras ── */
+/* -- 3. TOMBOL & TEKS KECIL: varian aman kontras -- */
 .btn-primary-custom,
 .btn-orange {
   background-color: var(--clr-orange-aa);
@@ -2117,7 +2122,7 @@ body:not(.admin-page) .form-card-header {
   background: var(--clr-green-aa);
 }
 
-/* ── 4. FOOTER: biru tua resmi + garis identitas 3 warna ── */
+/* -- 4. FOOTER: biru tua resmi + garis identitas 3 warna -- */
 body:not(.admin-page) #main-footer,
 body:not(.admin-page) footer,
 body:not(.admin-page) .site-footer {
@@ -2129,9 +2134,9 @@ body:not(.admin-page) .site-footer {
 
 
 /* ============================================================
-   PEWARNAAN SELURUH HALAMAN — RITME SECTION
-   Hijau tua (hero) → putih → krem → putih → HIJAU TUA (statistik)
-   → krem → putih → biru tua (footer).
+   PEWARNAAN SELURUH HALAMAN � RITME SECTION
+   Hijau tua (hero) ? putih ? krem ? putih ? HIJAU TUA (statistik)
+   ? krem ? putih ? biru tua (footer).
    Semua penyesuaian lewat CSS; index.html tidak perlu diubah.
    ============================================================ */
 
@@ -2188,7 +2193,7 @@ body:not(.admin-page) .site-footer {
 #statistik .stat-label { color: #FFFFFF; }
 #statistik .stat-note  { color: rgba(255, 255, 255, .78); }
 
-/* 4. IKON BERGANTIAN oranye · hijau · kuning (menimpa warna inline di HTML) */
+/* 4. IKON BERGANTIAN oranye � hijau � kuning (menimpa warna inline di HTML) */
 #layanan .row > div:nth-child(3n+1) .layanan-icon-wrap { background: rgba(242, 99, 15, .13) !important; }
 #layanan .row > div:nth-child(3n+2) .layanan-icon-wrap { background: rgba(104, 147, 75, .18) !important; }
 #layanan .row > div:nth-child(3n+3) .layanan-icon-wrap { background: rgba(255, 194, 11, .28) !important; }
@@ -2219,20 +2224,7 @@ body:not(.admin-page) .site-footer {
   border-color: var(--clr-green-aa);
   color: #FFFFFF;
 }
-.btn-detail {
-  border-color: var(--clr-green-aa);
-  color: var(--clr-green-aa);
-}
-.btn-detail:hover {
-  background: var(--clr-green-aa);
-  border-color: var(--clr-green-aa);
-  color: #FFFFFF;
-}
-/* Latar gambar kartu disamakan dengan warna badge kategorinya */
-.img-usaha  { background: linear-gradient(135deg, #fff0e8, #fdd8b8); }               /* oranye */
-.img-jasa   { background: linear-gradient(135deg, #e8f0f8, #c8d8f0); }               /* biru   */
-.img-hunian { background: linear-gradient(135deg, #fff8e0, #ffe9a6); }               /* kuning */
-.img-barang { background: linear-gradient(135deg, #f0f5ea, #d5e8c4); }               /* hijau  */
+/* duplicate .btn-detail and legacy img-* gradient blocks removed */
 
 /* 6. Tautan teks umum di area terang: hijau tua */
 #kontak-section a:not(.btn-primary-custom):not(.btn-riviera-custom):not(.btn-outline-custom) {
@@ -2241,7 +2233,7 @@ body:not(.admin-page) .site-footer {
 
 
 /* ============================================================
-   STATISTIK — HIJAU TUA + FOTO DI BALIKNYA
+   STATISTIK � HIJAU TUA + FOTO DI BALIKNYA
    Ganti foto: ubah url(...) di baris "background-image" di bawah ini.
    Saran: pakai foto BERBEDA dari hero (sawah, kegiatan warga, balai desa).
    Seberapa jelas fotonya: ubah angka alpha overlay (makin kecil = foto makin jelas).
@@ -2295,7 +2287,7 @@ body:not(.admin-page) .site-footer {
 
 
 /* ============================================================
-   HEADER KARTU (Panduan / Ketentuan / Butuh Bantuan) — TEKS PUTIH
+   HEADER KARTU (Panduan / Ketentuan / Butuh Bantuan) � TEKS PUTIH
    Judul memakai h5/h6 sehingga tidak terkena aturan ".form-card-header h4",
    dan ikut warna gelap bawaan body. Aturan ini memaksa putih untuk
    semua tag di dalam header berlatar biru/hijau.
@@ -2341,7 +2333,7 @@ body:not(.admin-page) .site-footer {
 
 
 /* ============================================================
-   HEADER HALAMAN FORM (daftar-potensi.html) — FOTO + OVERLAY HIJAU TUA
+   HEADER HALAMAN FORM (daftar-potensi.html) � FOTO + OVERLAY HIJAU TUA
    Ganti foto: ubah url(...) pada baris "background-image" di bawah
    (ada 2 tempat: utama dan versi mobile).
    Makin besar angka alpha (mis. .90) = makin gelap / foto makin samar.
@@ -2360,7 +2352,7 @@ body:not(.admin-page) .site-footer {
   background-position: center 40%;
   background-repeat: no-repeat;
   background-color: #1F3D17; /* cadangan bila foto gagal dimuat */
-  /* Navbar fixed (±92px) menumpuk di atas header, jadi ruang atas dihitung di sini */
+  /* Navbar fixed (�92px) menumpuk di atas header, jadi ruang atas dihitung di sini */
   padding: calc(92px + 2.5rem) 0 3rem;
 }
 /* Hilangkan jarak 80px bawaan di HTML (inline) yang menyisakan celah putih di bawah navbar */
@@ -2413,7 +2405,6 @@ body.form-page .form-page-header p {
   background: var(--clr-blue) !important;
   color: #FFFFFF !important;
   border-color: var(--clr-blue) !important;
-  transform: translateY(-1px);
 }
 .btn-nav-admin.is-logged-in {
   background: rgba(9, 74, 116, 0.08);
@@ -2440,7 +2431,7 @@ body.form-page .form-page-header p {
 .modal-login-admin .login-icon-badge {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: rgba(242, 99, 15, 0.12);
   color: var(--clr-orange);
   display: flex;
@@ -2481,324 +2472,355 @@ body.form-page .form-page-header p {
   color: #FFFFFF;
 }
 
-/* ============================================================
-   STANDAR DESAIN PORTAL RESMI PEMERINTAHAN (ANTI-AI SLOP)
-   Pemerintah Desa Pelemwatu, Kec. Menganti, Kab. Gresik
-   ============================================================ */
 
-/* ── 1. Top Bar Resmi Pemerintahan ── */
-.gov-topbar {
-  background: #062840;
-  color: #E2E8F0;
-  border-bottom: 2px solid var(--clr-orange);
-  font-size: 0.78rem;
-  line-height: 1.4;
-  position: relative;
-  z-index: 1060;
+/* ============================================================
+   SITE HEADER (Top Contact Bar + Main Navbar)
+   ============================================================ */
+#siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1050;
+  transition: all var(--transition);
 }
-.gov-topbar-inner {
+#siteHeader.scrolled {
+  box-shadow: 0 4px 20px rgba(9, 74, 116, .18);
+}
+
+#topContactBar {
+  background: #0A1628;
+  color: rgba(255,255,255,.72);
+  font-size: .78rem;
+  padding: .42rem 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+#topContactBar .tcb-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.35rem 0;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: .5rem;
 }
-.gov-badge {
-  background: #DC2626;
-  color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  padding: 0.18rem 0.5rem;
-  border-radius: 3px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  text-transform: uppercase;
-}
-.gov-topbar-meta {
-  color: #94A3B8;
+#topContactBar .tcb-left {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  font-size: 0.76rem;
+  gap: 1.4rem;
+  flex-wrap: wrap;
 }
-.gov-topbar-meta a {
-  color: #CBD5E1;
+#topContactBar .tcb-left span {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  color: rgba(255,255,255,.72);
+}
+#topContactBar .tcb-left i { color: var(--clr-yellow); }
+#topContactBar .tcb-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#topContactBar .tcb-right .tcb-cta {
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--clr-yellow);
+  padding: .25rem .8rem;
+  border: 1px solid rgba(255,194,11,.4);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all .2s;
+}
+#topContactBar .tcb-right .tcb-cta:hover {
+  background: var(--clr-yellow);
+  color: #0A1628;
+}
+#topContactBar .tcb-right .tcb-socials { display: flex; gap: .6rem; }
+#topContactBar .tcb-right .tcb-socials a {
+  color: rgba(255,255,255,.65);
+  font-size: .95rem;
+  transition: color .2s;
   text-decoration: none;
 }
-.gov-topbar-meta a:hover {
-  color: #FFFFFF;
-  text-decoration: underline;
+#topContactBar .tcb-right .tcb-socials a:hover { color: var(--clr-yellow); }
+
+/* Inside #siteHeader, #mainNavbar flows naturally right below #topContactBar */
+#siteHeader #mainNavbar {
+  position: relative;
+  top: auto;
+  box-shadow: 0 2px 14px rgba(9, 74, 116, .12);
+}
+/* ============================================================
+   HERO BUTTONS — override for centered hero
+   ============================================================ */
+#hero-desa .hero-cta-wrap {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#hero-desa .btn-hero-primary {
+  background: var(--clr-orange);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-orange);
+  padding: .75rem 2rem;
+  font-weight: 700;
+  font-size: .95rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: background .25s, border-color .25s;
+  letter-spacing: .3px;
+}
+#hero-desa .btn-hero-primary:hover {
+  background: var(--clr-orange-dark);
+  border-color: var(--clr-orange-dark);
+  color: var(--clr-white);
+}
+#hero-desa .btn-hero-outline {
+  background: transparent;
+  color: var(--clr-white);
+  border: 2px solid rgba(255,255,255,.75);
+  padding: .75rem 2rem;
+  font-weight: 700;
+  font-size: .95rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: background .25s, border-color .25s;
+  letter-spacing: .3px;
+}
+#hero-desa .btn-hero-outline:hover {
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,1);
+  color: var(--clr-white);
 }
 
-/* ── 2. Normalisasi Navbar Resmi ── */
-#mainNavbar {
-  background-color: #FFFFFF !important;
-  border-bottom: 1px solid #E2E8F0 !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
-  padding: 0.6rem 0 !important;
+/* ============================================================
+   HERO STAT STRIP (replaces identity badges at bottom)
+   ============================================================ */
+.hero-stat-strip {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(10,22,40,.75);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  z-index: 3;
 }
-#mainNavbar.scrolled {
-  background-color: #FFFFFF !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-  padding: 0.5rem 0 !important;
+.hero-stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 1.1rem 1rem;
+  border-right: 1px solid rgba(255,255,255,.12);
 }
-#mainNavbar .navbar-brand-wrap {
-  gap: 0.75rem;
-}
-#mainNavbar .logo-placeholder {
-  width: 42px;
-  height: 42px;
-  border-radius: 6px;
-  background: var(--clr-blue);
-  color: #FFFFFF;
-  font-weight: 800;
-  font-size: 0.95rem;
-  border: 1px solid #063553;
-  letter-spacing: 0.5px;
-}
-#mainNavbar .brand-name {
-  color: var(--clr-blue);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-#mainNavbar .brand-sub {
-  color: var(--clr-text-light);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.hero-stat-item:last-child { border-right: none; }
+.hero-stat-label {
+  font-size: .68rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.55);
+  margin-bottom: .2rem;
+  font-weight: 600;
 }
-#mainNavbar .nav-link {
-  color: #334155 !important;
-  font-weight: 600 !important;
-  font-size: 0.88rem !important;
-  padding: 0.45rem 0.85rem !important;
-  border-radius: 4px !important;
-  transition: background-color 0.15s ease, color 0.15s ease !important;
-}
-#mainNavbar .nav-link:hover,
-#mainNavbar .nav-link.active {
-  color: var(--clr-blue) !important;
-  background-color: #F1F5F9 !important;
-}
-#mainNavbar .nav-link::after {
-  display: none !important;
+.hero-stat-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--clr-white);
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* ── 3. Tombol Resmi Tanpa AI Slop (Zero Float, Zero Glowing Shadow, Radius 6px) ── */
-button, .btn,
-.btn-primary-custom,
-.btn-outline-custom,
-.btn-riviera-custom,
-.btn-nav-daftar,
-.btn-nav-admin,
-.btn-detail,
-.filter-btn,
-.quick-tag-btn,
-.btn-submit-login,
-.btn-action {
-  border-radius: 6px !important;
-  transform: none !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+/* ============================================================
+   SPLIT DARK SECTION — APRES style (photo left, dark right)
+   ============================================================ */
+
+/* Override old section-based #pengenalan-etalase styles */
+div#pengenalan-etalase {
+  background: none !important;
+  overflow: visible !important;
+  position: static !important;
+  color: var(--clr-white) !important;
+}
+div#pengenalan-etalase::before { display: none !important; }
+
+/* Force correct text colors for the split content — overrides any !important above */
+div#pengenalan-etalase .split-content h2,
+div#pengenalan-etalase .split-content h3,
+div#pengenalan-etalase .split-content h4,
+div#pengenalan-etalase .split-content h5,
+div#pengenalan-etalase .split-content h6 {
+  color: var(--clr-white) !important;
+}
+div#pengenalan-etalase .split-content p {
+  color: rgba(255,255,255,.85) !important;
+}
+div#pengenalan-etalase .split-content,
+div#pengenalan-etalase .split-content * {
+  background: transparent;
+}
+div#pengenalan-etalase .split-content { background: #0d3d6e !important; }
+
+#split-etalase,
+div#pengenalan-etalase {
+  display: flex;
+  min-height: 440px;
+}
+#split-etalase .split-photo,
+div#pengenalan-etalase .split-photo {
+  flex: 1;
+  background-image: url('../img/foto-warung-desa.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 340px;
+}
+#split-etalase .split-content,
+div#pengenalan-etalase .split-content {
+  flex: 1;
+  background: #0d3d6e;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#split-etalase .split-content .split-eyebrow,
+div#pengenalan-etalase .split-content .split-eyebrow {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-orange);
+  margin-bottom: 1rem;
+}
+#split-etalase .split-content h2,
+div#pengenalan-etalase .split-content h2 {
+  color: var(--clr-white);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+#split-etalase .split-content p,
+div#pengenalan-etalase .split-content p {
+  color: rgba(255,255,255,.78);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+#split-etalase .btn-split,
+div#pengenalan-etalase .btn-split {
+  background: var(--clr-yellow);
+  color: #0A1628;
+  border: 2px solid var(--clr-yellow);
+  padding: .7rem 1.8rem;
+  font-weight: 700;
+  font-size: .9rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: background .25s, border-color .25s;
+  align-self: flex-start;
+  letter-spacing: .3px;
+}
+#split-etalase .btn-split:hover,
+div#pengenalan-etalase .btn-split:hover {
+  background: var(--clr-yellow-dark);
+  border-color: var(--clr-yellow-dark);
+  color: #0A1628;
+}
+
+@media (max-width: 767px) {
+  #split-etalase,
+  div#pengenalan-etalase { flex-direction: column; }
+  #split-etalase .split-photo,
+  div#pengenalan-etalase .split-photo { min-height: 220px; }
+  #split-etalase .split-content,
+  div#pengenalan-etalase .split-content { padding: 2.5rem 1.75rem; }
+}
+
+
+
+/* ============================================================
+   CATALOG CARD REFINEMENTS — Match reference style exactly
+   ============================================================ */
+
+/* Card: transparent background, no shadow, no border — reference style */
+.potensi-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.potensi-card:hover {
   box-shadow: none !important;
 }
 
-.btn-primary-custom {
-  background-color: var(--clr-blue) !important;
-  border: 1px solid var(--clr-blue) !important;
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
-  font-size: 0.9rem !important;
-  padding: 0.55rem 1.35rem !important;
-}
-.btn-primary-custom:hover {
-  background-color: var(--clr-blue-dark) !important;
-  border-color: var(--clr-blue-dark) !important;
-  color: #FFFFFF !important;
-}
-
-.btn-outline-custom {
-  background-color: #FFFFFF !important;
-  border: 1px solid var(--clr-blue) !important;
-  color: var(--clr-blue) !important;
-  font-weight: 600 !important;
-  font-size: 0.9rem !important;
-  padding: 0.55rem 1.35rem !important;
-}
-.btn-outline-custom:hover {
-  background-color: #F1F5F9 !important;
-  border-color: var(--clr-blue-dark) !important;
-  color: var(--clr-blue-dark) !important;
-}
-
-.btn-nav-daftar {
-  background-color: var(--clr-green) !important;
-  border: 1px solid var(--clr-green-dark) !important;
-  color: #FFFFFF !important;
-  font-weight: 700 !important;
-  font-size: 0.84rem !important;
-  padding: 0.45rem 0.95rem !important;
-}
-.btn-nav-daftar:hover {
-  background-color: var(--clr-green-dark) !important;
-  border-color: var(--clr-green-dark) !important;
-  color: #FFFFFF !important;
-}
-
-.btn-nav-admin {
-  background: #FFFFFF !important;
-  color: var(--clr-blue) !important;
-  border: 1px solid var(--clr-border) !important;
-  font-weight: 600 !important;
-  font-size: 0.84rem !important;
-  padding: 0.45rem 0.95rem !important;
-}
-.btn-nav-admin:hover {
-  background: #F1F5F9 !important;
-  color: var(--clr-blue-dark) !important;
-  border-color: var(--clr-blue) !important;
-}
-
-.btn-detail {
-  background: #FFFFFF !important;
-  border: 1px solid var(--clr-blue) !important;
-  color: var(--clr-blue) !important;
-  font-weight: 600 !important;
-  padding: 0.4rem 0.9rem !important;
-  font-size: 0.82rem !important;
-}
-.btn-detail:hover {
-  background: var(--clr-blue) !important;
-  color: #FFFFFF !important;
-  border-color: var(--clr-blue) !important;
-}
-
-/* ── 4. Toolbar & Filter Pencarian Resmi (Segmented Control, No 50px Pills) ── */
-.katalog-toolbar {
-  background: #F8FAFC !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 8px !important;
-  padding: 1.25rem !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
-}
-
-.katalog-search-box input {
-  border-radius: 6px !important;
-  border: 1px solid #CBD5E1 !important;
-  font-size: 0.88rem !important;
-  height: 42px !important;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04) !important;
-}
-.katalog-search-box input:focus {
-  border-color: var(--clr-blue) !important;
-  box-shadow: 0 0 0 3px rgba(9, 74, 116, 0.15) !important;
-}
-
-.katalog-filter-bar {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.35rem !important;
-}
-
-.filter-btn {
-  background: #FFFFFF !important;
-  border: 1px solid #CBD5E1 !important;
-  color: #334155 !important;
-  font-size: 0.82rem !important;
-  font-weight: 600 !important;
-  padding: 0.4rem 0.9rem !important;
-  border-radius: 6px !important;
-}
-.filter-btn:hover {
-  background: #F1F5F9 !important;
-  border-color: #94A3B8 !important;
-  color: #0F172A !important;
-}
-.filter-btn.active {
-  background: var(--clr-blue) !important;
-  border-color: var(--clr-blue) !important;
-  color: #FFFFFF !important;
-}
-
-.quick-tag-btn {
-  border-radius: 4px !important;
-  border: 1px solid #E2E8F0 !important;
-  background: #FFFFFF !important;
-  color: #475569 !important;
-  font-size: 0.75rem !important;
-  font-weight: 500 !important;
-  padding: 0.15rem 0.55rem !important;
-}
-.quick-tag-btn:hover {
-  background: #F1F5F9 !important;
-  color: var(--clr-blue) !important;
-  border-color: #CBD5E1 !important;
-}
-
-/* ── 5. Rubrik & Badge Resmi (Bukan AI Pastel Capsule) ── */
-.section-badge,
-.hero-badge {
-  border-radius: 4px !important;
-  padding: 0.25rem 0.65rem !important;
-  font-size: 0.74rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.8px !important;
-  text-transform: uppercase !important;
-  background: rgba(9, 74, 116, 0.08) !important;
-  color: var(--clr-blue) !important;
-  border: 1px solid rgba(9, 74, 116, 0.18) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.35rem !important;
-}
-.hero-badge {
-  background: rgba(255, 255, 255, 0.15) !important;
-  color: #FFFFFF !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.card-tag {
-  border-radius: 4px !important;
-  font-size: 0.7rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.4px !important;
-  text-transform: uppercase !important;
-  padding: 0.2rem 0.55rem !important;
-}
-
-/* ── 6. Kartu Informasi Pemerintahan (Solid & Stabil, Tanpa Bouncing Hover) ── */
-.potensi-card,
-.stat-card,
-.layanan-card,
-.galeri-card,
-.admin-card {
-  border-radius: 6px !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
-  transform: none !important;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
-}
-.potensi-card:hover,
-.stat-card:hover,
-.layanan-card:hover,
-.galeri-card:hover {
-  transform: none !important;
-  border-color: var(--clr-blue) !important;
-  box-shadow: 0 4px 12px rgba(9, 74, 116, 0.10) !important;
-}
-
-/* Kartu Gambar Potensi: Latar Netral Bersih */
+/* Photo: rounded on all corners (reference shows ~12px rounded image) */
 .potensi-card-img {
-  background: #F8FAFC !important;
+  border-radius: 12px !important;
+  overflow: hidden;
 }
-.img-usaha, .img-jasa, .img-hunian, .img-barang {
-  background: #F1F5F9 !important;
+.potensi-card-img img {
+  border-radius: 12px !important;
 }
 
-/* ── 7. Footer Resmi Pemerintahan ── */
-footer, #kontak-section {
-  border-top: 2px solid var(--clr-orange);
+/* Card body: clean, no padding on sides */
+.potensi-card-body {
+  padding: .75rem 0 0 0 !important;
+}
+
+/* Name tag pill: exactly like reference */
+.potensi-name-tag {
+  font-size: .68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .9px !important;
+  text-transform: uppercase !important;
+  color: var(--clr-orange) !important;
+  border: 1.5px solid var(--clr-orange) !important;
+  border-radius: 50px !important;
+  padding: .2rem .7rem !important;
+  display: inline-block !important;
+  margin-bottom: .6rem !important;
+}
+
+/* Description text */
+.potensi-card-body p {
+  font-size: .82rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: .6rem;
+}
+
+/* Mobile: single column at 480px */
+@media (max-width: 480px) {
+  .katalog-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Split section: responsive stacking */
+@media (max-width: 991px) {
+  div#pengenalan-etalase,
+  #split-etalase {
+    flex-direction: column;
+  }
+  div#pengenalan-etalase .split-photo,
+  #split-etalase .split-photo {
+    min-height: 300px;
+    flex: none;
+    width: 100%;
+  }
+  div#pengenalan-etalase .split-content,
+  #split-etalase .split-content {
+    flex: none;
+    width: 100%;
+  }
 }

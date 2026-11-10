@@ -1,4 +1,4 @@
-﻿/**
+/**
  * EtalasePelemwatu — Main JavaScript
  * Landing Page Interactions
  */
@@ -29,9 +29,12 @@ function showToast(message, type = 'info', duration = 3500) {
 // ── Navbar Scroll Effect ──────────────────────────────────────
 function initNavbar() {
   const nav = document.getElementById('mainNavbar');
+  const header = document.getElementById('siteHeader');
   if (!nav) return;
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+    const isScrolled = window.scrollY > 40;
+    nav.classList.toggle('scrolled', isScrolled);
+    if (header) header.classList.toggle('scrolled', isScrolled);
   }, { passive: true });
 
   // Active nav link based on scroll
@@ -357,7 +360,7 @@ function initSmoothScroll() {
       if (toggler && toggler.classList.contains('show')) {
         bootstrap.Collapse.getInstance(toggler)?.hide();
       }
-      const navH = document.getElementById('mainNavbar')?.offsetHeight || 70;
+      const navH = document.getElementById('siteHeader')?.offsetHeight || document.getElementById('mainNavbar')?.offsetHeight || 70;
       window.scrollTo({ top: el.offsetTop - navH, behavior: 'smooth' });
     });
   });
