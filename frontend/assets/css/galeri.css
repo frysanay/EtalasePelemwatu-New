@@ -21,8 +21,8 @@
 }
 
 .galeri-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  border-color: var(--clr-blue);
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
 }
 
 .galeri-item img {
@@ -30,11 +30,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform .4s ease;
-}
-
-.galeri-item:hover img {
-  transform: scale(1.07);
 }
 
 .galeri-overlay {
@@ -89,8 +84,8 @@
 }
 
 .galeri-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.14);
+  border-color: var(--clr-blue);
+  box-shadow: 0 4px 14px rgba(9,74,116,.12);
 }
 
 .galeri-card-img {
@@ -108,9 +103,6 @@
   transition: transform .4s ease;
 }
 
-.galeri-card:hover .galeri-card-img img {
-  transform: scale(1.06);
-}
 
 .galeri-card-zoom {
   position: absolute;
@@ -172,8 +164,8 @@
 }
 
 .galeri-admin-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.1);
+  border-color: var(--clr-blue);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
 .galeri-admin-thumb {

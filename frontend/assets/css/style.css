@@ -1,19 +1,22 @@
-﻿/* =============================================================
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* =============================================================
    EtalasePelemwatu — Global Stylesheet
-   Palette: Orange #F2630F | Green #68934B | Blue #094A74 | Yellow #FFC20B
+   Standar Portal Resmi Pemerintah Desa Pelemwatu
+   Palette: Deep Navy #094A74 | Green #1B7A43 | Terracotta #C2410C | Amber #D97706
    ============================================================= */
 
 /* ── Root Variables ── */
 :root {
   /* Primary */
-  --clr-orange:       #F2630F;
-  --clr-orange-dark:  #D4540C;
-  --clr-orange-light: #F47A36;
+  --clr-orange:       #C2410C;
+  --clr-orange-dark:  #9A3412;
+  --clr-orange-light: #EA580C;
 
   /* Secondary */
-  --clr-green:        #68934B;
-  --clr-green-dark:   #537839;
-  --clr-green-light:  #80AD60;
+  --clr-green:        #1B7A43;
+  --clr-green-dark:   #145E33;
+  --clr-green-light:  #22C55E;
 
   /* Supporting */
   --clr-blue:         #094A74;
@@ -21,28 +24,28 @@
   --clr-blue-light:   #0E6199;
 
   /* Highlight */
-  --clr-yellow:       #FFC20B;
-  --clr-yellow-dark:  #E0AA08;
+  --clr-yellow:       #D97706;
+  --clr-yellow-dark:  #B45309;
 
   /* Neutrals */
   --clr-white:        #FFFFFF;
-  --clr-bg:           #F8F5F0;
-  --clr-bg-alt:       #EDE8E0;
-  --clr-text:         #1A1A1A;
-  --clr-text-mid:     #4A4A4A;
-  --clr-text-light:   #7A7A7A;
-  --clr-border:       #DDE0E5;
+  --clr-bg:           #F8FAFC;
+  --clr-bg-alt:       #F1F5F9;
+  --clr-text:         #0F172A;
+  --clr-text-mid:     #334155;
+  --clr-text-light:   #64748B;
+  --clr-border:       #E2E8F0;
 
-  /* Shadows */
-  --shadow-sm:  0 2px 8px rgba(242,99,15,.12);
-  --shadow-md:  0 6px 24px rgba(242,99,15,.16);
-  --shadow-lg:  0 12px 48px rgba(242,99,15,.20);
+  /* Shadows - Subtle Government Elevation */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,.08);
+  --shadow-lg:  0 10px 24px rgba(0,0,0,.10);
 
   /* Misc */
-  --radius:     10px;
-  --radius-lg:  18px;
-  --transition: .3s ease;
-  --font-main:  'Segoe UI', Arial, sans-serif;
+  --radius:     6px;
+  --radius-lg:  8px;
+  --transition: .2s ease;
+  --font-main:  'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* ── Reset & Base ── */
@@ -2476,4 +2479,326 @@ body.form-page .form-page-header p {
   background: #B02A37;
   border-color: #B02A37;
   color: #FFFFFF;
+}
+
+/* ============================================================
+   STANDAR DESAIN PORTAL RESMI PEMERINTAHAN (ANTI-AI SLOP)
+   Pemerintah Desa Pelemwatu, Kec. Menganti, Kab. Gresik
+   ============================================================ */
+
+/* ── 1. Top Bar Resmi Pemerintahan ── */
+.gov-topbar {
+  background: #062840;
+  color: #E2E8F0;
+  border-bottom: 2px solid var(--clr-orange);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1060;
+}
+.gov-topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  gap: 1rem;
+}
+.gov-badge {
+  background: #DC2626;
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: uppercase;
+}
+.gov-topbar-meta {
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.76rem;
+}
+.gov-topbar-meta a {
+  color: #CBD5E1;
+  text-decoration: none;
+}
+.gov-topbar-meta a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* ── 2. Normalisasi Navbar Resmi ── */
+#mainNavbar {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  padding: 0.6rem 0 !important;
+}
+#mainNavbar.scrolled {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  padding: 0.5rem 0 !important;
+}
+#mainNavbar .navbar-brand-wrap {
+  gap: 0.75rem;
+}
+#mainNavbar .logo-placeholder {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background: var(--clr-blue);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border: 1px solid #063553;
+  letter-spacing: 0.5px;
+}
+#mainNavbar .brand-name {
+  color: var(--clr-blue);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+#mainNavbar .brand-sub {
+  color: var(--clr-text-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+#mainNavbar .nav-link {
+  color: #334155 !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 0.45rem 0.85rem !important;
+  border-radius: 4px !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+#mainNavbar .nav-link:hover,
+#mainNavbar .nav-link.active {
+  color: var(--clr-blue) !important;
+  background-color: #F1F5F9 !important;
+}
+#mainNavbar .nav-link::after {
+  display: none !important;
+}
+
+/* ── 3. Tombol Resmi Tanpa AI Slop (Zero Float, Zero Glowing Shadow, Radius 6px) ── */
+button, .btn,
+.btn-primary-custom,
+.btn-outline-custom,
+.btn-riviera-custom,
+.btn-nav-daftar,
+.btn-nav-admin,
+.btn-detail,
+.filter-btn,
+.quick-tag-btn,
+.btn-submit-login,
+.btn-action {
+  border-radius: 6px !important;
+  transform: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+  box-shadow: none !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--clr-blue) !important;
+  border: 1px solid var(--clr-blue) !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  padding: 0.55rem 1.35rem !important;
+}
+.btn-primary-custom:hover {
+  background-color: var(--clr-blue-dark) !important;
+  border-color: var(--clr-blue-dark) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-outline-custom {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--clr-blue) !important;
+  color: var(--clr-blue) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  padding: 0.55rem 1.35rem !important;
+}
+.btn-outline-custom:hover {
+  background-color: #F1F5F9 !important;
+  border-color: var(--clr-blue-dark) !important;
+  color: var(--clr-blue-dark) !important;
+}
+
+.btn-nav-daftar {
+  background-color: var(--clr-green) !important;
+  border: 1px solid var(--clr-green-dark) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 0.84rem !important;
+  padding: 0.45rem 0.95rem !important;
+}
+.btn-nav-daftar:hover {
+  background-color: var(--clr-green-dark) !important;
+  border-color: var(--clr-green-dark) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-nav-admin {
+  background: #FFFFFF !important;
+  color: var(--clr-blue) !important;
+  border: 1px solid var(--clr-border) !important;
+  font-weight: 600 !important;
+  font-size: 0.84rem !important;
+  padding: 0.45rem 0.95rem !important;
+}
+.btn-nav-admin:hover {
+  background: #F1F5F9 !important;
+  color: var(--clr-blue-dark) !important;
+  border-color: var(--clr-blue) !important;
+}
+
+.btn-detail {
+  background: #FFFFFF !important;
+  border: 1px solid var(--clr-blue) !important;
+  color: var(--clr-blue) !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.9rem !important;
+  font-size: 0.82rem !important;
+}
+.btn-detail:hover {
+  background: var(--clr-blue) !important;
+  color: #FFFFFF !important;
+  border-color: var(--clr-blue) !important;
+}
+
+/* ── 4. Toolbar & Filter Pencarian Resmi (Segmented Control, No 50px Pills) ── */
+.katalog-toolbar {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  padding: 1.25rem !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+}
+
+.katalog-search-box input {
+  border-radius: 6px !important;
+  border: 1px solid #CBD5E1 !important;
+  font-size: 0.88rem !important;
+  height: 42px !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04) !important;
+}
+.katalog-search-box input:focus {
+  border-color: var(--clr-blue) !important;
+  box-shadow: 0 0 0 3px rgba(9, 74, 116, 0.15) !important;
+}
+
+.katalog-filter-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem !important;
+}
+
+.filter-btn {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #334155 !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 6px !important;
+}
+.filter-btn:hover {
+  background: #F1F5F9 !important;
+  border-color: #94A3B8 !important;
+  color: #0F172A !important;
+}
+.filter-btn.active {
+  background: var(--clr-blue) !important;
+  border-color: var(--clr-blue) !important;
+  color: #FFFFFF !important;
+}
+
+.quick-tag-btn {
+  border-radius: 4px !important;
+  border: 1px solid #E2E8F0 !important;
+  background: #FFFFFF !important;
+  color: #475569 !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  padding: 0.15rem 0.55rem !important;
+}
+.quick-tag-btn:hover {
+  background: #F1F5F9 !important;
+  color: var(--clr-blue) !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* ── 5. Rubrik & Badge Resmi (Bukan AI Pastel Capsule) ── */
+.section-badge,
+.hero-badge {
+  border-radius: 4px !important;
+  padding: 0.25rem 0.65rem !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  background: rgba(9, 74, 116, 0.08) !important;
+  color: var(--clr-blue) !important;
+  border: 1px solid rgba(9, 74, 116, 0.18) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+}
+.hero-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.card-tag {
+  border-radius: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+  padding: 0.2rem 0.55rem !important;
+}
+
+/* ── 6. Kartu Informasi Pemerintahan (Solid & Stabil, Tanpa Bouncing Hover) ── */
+.potensi-card,
+.stat-card,
+.layanan-card,
+.galeri-card,
+.admin-card {
+  border-radius: 6px !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  transform: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+.potensi-card:hover,
+.stat-card:hover,
+.layanan-card:hover,
+.galeri-card:hover {
+  transform: none !important;
+  border-color: var(--clr-blue) !important;
+  box-shadow: 0 4px 12px rgba(9, 74, 116, 0.10) !important;
+}
+
+/* Kartu Gambar Potensi: Latar Netral Bersih */
+.potensi-card-img {
+  background: #F8FAFC !important;
+}
+.img-usaha, .img-jasa, .img-hunian, .img-barang {
+  background: #F1F5F9 !important;
+}
+
+/* ── 7. Footer Resmi Pemerintahan ── */
+footer, #kontak-section {
+  border-top: 2px solid var(--clr-orange);
 }
