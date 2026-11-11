@@ -1,44 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 /* =============================================================
    EtalasePelemwatu � Global Stylesheet
-   Palette: Orange #F2630F | Green #68934B | Blue #094A74 | Yellow #FFC20B
+   Palette: Orange #F2630F | Green #68934B | Blue #1E3B2C | Yellow #FFC20B
    ============================================================= */
 
 /* -- Root Variables -- */
 :root {
   /* Primary */
-  --clr-orange:       #F2630F;
-  --clr-orange-dark:  #D4540C;
-  --clr-orange-light: #F47A36;
+
+  
 
   /* Secondary */
-  --clr-green:        #68934B;
-  --clr-green-dark:   #537839;
-  --clr-green-light:  #80AD60;
+
+  
 
   /* Supporting */
-  --clr-blue:         #094A74;
-  --clr-blue-dark:    #063553;
-  --clr-blue-light:   #0E6199;
+
+  
 
   /* Highlight */
-  --clr-yellow:       #FFC20B;
+
   --clr-yellow-dark:  #E0AA08;
 
   /* Neutrals */
-  --clr-white:        #FFFFFF;
-  --clr-bg:           #F8F5F0;
-  --clr-bg-alt:       #EDE8E0;
-  --clr-text:         #1A1A1A;
-  --clr-text-mid:     #4A4A4A;
-  --clr-text-light:   #7A7A7A;
-  --clr-border:       #DDE0E5;
+
+  
+
+  
+
+  
 
   /* Shadows */
-  --shadow-sm:  0 1px 4px rgba(0,0,0,.08);
-  --shadow-md:  0 4px 16px rgba(0,0,0,.12);
-  --shadow-lg:  0 10px 36px rgba(0,0,0,.16);
+
+  
 
   /* Misc */
   --radius:     6px;
@@ -49,13 +44,16 @@
 
 /* -- Reset & Base -- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-size: 87.5%; /* skala dasar: 1rem = 14px. Semua ukuran rem ikut mengecil */
+}
 
 body {
   font-family: var(--font-main);
   background-color: var(--clr-white);
-  color: var(--clr-text);
-  font-size: 16px;
+
+  font-size: 1rem;
   line-height: 1.7;
   min-width: 320px;
 }
@@ -69,10 +67,8 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--clr-blue);
-}
 
-p { color: var(--clr-text-mid); }
+}
 
 /* -- Utility -- */
 .text-orange   { color: var(--clr-orange) !important; }
@@ -86,8 +82,8 @@ p { color: var(--clr-text-mid); }
 
 /* -- Buttons -- */
 .btn-primary-custom {
-  background-color: var(--clr-orange);
-  color: var(--clr-white);
+
+  
   border: 2px solid var(--clr-orange);
   padding: .65rem 1.6rem;
   border-radius: var(--radius);
@@ -98,16 +94,11 @@ p { color: var(--clr-text-mid); }
   align-items: center;
   gap: .5rem;
   cursor: pointer;
-}
-.btn-primary-custom:hover {
-  background-color: var(--clr-orange-dark);
-  border-color: var(--clr-orange-dark);
-  color: var(--clr-white);
 }
 
 .btn-outline-custom {
   background: transparent;
-  color: var(--clr-orange);
+
   border: 2px solid var(--clr-orange);
   padding: .65rem 1.6rem;
   border-radius: var(--radius);
@@ -119,14 +110,10 @@ p { color: var(--clr-text-mid); }
   gap: .5rem;
   cursor: pointer;
 }
-.btn-outline-custom:hover {
-  background-color: var(--clr-orange);
-  color: var(--clr-white);
-}
 
 .btn-riviera-custom {
-  background-color: var(--clr-blue);
-  color: var(--clr-white);
+
+  
   border: 2px solid var(--clr-blue);
   padding: .65rem 1.6rem;
   border-radius: var(--radius);
@@ -138,28 +125,9 @@ p { color: var(--clr-text-mid); }
   gap: .5rem;
   cursor: pointer;
 }
-.btn-riviera-custom:hover {
-  background-color: var(--clr-blue-dark);
-  border-color: var(--clr-blue-dark);
-  color: var(--clr-white);
-}
 
 /* -- Section Common -- */
 .section-header { margin-bottom: 3rem; }
-.section-header .section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  background-color: rgba(242,99,15,.12);
-  color: var(--clr-orange);
-  font-size: .8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  padding: .35rem .9rem;
-  border-radius: 6px;
-  margin-bottom: .9rem;
-}
 .section-header h2 {
   font-size: clamp(1.6rem, 3vw, 2.3rem);
   color: var(--clr-blue);
@@ -172,29 +140,22 @@ p { color: var(--clr-text-mid); }
 }
 .section-header.center { text-align: center; }
 .section-header.center p { margin: 0 auto; }
-.section-underline {
-  width: 60px;
-  height: 4px;
-  background: var(--clr-orange);
-  border-radius: 4px;
-  margin: .6rem 0 1.2rem;
-}
-.section-header.center .section-underline { margin: .6rem auto 1.2rem; }
+
 
 /* ============================================================
    NAVBAR
    ============================================================ */
 #mainNavbar {
-  background-color: var(--clr-white) !important;
+
   padding: .5rem 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+
   transition: all var(--transition);
   z-index: 1050;
 }
 #mainNavbar.scrolled {
   padding: .3rem 0;
-  background-color: var(--clr-white) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+
+  
 }
 
 .navbar-brand-wrap {
@@ -233,8 +194,8 @@ p { color: var(--clr-text-mid); }
 }
 
 #mainNavbar .nav-link {
-  color: var(--clr-text) !important;
-  font-weight: 600;
+
+  
   font-size: .88rem;
   padding: .45rem .75rem !important;
   border-radius: 0;
@@ -247,14 +208,10 @@ p { color: var(--clr-text-mid); }
   position: absolute;
   bottom: -2px; left: 0;
   width: 0; height: 3px;
-  background-color: var(--clr-orange);
+
   transition: all var(--transition);
 }
-#mainNavbar .nav-link:hover,
-#mainNavbar .nav-link.active {
-  color: var(--clr-orange) !important;
-  background-color: transparent;
-}
+
 #mainNavbar .nav-link:hover::after,
 #mainNavbar .nav-link.active::after { width: 100%; }
 
@@ -289,23 +246,18 @@ p { color: var(--clr-text-mid); }
    HERO � PENGENALAN DESA � FULL-BLEED PHOTO BACKGROUND
    ============================================================ */
 #hero-desa {
-  min-height: 100vh;
+
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+
   overflow: hidden;
-  background-image:
-    linear-gradient(
-      rgba(6, 20, 40, 0.68) 0%,
-      rgba(6, 20, 40, 0.68) 100%
-    ),
-    url('../img/foto-kantor-desa.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+
+  
+
+  
   background-attachment: scroll;
-  text-align: center;
+
 }
 
 /* Full-height row for content alignment */
@@ -324,68 +276,34 @@ p { color: var(--clr-text-mid); }
 }
 
 .hero-content { position: relative; z-index: 2; max-width: 820px; }
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.35);
-  color: var(--clr-white);
-  font-size: .78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: .4rem 1rem;
-  border-radius: 6px;
-  margin-bottom: 1.4rem;
-}
+
 #hero-desa h1 {
-  color: var(--clr-white);
-  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-  font-weight: 900;
-  line-height: 1.1;
+
+  
+
+  
   margin-bottom: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+
+  
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
-#hero-desa h1 span { color: var(--clr-yellow); }
+
 .hero-desc {
-  color: rgba(255,255,255,.88);
+
   font-size: 1.08rem;
   line-height: 1.75;
   margin-bottom: 2rem;
-  max-width: 580px;
+
   margin-left: auto;
   margin-right: auto;
 }
-.hero-identity-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .7rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-}
-.identity-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  background: rgba(255,255,255,.15);
-  border: 1px solid rgba(255,255,255,.28);
-  color: rgba(255,255,255,.95);
-  padding: .4rem .9rem;
-  border-radius: 6px;
-  font-size: .85rem;
-  font-weight: 500;
-  backdrop-filter: blur(4px);
-}
-.identity-badge i { color: var(--clr-yellow); font-size: .9rem; }
+
 
 .hero-scroll-hint {
   position: absolute;
   bottom: 2rem; left: 50%;
   transform: translateX(-50%);
-  color: rgba(255,255,255,.55);
+
   font-size: .8rem;
   text-align: center;
   z-index: 2;
@@ -394,7 +312,6 @@ p { color: var(--clr-text-mid); }
 /* ============================================================
    PROFIL DESA
    ============================================================ */
-#profil-desa { background-color: var(--clr-white); }
 
 .profil-nav {
   display: flex;
@@ -442,8 +359,36 @@ p { color: var(--clr-text-mid); }
   border-bottom: 2px solid var(--clr-orange-light);
 }
 
+/* Kartu statistik di bawah Identitas Desa */
+.desa-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.desa-stat-card {
+  background: #FFFFFF;
+  border: 1px solid #D9DFD6;
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.25rem;
+}
+.desa-stat-num {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--clr-blue);
+}
+.desa-stat-label {
+  margin-top: .3rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--clr-text-mid);
+}
+
 .map-placeholder {
-  background: linear-gradient(135deg, #fef3ea, #fde0ca);
+  background: var(--clr-bg);
   border: 2px dashed rgba(242,99,15,.35);
   border-radius: var(--radius);
   height: 300px;
@@ -467,7 +412,7 @@ p { color: var(--clr-text-mid); }
   border-radius: var(--radius);
   overflow: hidden;
   aspect-ratio: 4/3;
-  background: linear-gradient(135deg, var(--clr-bg), var(--clr-bg-alt));
+  background: var(--clr-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -479,7 +424,7 @@ p { color: var(--clr-text-mid); }
   cursor: pointer;
   transition: all var(--transition);
 }
-.gallery-item:hover { border-color: var(--clr-orange); color: var(--clr-orange); transform: scale(1.02); }
+.gallery-item:hover { border-color: var(--clr-orange); color: var(--clr-orange); }
 .gallery-item i { font-size: 2rem; }
 
 .info-placeholder-card {
@@ -490,76 +435,8 @@ p { color: var(--clr-text-mid); }
   text-align: center;
   color: var(--clr-text-light);
 }
-.info-placeholder-card i { font-size: 2rem; color: var(--clr-green); margin-bottom: .5rem; }
+.info-placeholder-card i { font-size: 2rem;  margin-bottom: .5rem; }
 
-/* ============================================================
-   PENGENALAN ETALASE
-   ============================================================ */
-#pengenalan-etalase {
-  background: linear-gradient(135deg, var(--clr-green) 0%, var(--clr-green-dark) 100%);
-  position: relative;
-  overflow: hidden;
-}
-#pengenalan-etalase::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 50%, rgba(9,74,116,.18) 0%, transparent 60%);
-  pointer-events: none;
-}
-.etalase-intro-card {
-  background: rgba(255,255,255,.09);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  backdrop-filter: blur(10px);
-}
-#pengenalan-etalase h2 { color: var(--clr-white); }
-#pengenalan-etalase p { color: rgba(255,255,255,.85); }
-.etalase-feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.4rem;
-}
-.etalase-feature-item:last-child { margin-bottom: 0; }
-.etalase-feat-icon {
-  width: 44px; height: 44px;
-  background: rgba(9,74,116,.45);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  color: #FFFFFF;
-  font-size: 1.2rem;
-}
-.etalase-feat-text h6 { color: var(--clr-white); font-size: .95rem; margin-bottom: .2rem; }
-.etalase-feat-text p  { color: rgba(255,255,255,.72); font-size: .85rem; margin: 0; }
-
-.etalase-visual {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  text-align: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-.etalase-logo-big {
-  width: 100px; height: 100px;
-  background: linear-gradient(135deg, var(--clr-orange), var(--clr-orange-light));
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.8rem;
-  color: var(--clr-white);
-  box-shadow: 0 4px 16px rgba(0,0,0,.18);
-  margin: 0 auto;
-}
-.etalase-visual h3 { color: var(--clr-white); font-size: 1.6rem; }
-.etalase-visual p  { color: rgba(255,255,255,.72); font-size: .9rem; max-width: 300px; }
 
 .platform-stats {
   display: grid;
@@ -576,7 +453,7 @@ p { color: var(--clr-text-mid); }
 .platform-stat .pstat-num {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #094A74;
+  color: #1E3B2C;
   line-height: 1;
 }
 .platform-stat .pstat-label {
@@ -588,7 +465,7 @@ p { color: var(--clr-text-mid); }
 /* ============================================================
    STATISTIK
    ============================================================ */
-#statistik { background-color: var(--clr-bg); }
+
 .stat-card {
   background: var(--clr-white);
   border-radius: var(--radius-lg);
@@ -618,29 +495,17 @@ p { color: var(--clr-text-mid); }
 .stat-num {
   font-size: 2.8rem;
   font-weight: 800;
-  color: var(--clr-orange);
+
   line-height: 1;
   margin-bottom: .25rem;
 }
 .stat-label { font-size: 1rem; font-weight: 600; color: var(--clr-blue); margin-bottom: .3rem; }
 .stat-note  { font-size: .8rem; color: var(--clr-text-light); }
-.stat-demo-notice {
-  background: rgba(242,99,15,.07);
-  border: 1px solid rgba(242,99,15,.22);
-  border-radius: var(--radius);
-  padding: .75rem 1.25rem;
-  color: var(--clr-orange);
-  font-size: .85rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-}
+
 
 /* ============================================================
    KATALOG
    ============================================================ */
-#katalog { background-color: var(--clr-white); }
 
 .katalog-toolbar {
   margin-bottom: 2.2rem;
@@ -675,7 +540,7 @@ p { color: var(--clr-text-mid); }
 .katalog-search-box .form-control:focus {
   border-color: var(--clr-blue);
   background-color: var(--clr-white);
-  box-shadow: 0 0 0 4px rgba(9, 74, 116, 0.12);
+  box-shadow: 0 0 0 4px rgba(30, 59, 44, 0.12);
 }
 
 .katalog-search-box:focus-within .search-icon {
@@ -753,12 +618,6 @@ p { color: var(--clr-text-mid); }
   transition: all var(--transition);
   box-sizing: border-box;
 }
-.filter-btn:hover { border-color: var(--clr-orange); color: var(--clr-orange); }
-.filter-btn.active {
-  background: var(--clr-orange);
-  border-color: var(--clr-orange);
-  color: var(--clr-white);
-}
 
 .katalog-empty-state {
   text-align: center;
@@ -773,7 +632,7 @@ p { color: var(--clr-text-mid); }
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(9, 74, 116, 0.08);
+  background: rgba(30, 59, 44, 0.08);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -807,23 +666,22 @@ p { color: var(--clr-text-mid); }
 }
 
 .potensi-card {
-  background: var(--clr-white);
-  border: none;
-  border-radius: var(--radius-lg);
+
+  
+
   overflow: hidden;
-  box-shadow: none;
+
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
 }
-.potensi-card:hover { box-shadow: var(--shadow-md); }
 
 /* Photo image - fills card top */
 .potensi-card-img {
   width: 100%;
   aspect-ratio: 4/3;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
+
+  
   position: relative;
 }
 .potensi-card-img img {
@@ -831,14 +689,14 @@ p { color: var(--clr-text-mid); }
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: var(--radius-lg);
+
   transition: transform .4s ease;
 }
-.potensi-card:hover .potensi-card-img img { transform: scale(1.04); }
+
 
 /* Card body below photo */
 .potensi-card-body {
-  padding: .9rem .1rem;
+
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -846,16 +704,16 @@ p { color: var(--clr-text-mid); }
 
 /* Outlined name tag - reference style pill */
 .potensi-name-tag {
-  display: inline-block;
-  border: 1.5px solid var(--clr-orange);
-  color: var(--clr-orange);
-  font-size: .68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  padding: .22rem .75rem;
-  border-radius: 50px;
-  margin-bottom: .65rem;
+
+  
+
+  
+
+  
+
+  
+
+  
   width: fit-content;
 }
 
@@ -864,7 +722,7 @@ p { color: var(--clr-text-mid); }
 .badge-usaha, .badge-jasa, .badge-hunian, .badge-barang { display: none; }
 
 .potensi-card-body h5 { font-size: .95rem; color: var(--clr-blue); margin-bottom: .4rem; }
-.potensi-card-body p  { font-size: .82rem; color: var(--clr-text-mid); flex: 1; margin-bottom: .8rem; line-height: 1.6; }
+.potensi-card-body p  {   flex: 1;   }
 .btn-detail {
   background: transparent;
   border: none;
@@ -903,7 +761,7 @@ p { color: var(--clr-text-mid); }
 /* ============================================================
    LAYANAN
    ============================================================ */
-#layanan { background-color: var(--clr-bg); }
+
 .layanan-card {
   background: var(--clr-white);
   border-radius: var(--radius-lg);
@@ -914,36 +772,51 @@ p { color: var(--clr-text-mid); }
   text-align: center;
   height: 100%;
 }
-.layanan-card:hover { border-color: var(--clr-orange); box-shadow: var(--shadow-md); }
-.layanan-icon-wrap {
-  width: 80px; height: 80px;
-  border-radius: var(--radius-lg);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 2rem;
-}
+.layanan-card:hover {  box-shadow: var(--shadow-md); }
+
 .layanan-card h4 { color: var(--clr-blue); font-size: 1.1rem; margin-bottom: .75rem; }
 .layanan-card p  { color: var(--clr-text-mid); font-size: .9rem; margin-bottom: 1.5rem; }
 
 /* ============================================================
    KONTAK & FOOTER
    ============================================================ */
-#kontak-section { background-color: var(--clr-white); }
-.kontak-info-block {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+
+.kontak-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  text-align: center;
 }
-.kontak-icon {
-  width: 48px; height: 48px;
-  border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: 1.2rem;
+.kontak-item {
+  padding: 0 1.25rem;
+  border-left: 1px solid var(--clr-border);
 }
-.kontak-info-text h6 { font-size: .9rem; color: var(--clr-blue); margin-bottom: .2rem; }
-.kontak-info-text p  { font-size: .88rem; color: var(--clr-text-mid); margin: 0; }
+.kontak-item:first-child { border-left: 0; }
+.kontak-ikon {
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--clr-orange-aa);
+  margin-bottom: .75rem;
+}
+.kontak-item h6 { font-size: .95rem; font-weight: 700; color: var(--clr-blue); margin-bottom: .35rem; }
+.kontak-item p  { font-size: .9rem; color: var(--clr-text-mid); margin: 0; line-height: 1.6; overflow-wrap: anywhere; }
+.kontak-item a  { font-weight: 600; text-decoration: none; }
+.kontak-item a:hover { text-decoration: underline; }
+
+@media (max-width: 991.98px) {
+  .kontak-list { grid-template-columns: repeat(2, 1fr); gap: 2rem 0; }
+  .kontak-item:nth-child(odd) { border-left: 0; }
+  .kontak-item:last-child { grid-column: 1 / -1; border-left: 0; }
+}
+@media (max-width: 575.98px) {
+  .kontak-list { grid-template-columns: 1fr; }
+  .kontak-item { border-left: 0; }
+}
 
 .kontak-placeholder {
   color: var(--clr-text-light);
@@ -952,18 +825,18 @@ p { color: var(--clr-text-mid); }
 }
 
 #main-footer {
-  background: linear-gradient(135deg, var(--clr-blue-dark) 0%, var(--clr-blue) 100%);
+  background: var(--clr-ink-dark);
   color: rgba(255,255,255,.78);
 }
 .footer-brand { color: var(--clr-white); font-size: 1.25rem; font-weight: 800; margin-bottom: .5rem; }
 .footer-desc  { font-size: .85rem; line-height: 1.7; }
-.footer-heading { color: var(--clr-yellow); font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+.footer-heading { color: #FFFFFF; font-size: .95rem; font-weight: 700; margin-bottom: 1rem; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: .5rem; }
-.footer-links a { color: rgba(255,255,255,.70); font-size: .88rem; transition: color var(--transition); }
-.footer-links a:hover { color: var(--clr-yellow); }
+.footer-links a {  font-size: .88rem; transition: color var(--transition); }
+.footer-links a:hover { color: #FFFFFF; text-decoration: underline; }
 .footer-divider { border-color: rgba(255,255,255,.12); margin: 1.5rem 0; }
-.footer-bottom { font-size: .8rem; color: rgba(255,255,255,.50); }
+.footer-bottom { font-size: .8rem;  }
 
 /* ============================================================
    ANIMATIONS
@@ -979,8 +852,7 @@ p { color: var(--clr-text-mid); }
 .animate-fade-up { animation: fadeInUp .6s ease both; }
 
 /* Reveal on scroll */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+
 
 /* ============================================================
    BACK TO TOP
@@ -1029,8 +901,7 @@ p { color: var(--clr-text-mid); }
   font-size: .88rem;
   color: var(--clr-text);
 }
-.custom-toast.success { border-left-color: #28a745; }
-.custom-toast.error   { border-left-color: #dc3545; }
+
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(40px); }
   to   { opacity: 1; transform: translateX(0); }
@@ -1068,7 +939,6 @@ p { color: var(--clr-text-mid); }
 /* ============================================================
    ADMIN PAGE
    ============================================================ */
-body.admin-page { background-color: #f0f2f5; }
 
 .admin-sidebar {
   width: 260px;
@@ -1245,11 +1115,10 @@ body.admin-page { background-color: #f0f2f5; }
 /* ============================================================
    FORM DAFTAR POTENSI
    ============================================================ */
-body.form-page { background-color: var(--clr-bg); }
 
 .form-page-header {
   background: linear-gradient(135deg, var(--clr-orange) 0%, var(--clr-orange-dark) 100%);
-  padding: 3.5rem 0 2.5rem;
+
   position: relative;
   overflow: hidden;
 }
@@ -1263,9 +1132,9 @@ body.form-page { background-color: var(--clr-bg); }
 .form-page-header h1 { color: var(--clr-white); font-size: clamp(1.5rem, 3vw, 2.2rem); }
 .form-page-header p  { color: rgba(255,255,255,.85); }
 .form-breadcrumb { display: flex; gap: .5rem; align-items: center; margin-bottom: 1rem; }
-.form-breadcrumb a { color: rgba(255,255,255,.75); font-size: .85rem; text-decoration: none; }
+.form-breadcrumb a {  font-size: .85rem; text-decoration: none; }
 .form-breadcrumb a:hover { color: var(--clr-white); }
-.form-breadcrumb span { color: rgba(255,255,255,.45); font-size: .85rem; }
+.form-breadcrumb span {  font-size: .85rem; }
 
 .form-card {
   background: var(--clr-white);
@@ -1276,11 +1145,11 @@ body.form-page { background-color: var(--clr-bg); }
   margin-bottom: 2rem;
 }
 .form-card-header {
-  background: var(--clr-blue);
+
   padding: 1.25rem 1.75rem;
-  color: var(--clr-white);
+
 }
-.form-card-header h4 { color: var(--clr-white); font-size: 1.1rem; margin: 0; }
+.form-card-header h4 {  font-size: 1.1rem; margin: 0; }
 .form-card-body { padding: 2rem 1.75rem; }
 
 .form-section-title {
@@ -1297,10 +1166,6 @@ body.form-page { background-color: var(--clr-bg); }
   gap: .5rem;
 }
 
-.form-control:focus, .form-select:focus {
-  border-color: var(--clr-orange);
-  box-shadow: 0 0 0 3px rgba(242,99,15,.16);
-}
 .form-label { font-size: .88rem; font-weight: 600; color: var(--clr-blue); }
 .required-mark { color: var(--clr-orange); }
 
@@ -1390,21 +1255,14 @@ body.form-page { background-color: var(--clr-bg); }
 }
 
 @media (max-width: 991px) {
-  #hero-desa { min-height: auto; }
+
   .hero-content-col {
     padding: 130px 2rem 60px 2rem;
     width: 100%;
     max-width: 100%;
   }
   #hero-desa {
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(6, 53, 83, 0.88) 0%,
-        rgba(9, 74, 116, 0.80) 60%,
-        rgba(9, 74, 116, 0.65) 100%
-      ),
-      url('../img/foto-kantor-desa.jpg');
+
     background-position: center center;
   }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1427,8 +1285,8 @@ body.form-page { background-color: var(--clr-bg); }
 
 @media (max-width: 575px) {
   .gallery-grid { grid-template-columns: 1fr; }
-  .hero-identity-badges { gap: .5rem; }
-  .identity-badge { font-size: .78rem; padding: .35rem .75rem; }
+  
+  
   #backToTop { bottom: 1.25rem; right: 1.25rem; }
 }
 
@@ -1440,8 +1298,8 @@ body.form-page { background-color: var(--clr-bg); }
 #hero-desa .hero-content .btn-primary-custom,
 #hero-desa .hero-content .btn-outline-custom,
 #hero-desa .hero-content .btn-riviera-custom {
-  background-color: #F2630F;
-  color: #FFFFFF;
+
+  
   border: 2px solid #F2630F;
 }
 
@@ -1449,42 +1307,44 @@ body.form-page { background-color: var(--clr-bg); }
 #hero-desa .hero-content .btn-primary-custom:hover,
 #hero-desa .hero-content .btn-outline-custom:hover,
 #hero-desa .hero-content .btn-riviera-custom:hover {
-  background-color: #D4540C;
+
   color: #FFFFFF;
-  border-color: #D4540C;
+
 }
 
 /* Hero title highlight: orange */
-#hero-desa h1 span {
-  color: #F2630F !important;
-}
-
 
 /* ============================================================
    ETALASEPELEMWATU � FINAL COLOR THEME
    This block changes colors only; layout and behavior stay intact.
    ============================================================ */
 :root {
-  --clr-orange: #F2630F;
-  --clr-orange-dark: #D4540C;
+  /* Palet: hijau hutan (tinta & footer), hijau daun (aksen), oranye (aksi), netral hijau-abu */
+  --clr-ink:        #1E3B2C;
+  --clr-ink-dark:   #15291F;
+  --clr-ink-light:  #2F5A43;
+  --clr-orange:       #F2630F;
+  --clr-orange-dark:  #D4540C;
   --clr-orange-light: #F47A36;
-  --clr-green: #68934B;
-  --clr-green-dark: #537839;
-  --clr-green-light: #80AD60;
-  --clr-blue: #094A74;
-  --clr-blue-dark: #063553;
-  --clr-blue-light: #0E6199;
-  --clr-yellow: #FFC20B;
-  --clr-white: #FFFFFF;
-  --clr-bg: #F8F5F0;
-  --clr-bg-alt: #EDE8E0;
-  --clr-text: #24313A;
-  --clr-text-mid: #4B5962;
-  --clr-text-light: #74818A;
-  --clr-border: #E2DDD5;
-  --shadow-sm: 0 2px 8px rgba(9,74,116,.08);
-  --shadow-md: 0 6px 24px rgba(9,74,116,.12);
-  --shadow-lg: 0 12px 48px rgba(9,74,116,.16);
+  --clr-green:        #4F7F45;
+  --clr-green-dark:   #3C6336;
+  --clr-green-light:  #6F9C64;
+  --clr-yellow:       #FFC20B;
+  --clr-white:   #FFFFFF;
+  --clr-bg:      #F4F6F2;
+  --clr-soft:    #FAFBF8;
+  --clr-bg-alt:  #E8ECE5;
+  --clr-text:       #1F2A24;
+  --clr-text-mid:   #46524B;
+  --clr-text-light: #66726B;
+  --clr-border:     #D9DFD6;
+  --shadow-sm: 0 1px 3px rgba(30, 59, 44, .08);
+  --shadow-md: 0 4px 14px rgba(30, 59, 44, .10);
+  --shadow-lg: 0 10px 30px rgba(30, 59, 44, .14);
+  /* Nama lama, masih dipakai halaman lain: sekarang menunjuk ke hijau hutan */
+  --clr-blue:       var(--clr-ink);
+  --clr-blue-dark:  var(--clr-ink-dark);
+  --clr-blue-light: var(--clr-ink-light);
 }
 
 /* Shared text and page surfaces */
@@ -1500,108 +1360,41 @@ h1, h2, h3, h4, h5, h6 {
 .text-muted { color: var(--clr-text-light) !important; }
 
 /* Landing page navigation � the ID selector matches the actual navbar */
-#mainNavbar,
-#mainNavbar.scrolled {
-  background-color: var(--clr-orange) !important;
-}
-#mainNavbar .nav-link:hover,
-#mainNavbar .nav-link.active {
-  background-color: rgba(0,0,0,.16);
-}
-#mainNavbar .btn-nav-daftar {
-  background: var(--clr-blue);
-  border-color: var(--clr-blue);
-}
-#mainNavbar .btn-nav-daftar:hover {
-  background: var(--clr-blue-dark) !important;
-  border-color: var(--clr-blue-dark) !important;
-}
 
 /* Village profile, catalog, service and contact section surfaces */
-#profil-desa, #katalog, #kontak-section {
-  background-color: #FFFFFF;
+#katalog, #kontak-section {
+  background-color: var(--clr-soft);
 }
-#statistik, #layanan, body.form-page {
+#profil-desa, #layanan {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+#layanan,
+body.form-page {
   background-color: var(--clr-bg);
 }
 
-/* Etalase introduction: cream surface, blue headings, orange icon accents */
-#pengenalan-etalase {
-  background: var(--clr-bg) !important;
-  color: var(--clr-text);
-}
-#pengenalan-etalase::before {
-  opacity: .10;
-}
-/* Legacy #pengenalan-etalase heading/p color rules — !important removed so split-content override works */
-#pengenalan-etalase .etalase-intro-card,
-#pengenalan-etalase .etalase-visual {
-  background: #FFFFFF !important;
-  border: 1px solid var(--clr-border) !important;
-  box-shadow: var(--shadow-md);
-  backdrop-filter: none;
-}
-#pengenalan-etalase .etalase-feat-icon,
-#pengenalan-etalase .etalase-logo-big {
-  background: var(--clr-orange) !important;
-  color: #FFFFFF !important;
-}
-#pengenalan-etalase .platform-stat,
-#pengenalan-etalase .stat-card,
-#pengenalan-etalase .stat-box {
-  background: var(--clr-bg) !important;
-  border: 1px solid var(--clr-border);
-}
-#pengenalan-etalase .platform-stat .pstat-num {
-  color: var(--clr-orange) !important;
-}
-#pengenalan-etalase .platform-stat .pstat-label {
-  color: var(--clr-text-light) !important;
-}
-#pengenalan-etalase .section-badge,
-#pengenalan-etalase .etalase-visual .stat-number {
-  color: var(--clr-orange) !important;
-}
-#pengenalan-etalase .btn-outline-custom {
-  color: var(--clr-blue) !important;
-  border-color: var(--clr-blue) !important;
-}
-#pengenalan-etalase .btn-outline-custom:hover {
-  background: var(--clr-blue) !important;
-  color: #FFFFFF !important;
-}
 
 /* Catalog category badges keep distinct category colors and readable text */
-.badge-usaha { background: rgba(242,99,15,.12); color: var(--clr-orange); }
-.badge-jasa { background: rgba(9,74,116,.12); color: var(--clr-blue); }
-.badge-hunian { background: rgba(255,194,11,.24); color: #765900; }
-.badge-barang { background: rgba(104,147,75,.14); color: #496B34; }
+.badge-usaha { background: rgba(242,99,15,.12);  }
+.badge-jasa { background: rgba(30,59,44,.12); color: var(--clr-blue); }
+
+.badge-barang { background: rgba(104,147,75,.14);  }
 
 /* Buttons and controls */
 .btn-primary-custom,
 .btn-orange {
-  background-color: var(--clr-orange);
-  border-color: var(--clr-orange);
+
+  
   color: #FFFFFF;
 }
 .btn-primary-custom:hover,
 .btn-orange:hover {
-  background-color: var(--clr-orange-dark);
-  border-color: var(--clr-orange-dark);
+
+  
   color: #FFFFFF;
 }
-.btn-riviera-custom,
-.btn-blue {
-  background-color: var(--clr-blue);
-  border-color: var(--clr-blue);
-  color: #FFFFFF;
-}
-.btn-riviera-custom:hover,
-.btn-blue:hover {
-  background-color: var(--clr-blue-dark);
-  border-color: var(--clr-blue-dark);
-  color: #FFFFFF;
-}
+
 .form-control, .form-select, textarea {
   color: var(--clr-text);
   background-color: #FFFFFF;
@@ -1618,9 +1411,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Form headers retain a formal blue treatment */
 .form-card-header {
   background: var(--clr-blue);
-  color: #FFFFFF;
+
 }
-.form-card-header h4 { color: #FFFFFF; }
 
 /* Admin page rules also exist in this global stylesheet */
 body.admin-page {
@@ -1662,7 +1454,6 @@ body.admin-page {
   background-color: var(--clr-blue);
 }
 
-
 /* ============================================================
    FINAL FRONTEND COLOR REFINEMENT � PELEMWATU
    Hero overlay lebih ringan, section cream, tombol sekunder hijau.
@@ -1671,59 +1462,20 @@ body.admin-page {
    ============================================================ */
 
 /* 1. HERO: kurangi overlay biru, foto asli tetap digunakan */
-#hero-desa {
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(6, 53, 83, 0.68) 0%,
-      rgba(9, 74, 116, 0.48) 42%,
-      rgba(9, 74, 116, 0.18) 68%,
-      rgba(9, 74, 116, 0.04) 100%
-    ),
-    url('../img/foto-kantor-desa.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
 /* Jaga keterbacaan teks hero setelah overlay diringankan */
-#hero-desa .hero-content {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, .22);
-}
-#hero-desa .hero-badge,
-#hero-desa .identity-badge {
-  background: rgba(20, 35, 25, .34);
-  border-color: rgba(255, 255, 255, .42);
-}
+
 
 /* 2. PROFIL DESA dan area pengenalan memakai latar cream */
-#profil-desa,
-#pengenalan-etalase {
-  background: #F8F5F0 !important;
-  color: #24313A;
-}
-#profil-desa .desa-info-card,
-#profil-desa .etalase-intro-card,
-#profil-desa .etalase-visual {
+
+#profil-desa .desa-info-card {
   background: #FFFFFF;
-  border-color: #E2DDD5;
+  border-color: #D9DFD6;
 }
 #profil-desa .profil-nav {
-  border-bottom-color: #E2DDD5;
+  border-bottom-color: #D9DFD6;
 }
-#pengenalan-etalase::before {
-  background: radial-gradient(
-    circle at 80% 50%,
-    rgba(104, 147, 75, .10) 0%,
-    transparent 60%
-  );
-  opacity: 1;
-}
-#pengenalan-etalase h2,
-#pengenalan-etalase h3,
-#pengenalan-etalase h4,
-#pengenalan-etalase h5,
-#pengenalan-etalase h6,
+
 #profil-desa h2,
 #profil-desa h3,
 #profil-desa h4,
@@ -1731,72 +1483,40 @@ body.admin-page {
 #profil-desa h6 {
   color: var(--clr-blue);
 }
-#pengenalan-etalase p,
-#pengenalan-etalase li,
 #profil-desa p {
   color: var(--clr-text-mid);
 }
-#pengenalan-etalase .etalase-intro-card,
-#pengenalan-etalase .etalase-visual {
-  background: #FFFFFF !important;
-  border: 1px solid var(--clr-border) !important;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: none;
-}
-#pengenalan-etalase .etalase-feat-icon,
-#pengenalan-etalase .etalase-logo-big {
-  background: var(--clr-orange) !important;
-  color: #FFFFFF !important;
-}
+
 
 /* 3. NAVBAR tetap oranye */
-#mainNavbar,
-#mainNavbar.scrolled {
-  background-color: var(--clr-orange) !important;
-}
 
 /* Tombol daftar di navbar memakai hijau agar biru tidak mendominasi */
-#mainNavbar .btn-nav-daftar {
-  background: var(--clr-green) !important;
-  border-color: var(--clr-green) !important;
-  color: #FFFFFF !important;
-}
-#mainNavbar .btn-nav-daftar:hover {
-  background: var(--clr-green-dark) !important;
-  border-color: var(--clr-green-dark) !important;
-}
 
 /* 4. Tombol sekunder memakai hijau */
 .btn-riviera-custom,
 .btn-blue,
-.btn-secondary-custom,
-#pengenalan-etalase .btn-outline-custom {
-  background-color: var(--clr-green);
-  border-color: var(--clr-green);
+.btn-secondary-custom {
+
+  
   color: #FFFFFF !important;
 }
 .btn-riviera-custom:hover,
 .btn-blue:hover,
-.btn-secondary-custom:hover,
-#pengenalan-etalase .btn-outline-custom:hover {
-  background-color: var(--clr-green-dark) !important;
-  border-color: var(--clr-green-dark) !important;
+.btn-secondary-custom:hover {
+
+  
   color: #FFFFFF !important;
 }
 
 /* Outline sekunder hijau; hover menjadi hijau solid */
-.btn-outline-custom {
-  color: var(--clr-green);
-  border-color: var(--clr-green);
-}
+
 .btn-outline-custom:hover {
-  background-color: var(--clr-green);
-  border-color: var(--clr-green);
+
+  
   color: #FFFFFF;
 }
 
 /* Ikon aksen tetap oranye/hijau, bukan bidang biru besar */
-.etalase-feat-icon,
 .info-placeholder-card i {
   color: var(--clr-green);
 }
@@ -1817,11 +1537,7 @@ body:not(.admin-page) #main-footer,
 body:not(.admin-page) #footer,
 body:not(.admin-page) footer,
 body:not(.admin-page) .site-footer {
-  background: linear-gradient(
-    135deg,
-    var(--clr-blue-dark) 0%,
-    var(--clr-blue) 100%
-  ) !important;
+  background: var(--clr-ink-dark) !important;
 }
 
 /* Hindari class utilitas biru membuat tombol/area publik kembali dominan biru */
@@ -1834,28 +1550,12 @@ body:not(.admin-page) .text-blue {
 
 /* Formulir publik: header formal tetap rapi tanpa bidang biru dominan */
 body:not(.admin-page) .form-card-header {
-  background: var(--clr-green);
+
   color: #FFFFFF;
 }
 body:not(.admin-page) .form-card-header h4 {
   color: #FFFFFF;
 }
-
-/* Mobile: overlay dibuat sedikit lebih merata agar teks tetap terbaca */
-@media (max-width: 767px) {
-  #hero-desa {
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(6, 53, 83, .62) 0%,
-        rgba(9, 74, 116, .42) 55%,
-        rgba(9, 74, 116, .20) 100%
-      ),
-      url('../img/foto-kantor-desa.jpg');
-    background-position: center center;
-  }
-}
-
 
 /* ============================================================
    HERO READABILITY FIX � KONTRAS TEKS
@@ -1866,68 +1566,27 @@ body:not(.admin-page) .form-card-header h4 {
    ============================================================ */
 
 /* 1. Overlay: kiri pekat (teks), kanan ringan (foto), bawah gelap (tombol & hint) */
-#hero-desa {
-  background-image:
-    linear-gradient(
-      0deg,
-      rgba(6, 53, 83, 0.80) 0%,
-      rgba(6, 53, 83, 0.00) 28%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(6, 53, 83, 0.94) 0%,
-      rgba(6, 53, 83, 0.88) 34%,
-      rgba(9, 74, 116, 0.62) 55%,
-      rgba(9, 74, 116, 0.22) 78%,
-      rgba(9, 74, 116, 0.08) 100%
-    ),
-    url('../img/foto-kantor-desa.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
 /* 2. Teks: putih bersih + bayangan lembut */
-#hero-desa .hero-content {
-  text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
-}
-#hero-desa h1 {
-  color: #FFFFFF;
-}
+
 /* Oranye sedikit lebih terang agar kontras di atas biru tua */
-#hero-desa h1 span {
-  color: #FF8A3D !important;
-}
+
 .hero-desc {
   color: #FFFFFF;
   max-width: 540px;
 }
 
 /* 3. Badge lokasi & identitas: latar gelap solid-ish */
-#hero-desa .hero-badge,
-#hero-desa .identity-badge {
-  background: rgba(6, 53, 83, .82);
-  border-color: rgba(255, 255, 255, .55);
-  color: #FFFFFF;
-  text-shadow: none;
-  backdrop-filter: blur(6px);
-}
+
 
 /* 4. Tombol hero: oranye lebih gelap agar teks putih lolos kontras */
 #hero-desa .hero-content .btn-primary-custom,
 #hero-desa .hero-content .btn-outline-custom,
 #hero-desa .hero-content .btn-riviera-custom {
-  background-color: #D4540C;
+
   border-color: #D4540C;
-  color: #FFFFFF;
+
   text-shadow: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
-}
-#hero-desa .hero-content .btn-primary-custom:hover,
-#hero-desa .hero-content .btn-outline-custom:hover,
-#hero-desa .hero-content .btn-riviera-custom:hover {
-  background-color: #B84708;
-  border-color: #B84708;
 }
 
 /* 5. "Gulir untuk menjelajah" */
@@ -1938,18 +1597,6 @@ body:not(.admin-page) .form-card-header h4 {
 }
 
 /* 6. Tablet & mobile: overlay merata dari atas ke bawah */
-@media (max-width: 991px) {
-  #hero-desa {
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(6, 53, 83, 0.90) 0%,
-        rgba(6, 53, 83, 0.82) 60%,
-        rgba(6, 53, 83, 0.72) 100%
-      ),
-      url('../img/foto-kantor-desa.jpg');
-  }
-}
 
 
 /* ============================================================
@@ -1963,21 +1610,20 @@ body:not(.admin-page) .form-card-header h4 {
   /* Versi "aman kontras" untuk teks kecil / tombol dengan teks putih (= 4.5:1) */
   --clr-orange-aa:  #C44D09;
   --clr-orange-aa-dark: #A83F06;
-  --clr-green-aa:   #537839;
-  --clr-green-aa-dark: #3F5D2B;
-  --clr-forest:     #183012;
+  --clr-green-aa:   #3F6B38;
+  --clr-green-aa-dark: #2F5229;
+  --clr-forest:     var(--clr-ink);
 }
 
 /* -- 1. NAVBAR: putih resmi, oranye hanya untuk aksi -- */
 #mainNavbar,
 #mainNavbar.scrolled {
   background-color: #FFFFFF !important;
-  border-bottom: 3px solid transparent;
-  border-image: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%) 1;
-  box-shadow: 0 2px 14px rgba(9, 74, 116, .12);
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: 0 2px 14px rgba(30, 59, 44, .12);
 }
 #mainNavbar.scrolled {
-  box-shadow: 0 4px 20px rgba(9, 74, 116, .18);
+  box-shadow: 0 4px 20px rgba(30, 59, 44, .18);
 }
 #mainNavbar .logo-placeholder {
   background: var(--clr-orange-aa);
@@ -2007,9 +1653,9 @@ body:not(.admin-page) .form-card-header h4 {
   background: var(--clr-orange-aa-dark) !important;
   border-color: var(--clr-orange-aa-dark) !important;
 }
-#mainNavbar .navbar-toggler { border-color: rgba(9, 74, 116, .45) !important; }
+#mainNavbar .navbar-toggler { border-color: rgba(30, 59, 44, .45) !important; }
 #mainNavbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(9,74,116,.95)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(30,59,44,.95)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 /* Menu mobile yang terbuka tetap berlatar putih */
 @media (max-width: 991px) {
@@ -2017,27 +1663,8 @@ body:not(.admin-page) .form-card-header h4 {
 }
 
 /* -- 2. HERO: overlay hijau tua (identitas desa), bukan biru -- */
-#hero-desa {
-  background-image:
-    linear-gradient(0deg, rgba(24, 48, 18, .80) 0%, rgba(24, 48, 18, 0) 28%),
-    linear-gradient(
-      90deg,
-      rgba(24, 48, 18, .94) 0%,
-      rgba(24, 48, 18, .88) 34%,
-      rgba(31, 61, 23, .62) 55%,
-      rgba(31, 61, 23, .22) 78%,
-      rgba(31, 61, 23, .08) 100%
-    ),
-    url('../img/foto-kantor-desa.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#hero-desa .hero-badge,
-#hero-desa .identity-badge {
-  background: rgba(24, 48, 18, .82);
-  border-color: rgba(255, 255, 255, .55);
-}
+
+
 /* Tombol utama: oranye. Tombol kedua: outline putih transparan */
 #hero-desa .hero-content .btn-primary-custom {
   background-color: var(--clr-orange-aa);
@@ -2061,18 +1688,7 @@ body:not(.admin-page) .form-card-header h4 {
   border-color: #FFFFFF !important;
   color: var(--clr-green-aa-dark) !important;
 }
-@media (max-width: 991px) {
-  #hero-desa {
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(24, 48, 18, .90) 0%,
-        rgba(24, 48, 18, .82) 60%,
-        rgba(24, 48, 18, .72) 100%
-      ),
-      url('../img/foto-kantor-desa.jpg');
-  }
-}
+
 
 /* -- 3. TOMBOL & TEKS KECIL: varian aman kontras -- */
 .btn-primary-custom,
@@ -2088,15 +1704,13 @@ body:not(.admin-page) .form-card-header h4 {
 /* Tombol sekunder = hijau tua */
 .btn-riviera-custom,
 .btn-blue,
-.btn-secondary-custom,
-#pengenalan-etalase .btn-outline-custom {
+.btn-secondary-custom {
   background-color: var(--clr-green-aa);
   border-color: var(--clr-green-aa);
 }
 .btn-riviera-custom:hover,
 .btn-blue:hover,
-.btn-secondary-custom:hover,
-#pengenalan-etalase .btn-outline-custom:hover {
+.btn-secondary-custom:hover {
   background-color: var(--clr-green-aa-dark) !important;
   border-color: var(--clr-green-aa-dark) !important;
 }
@@ -2109,13 +1723,12 @@ body:not(.admin-page) .form-card-header h4 {
   border-color: var(--clr-green-aa);
 }
 /* Angka statistik oranye versi aman kontras */
-.stat-num,
-#pengenalan-etalase .platform-stat .pstat-num {
+.stat-num {
   color: var(--clr-orange-aa) !important;
 }
 /* Label kategori */
 .badge-usaha  { color: #B8470A; }
-.badge-hunian { background: rgba(255, 194, 11, .28); color: #6B5000; }
+.badge-hunian { background: rgba(70, 82, 75, .12); color: var(--clr-text-mid); }
 .badge-barang { color: var(--clr-green-aa); }
 /* Header formulir publik: hijau tua */
 body:not(.admin-page) .form-card-header {
@@ -2126,12 +1739,10 @@ body:not(.admin-page) .form-card-header {
 body:not(.admin-page) #main-footer,
 body:not(.admin-page) footer,
 body:not(.admin-page) .site-footer {
-  border-top: 4px solid transparent;
-  border-image: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%) 1;
+  border-top: 0;
 }
 .footer-links a { color: rgba(255, 255, 255, .82); }
 .footer-bottom  { color: rgba(255, 255, 255, .72); }
-
 
 /* ============================================================
    PEWARNAAN SELURUH HALAMAN � RITME SECTION
@@ -2149,70 +1760,15 @@ body:not(.admin-page) .site-footer {
 }
 
 /* 1. Garis bawah judul section = tanda tangan 3 warna desa */
-.section-underline {
-  background: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%);
-}
-#pengenalan-etalase .section-underline {
-  background: linear-gradient(90deg, var(--clr-green) 0%, var(--clr-yellow) 50%, var(--clr-orange) 100%) !important;
-}
 
-/* 2. TENTANG ETALASE (krem): badge hijau, bukan campuran biru+oranye */
-#pengenalan-etalase .section-badge {
-  background: rgba(104, 147, 75, .16) !important;
-  color: var(--clr-green-aa-dark) !important;
-}
 
 /* 3. STATISTIK: pita hijau tua, angka kuning */
-#statistik {
-  background: linear-gradient(135deg, #1F3D17 0%, #2F4A1F 45%, #3F5D2B 100%);
-}
-#statistik .section-header .section-badge {
-  background: rgba(255, 194, 11, .16);
-  color: var(--clr-yellow);
-}
-#statistik .section-header h2 { color: #FFFFFF; }
-#statistik .section-header p  { color: rgba(255, 255, 255, .86); }
-#statistik .stat-demo-notice {
-  background: rgba(255, 255, 255, .10);
-  border-color: rgba(255, 255, 255, .28);
-  color: #FFFFFF;
-}
-#statistik .stat-card {
-  background: rgba(255, 255, 255, .08);
-  border: 1px solid rgba(255, 255, 255, .20);
-  box-shadow: none;
-  backdrop-filter: blur(4px);
-}
-#statistik .stat-card:hover {
-  background: rgba(255, 255, 255, .14);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
-}
-#statistik .stat-icon { background: rgba(255, 255, 255, .14) !important; }
-#statistik .stat-icon i { color: var(--clr-yellow) !important; }
-#statistik .stat-num   { color: var(--clr-yellow) !important; }
-#statistik .stat-label { color: #FFFFFF; }
-#statistik .stat-note  { color: rgba(255, 255, 255, .78); }
+
 
 /* 4. IKON BERGANTIAN oranye � hijau � kuning (menimpa warna inline di HTML) */
-#layanan .row > div:nth-child(3n+1) .layanan-icon-wrap { background: rgba(242, 99, 15, .13) !important; }
-#layanan .row > div:nth-child(3n+2) .layanan-icon-wrap { background: rgba(104, 147, 75, .18) !important; }
-#layanan .row > div:nth-child(3n+3) .layanan-icon-wrap { background: rgba(255, 194, 11, .28) !important; }
-#layanan .row > div:nth-child(3n+1) .layanan-icon-wrap i { color: var(--clr-orange-aa) !important; }
-#layanan .row > div:nth-child(3n+2) .layanan-icon-wrap i { color: var(--clr-green-aa)  !important; }
-#layanan .row > div:nth-child(3n+3) .layanan-icon-wrap i { color: #8A6500 !important; }
 
-/* Ikon kontak: grup .kontak-info-block (tiap blok punya 1 ikon) */
-#kontak-section .kontak-info-block:nth-of-type(4n+1) .kontak-icon { background: rgba(242, 99, 15, .13) !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+2) .kontak-icon { background: rgba(104, 147, 75, .18) !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+3) .kontak-icon { background: rgba(255, 194, 11, .28) !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+4) .kontak-icon { background: rgba(104, 147, 75, .18) !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+1) .kontak-icon i { color: var(--clr-orange-aa) !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+2) .kontak-icon i { color: var(--clr-green-aa)  !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+3) .kontak-icon i { color: #8A6500 !important; }
-#kontak-section .kontak-info-block:nth-of-type(4n+4) .kontak-icon i { color: var(--clr-green-aa)  !important; }
 
 /* Ikon kategori di tab Potensi (profil desa): cocokkan dengan badge katalog */
-#tab-potensi .layanan-icon-wrap:has(.bi-house) i { color: #8A6500 !important; }
 
 /* Hover kartu layanan: hijau (oranye dicadangkan untuk aksi) */
 .layanan-card:hover { border-color: var(--clr-green); }
@@ -2231,52 +1787,19 @@ body:not(.admin-page) .site-footer {
   color: var(--clr-green-aa);
 }
 
-
 /* ============================================================
    STATISTIK � HIJAU TUA + FOTO DI BALIKNYA
    Ganti foto: ubah url(...) di baris "background-image" di bawah ini.
    Saran: pakai foto BERBEDA dari hero (sawah, kegiatan warga, balai desa).
    Seberapa jelas fotonya: ubah angka alpha overlay (makin kecil = foto makin jelas).
    ============================================================ */
-#statistik {
-  position: relative;
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(16, 36, 12, .90) 0%,
-      rgba(16, 36, 12, .84) 30%,
-      rgba(16, 36, 12, .74) 55%,
-      rgba(16, 36, 12, .80) 100%
-    ),
-    url('../img/foto-warung-desa.jpg');
-  background-size: cover;
-  background-position: center 65%;
-  background-repeat: no-repeat;
-  background-color: #1F3D17; /* cadangan bila foto gagal dimuat */
-}
+
 /* Kotak catatan & subjudul: lebih gelap agar terbaca di atas foto */
-#statistik .stat-demo-notice {
-  background: rgba(16, 36, 12, .72);
-  border-color: rgba(255, 255, 255, .30);
-}
-#statistik .section-header p {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, .75);
-}
+
+
 /* Efek parallax ringan hanya di layar lebar (di mobile sering patah-patah) */
-@media (min-width: 992px) {
-  #statistik { background-attachment: scroll, fixed; }
-}
+
 /* Kartu sedikit lebih pekat agar angka tetap jelas di atas foto */
-#statistik .stat-card {
-  background: rgba(18, 38, 13, .62);
-  border-color: rgba(255, 255, 255, .30);
-  backdrop-filter: blur(6px);
-}
-#statistik .stat-card:hover { background: rgba(18, 38, 13, .78); }
-#statistik .section-header h2,
-#statistik .section-header p,
-#statistik .stat-label,
-#statistik .stat-note { text-shadow: 0 1px 6px rgba(0, 0, 0, .45); }
 
 
 /* Toast: garis tepi memakai palet desa (sebelumnya hijau/merah bawaan Bootstrap) */
@@ -2284,7 +1807,6 @@ body:not(.admin-page) .site-footer {
 .custom-toast.error   { border-left-color: #B02A37; }
 .custom-toast.warning { border-left-color: var(--clr-yellow-dark); }
 .custom-toast.info    { border-left-color: var(--clr-blue); }
-
 
 /* ============================================================
    HEADER KARTU (Panduan / Ketentuan / Butuh Bantuan) � TEKS PUTIH
@@ -2306,7 +1828,6 @@ body:not(.admin-page) .site-footer {
 .form-card-header h4 > i, .form-card-header h5 > i, .form-card-header h6 > i {
   color: var(--clr-yellow) !important;
 }
-
 
 /* ============================================================
    PERBAIKAN halaman daftar-potensi.html
@@ -2331,7 +1852,6 @@ body:not(.admin-page) .site-footer {
 /* Ikon kategori Barang Warga tetap hijau tua agar terbaca */
 .kat-icon:has(.bi-bag) i { color: var(--clr-green-aa) !important; }
 
-
 /* ============================================================
    HEADER HALAMAN FORM (daftar-potensi.html) � FOTO + OVERLAY HIJAU TUA
    Ganti foto: ubah url(...) pada baris "background-image" di bawah
@@ -2342,16 +1862,16 @@ body:not(.admin-page) .site-footer {
   background-image:
     linear-gradient(
       90deg,
-      rgba(16, 36, 12, .92) 0%,
-      rgba(16, 36, 12, .82) 40%,
-      rgba(24, 48, 18, .52) 72%,
-      rgba(24, 48, 18, .30) 100%
+      rgba(21, 41, 31, .92) 0%,
+      rgba(21, 41, 31, .82) 40%,
+      rgba(30, 59, 44, .52) 72%,
+      rgba(30, 59, 44, .30) 100%
     ),
     url('../img/foto-daftar-potensi.jpg');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
-  background-color: #1F3D17; /* cadangan bila foto gagal dimuat */
+  background-color: #1E3B2C; /* cadangan bila foto gagal dimuat */
   /* Navbar fixed (�92px) menumpuk di atas header, jadi ruang atas dihitung di sini */
   padding: calc(92px + 2.5rem) 0 3rem;
 }
@@ -2375,8 +1895,8 @@ body.form-page .form-page-header p {
     background-image:
       linear-gradient(
         180deg,
-        rgba(16, 36, 12, .88) 0%,
-        rgba(16, 36, 12, .78) 100%
+        rgba(21, 41, 31, .88) 0%,
+        rgba(21, 41, 31, .78) 100%
       ),
       url('../img/foto-daftar-potensi.jpg');
   }
@@ -2407,7 +1927,7 @@ body.form-page .form-page-header p {
   border-color: var(--clr-blue) !important;
 }
 .btn-nav-admin.is-logged-in {
-  background: rgba(9, 74, 116, 0.08);
+  background: rgba(30, 59, 44, 0.08);
   color: var(--clr-blue) !important;
   border-color: var(--clr-blue);
 }
@@ -2448,7 +1968,7 @@ body.form-page .form-page-header p {
 }
 .modal-login-admin .form-control:focus {
   border-color: var(--clr-blue);
-  box-shadow: 0 0 0 3px rgba(9, 74, 116, 0.12);
+  box-shadow: 0 0 0 3px rgba(30, 59, 44, 0.12);
 }
 .modal-login-admin .input-group-text {
   border: 1.5px solid var(--clr-border);
@@ -2472,9 +1992,8 @@ body.form-page .form-page-header p {
   color: #FFFFFF;
 }
 
-
 /* ============================================================
-   SITE HEADER (Top Contact Bar + Main Navbar)
+   SITE HEADER (Main Navbar)
    ============================================================ */
 #siteHeader {
   position: fixed;
@@ -2486,74 +2005,14 @@ body.form-page .form-page-header p {
   transition: all var(--transition);
 }
 #siteHeader.scrolled {
-  box-shadow: 0 4px 20px rgba(9, 74, 116, .18);
+  box-shadow: 0 4px 20px rgba(30, 59, 44, .18);
 }
 
-#topContactBar {
-  background: #0A1628;
-  color: rgba(255,255,255,.72);
-  font-size: .78rem;
-  padding: .42rem 0;
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-#topContactBar .tcb-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5rem;
-}
-#topContactBar .tcb-left {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-  flex-wrap: wrap;
-}
-#topContactBar .tcb-left span {
-  display: flex;
-  align-items: center;
-  gap: .35rem;
-  color: rgba(255,255,255,.72);
-}
-#topContactBar .tcb-left i { color: var(--clr-yellow); }
-#topContactBar .tcb-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-#topContactBar .tcb-right .tcb-cta {
-  font-weight: 700;
-  font-size: .75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--clr-yellow);
-  padding: .25rem .8rem;
-  border: 1px solid rgba(255,194,11,.4);
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all .2s;
-}
-#topContactBar .tcb-right .tcb-cta:hover {
-  background: var(--clr-yellow);
-  color: #0A1628;
-}
-#topContactBar .tcb-right .tcb-socials { display: flex; gap: .6rem; }
-#topContactBar .tcb-right .tcb-socials a {
-  color: rgba(255,255,255,.65);
-  font-size: .95rem;
-  transition: color .2s;
-  text-decoration: none;
-}
-#topContactBar .tcb-right .tcb-socials a:hover { color: var(--clr-yellow); }
-
-/* Inside #siteHeader, #mainNavbar flows naturally right below #topContactBar */
+/* #mainNavbar inside #siteHeader */
 #siteHeader #mainNavbar {
   position: relative;
   top: auto;
-  box-shadow: 0 2px 14px rgba(9, 74, 116, .12);
+
 }
 /* ============================================================
    HERO BUTTONS — override for centered hero
@@ -2561,193 +2020,44 @@ body.form-page .form-page-header p {
 #hero-desa .hero-cta-wrap {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+
   flex-wrap: wrap;
 }
 #hero-desa .btn-hero-primary {
-  background: var(--clr-orange);
-  color: var(--clr-white);
-  border: 2px solid var(--clr-orange);
-  padding: .75rem 2rem;
+
+  
+
+  
   font-weight: 700;
-  font-size: .95rem;
-  border-radius: var(--radius);
+
+  
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
   transition: background .25s, border-color .25s;
-  letter-spacing: .3px;
+
 }
-#hero-desa .btn-hero-primary:hover {
-  background: var(--clr-orange-dark);
-  border-color: var(--clr-orange-dark);
-  color: var(--clr-white);
-}
+
 #hero-desa .btn-hero-outline {
-  background: transparent;
-  color: var(--clr-white);
-  border: 2px solid rgba(255,255,255,.75);
-  padding: .75rem 2rem;
+
+  
+
+  
   font-weight: 700;
-  font-size: .95rem;
-  border-radius: var(--radius);
+
+  
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
   transition: background .25s, border-color .25s;
-  letter-spacing: .3px;
-}
-#hero-desa .btn-hero-outline:hover {
-  background: rgba(255,255,255,.18);
-  border-color: rgba(255,255,255,1);
-  color: var(--clr-white);
+
 }
 
 /* ============================================================
    HERO STAT STRIP (replaces identity badges at bottom)
    ============================================================ */
-.hero-stat-strip {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(10,22,40,.75);
-  backdrop-filter: blur(6px);
-  border-top: 1px solid rgba(255,255,255,.12);
-  display: flex;
-  z-index: 3;
-}
-.hero-stat-item {
-  flex: 1;
-  text-align: center;
-  padding: 1.1rem 1rem;
-  border-right: 1px solid rgba(255,255,255,.12);
-}
-.hero-stat-item:last-child { border-right: none; }
-.hero-stat-label {
-  font-size: .68rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,.55);
-  margin-bottom: .2rem;
-  font-weight: 600;
-}
-.hero-stat-value {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--clr-white);
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* ============================================================
-   SPLIT DARK SECTION — APRES style (photo left, dark right)
-   ============================================================ */
-
-/* Override old section-based #pengenalan-etalase styles */
-div#pengenalan-etalase {
-  background: none !important;
-  overflow: visible !important;
-  position: static !important;
-  color: var(--clr-white) !important;
-}
-div#pengenalan-etalase::before { display: none !important; }
-
-/* Force correct text colors for the split content — overrides any !important above */
-div#pengenalan-etalase .split-content h2,
-div#pengenalan-etalase .split-content h3,
-div#pengenalan-etalase .split-content h4,
-div#pengenalan-etalase .split-content h5,
-div#pengenalan-etalase .split-content h6 {
-  color: var(--clr-white) !important;
-}
-div#pengenalan-etalase .split-content p {
-  color: rgba(255,255,255,.85) !important;
-}
-div#pengenalan-etalase .split-content,
-div#pengenalan-etalase .split-content * {
-  background: transparent;
-}
-div#pengenalan-etalase .split-content { background: #0d3d6e !important; }
-
-#split-etalase,
-div#pengenalan-etalase {
-  display: flex;
-  min-height: 440px;
-}
-#split-etalase .split-photo,
-div#pengenalan-etalase .split-photo {
-  flex: 1;
-  background-image: url('../img/foto-warung-desa.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 340px;
-}
-#split-etalase .split-content,
-div#pengenalan-etalase .split-content {
-  flex: 1;
-  background: #0d3d6e;
-  padding: 4rem 3.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#split-etalase .split-content .split-eyebrow,
-div#pengenalan-etalase .split-content .split-eyebrow {
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--clr-orange);
-  margin-bottom: 1rem;
-}
-#split-etalase .split-content h2,
-div#pengenalan-etalase .split-content h2 {
-  color: var(--clr-white);
-  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 1.2rem;
-}
-#split-etalase .split-content p,
-div#pengenalan-etalase .split-content p {
-  color: rgba(255,255,255,.78);
-  font-size: 1rem;
-  line-height: 1.75;
-  margin-bottom: 2rem;
-}
-#split-etalase .btn-split,
-div#pengenalan-etalase .btn-split {
-  background: var(--clr-yellow);
-  color: #0A1628;
-  border: 2px solid var(--clr-yellow);
-  padding: .7rem 1.8rem;
-  font-weight: 700;
-  font-size: .9rem;
-  border-radius: var(--radius);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  transition: background .25s, border-color .25s;
-  align-self: flex-start;
-  letter-spacing: .3px;
-}
-#split-etalase .btn-split:hover,
-div#pengenalan-etalase .btn-split:hover {
-  background: var(--clr-yellow-dark);
-  border-color: var(--clr-yellow-dark);
-  color: #0A1628;
-}
-
-@media (max-width: 767px) {
-  #split-etalase,
-  div#pengenalan-etalase { flex-direction: column; }
-  #split-etalase .split-photo,
-  div#pengenalan-etalase .split-photo { min-height: 220px; }
-  #split-etalase .split-content,
-  div#pengenalan-etalase .split-content { padding: 2.5rem 1.75rem; }
-}
-
 
 
 /* ============================================================
@@ -2806,21 +2116,295 @@ div#pengenalan-etalase .btn-split:hover {
   .katalog-grid { grid-template-columns: 1fr !important; }
 }
 
-/* Split section: responsive stacking */
+
+/* ============================================================
+   TAMPILAN BARU — NAVBAR TRANSPARAN + HERO TERANG
+   (Letakkan di paling bawah style.css; menimpa aturan navbar & hero sebelumnya)
+   ============================================================ */
+
+/* ---------- NAVBAR ---------- */
+#siteHeader #mainNavbar {
+  background-color: rgba(250, 251, 248, .97) !important;
+  border-bottom: 1px solid var(--clr-border) !important;
+  border-image: none !important;
+  box-shadow: none !important;
+  padding: .85rem 0;
+  transition: padding .3s ease, box-shadow .3s ease;
+}
+#siteHeader #mainNavbar.scrolled,
+#siteHeader.scrolled #mainNavbar {
+  box-shadow: 0 4px 18px rgba(30, 59, 44, .10) !important;
+  padding: .5rem 0;
+}
+#siteHeader #mainNavbar .brand-name { color: var(--clr-forest); }
+#siteHeader #mainNavbar .brand-sub  { color: var(--clr-orange-aa); }
+
+#siteHeader #mainNavbar .navbar-nav { gap: .15rem; }
+#siteHeader #mainNavbar .nav-link:not(.btn-nav-daftar) {
+  color: var(--clr-forest) !important;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .45rem .8rem !important;
+  background-color: transparent !important;
+}
+#siteHeader #mainNavbar .nav-link:not(.btn-nav-daftar)::after { display: none; }
+#siteHeader #mainNavbar .nav-link:not(.btn-nav-daftar):hover,
+#siteHeader #mainNavbar .nav-link:not(.btn-nav-daftar).active {
+  color: var(--clr-orange-aa) !important;
+  background-color: transparent !important;
+}
+
+/* Tombol "Daftarkan Potensimu" = pil oranye */
+#siteHeader #mainNavbar .btn-nav-daftar {
+  background: var(--clr-orange-aa) !important;
+  border: 2px solid var(--clr-orange-aa) !important;
+  color: #FFFFFF !important;
+  border-radius: 50px !important;
+  padding: .5rem 1.3rem !important;
+  font-size: .82rem !important;
+  font-weight: 700 !important;
+}
+#siteHeader #mainNavbar .btn-nav-daftar:hover {
+  background: var(--clr-orange-aa-dark) !important;
+  border-color: var(--clr-orange-aa-dark) !important;
+}
+/* Tombol "Login Admin" = pil outline hijau tua */
+#siteHeader #mainNavbar .btn-nav-admin,
+#siteHeader #mainNavbar .btn-nav-admin.is-logged-in {
+  background: transparent;
+  color: var(--clr-forest) !important;
+  border: 2px solid var(--clr-forest) !important;
+  border-radius: 50px !important;
+  padding: .45rem 1.1rem !important;
+  font-size: .82rem !important;
+  font-weight: 700 !important;
+}
+#siteHeader #mainNavbar .btn-nav-admin:hover,
+#siteHeader #mainNavbar .btn-nav-admin.is-logged-in:hover {
+  background: var(--clr-forest) !important;
+  color: #FFFFFF !important;
+  border-color: var(--clr-forest) !important;
+}
+
+/* ---------- HERO ---------- */
+#hero-desa {
+  min-height: 92vh;
+  justify-content: flex-start;
+  text-align: left;
+  background-color: var(--clr-ink-dark);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(21, 41, 31, .90) 0%,
+      rgba(21, 41, 31, .78) 38%,
+      rgba(21, 41, 31, .42) 68%,
+      rgba(21, 41, 31, .18) 100%
+    ),
+    url('../img/foto-kantor-desa.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#hero-desa .hero-content {
+  max-width: 600px;
+  padding: 150px 0 110px !important;
+}
+#hero-desa h1 {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -.5px;
+  text-transform: none;
+}
+#hero-desa .hero-desc {
+  color: rgba(255, 255, 255, .88);
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 1.8rem 0;
+}
+#hero-desa .hero-cta-wrap { justify-content: flex-start; }
+#hero-desa .btn-hero-primary {
+  background: var(--clr-orange-aa);
+  border: 2px solid var(--clr-orange-aa);
+  color: #FFFFFF;
+  border-radius: var(--radius);
+  padding: .8rem 2rem;
+  font-size: .85rem;
+}
+#hero-desa .btn-hero-primary:hover {
+  background: var(--clr-orange-aa-dark);
+  border-color: var(--clr-orange-aa-dark);
+  color: #FFFFFF;
+}
+#hero-desa .btn-hero-outline {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, .85);
+  border-radius: var(--radius);
+  padding: .8rem 2rem;
+  font-size: .85rem;
+}
+#hero-desa .btn-hero-outline:hover {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--clr-ink);
+}
+
+/* Strip statistik di dasar hero: versi terang */
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #siteHeader #mainNavbar .nav-link:not(.btn-nav-daftar) {
+    padding: .4rem .45rem !important;
+    font-size: .78rem;
+  }
+  #siteHeader #mainNavbar .btn-nav-daftar {
+    padding: .45rem .9rem !important;
+    font-size: .76rem !important;
+  }
+  #siteHeader #mainNavbar .btn-nav-admin,
+  #siteHeader #mainNavbar .btn-nav-admin.is-logged-in {
+    padding: .4rem .8rem !important;
+    font-size: .76rem !important;
+  }
+  #siteHeader #mainNavbar .brand-sub { display: none; }
+}
 @media (max-width: 991px) {
-  div#pengenalan-etalase,
-  #split-etalase {
-    flex-direction: column;
+  #hero-desa {
+    min-height: 100vh;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(21, 41, 31, .88) 0%,
+        rgba(21, 41, 31, .76) 55%,
+        rgba(21, 41, 31, .60) 100%
+      ),
+      url('../img/foto-kantor-desa.jpg');
   }
-  div#pengenalan-etalase .split-photo,
-  #split-etalase .split-photo {
-    min-height: 300px;
-    flex: none;
-    width: 100%;
+  #hero-desa .hero-content { padding: 120px 0 130px !important; }
+  #mainNavbar .navbar-collapse {
+    margin-top: .6rem;
+    padding: .8rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(30, 59, 44, .14);
   }
-  div#pengenalan-etalase .split-content,
-  #split-etalase .split-content {
-    flex: none;
-    width: 100%;
-  }
+}
+@media (max-width: 575px) {
+  #hero-desa .hero-content { padding: 110px 0 200px !important; }
+  
+  
+  
+  #hero-desa .btn-hero-primary,
+  #hero-desa .btn-hero-outline { padding: .7rem 1.5rem; }
+}
+
+
+/* Tab Lokasi: layout ringkas */
+#tab-lokasi .lokasi-card { padding: 1.25rem 1.5rem; }
+#tab-lokasi .lokasi-card h4 { margin-bottom: .9rem; padding-bottom: .6rem; }
+#tab-lokasi .lokasi-label { margin: 0 0 .35rem; font-weight: 700; }
+#tab-lokasi .lokasi-alamat { margin: 0 0 1.1rem; line-height: 1.7; }
+#tab-lokasi .lokasi-btn { display: inline-block; padding: .5rem 1.1rem; font-size: .88rem; }
+#tab-lokasi .lokasi-map { border-radius: 12px; overflow: hidden; height: 300px; }
+#tab-lokasi .lokasi-map iframe { width: 100%; height: 100%; display: block; }
+@media (max-width: 991.98px) { #tab-lokasi .lokasi-map { height: 260px; } }
+
+
+/* ============================================================
+   TENTANG ETALASE — foto di belakang, lapisan oranye transparan,
+   teks di atasnya
+   ============================================================ */
+#pengenalan-etalase.tentang-etalase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 460px;
+  padding: 4.5rem 0;
+  background: url('../img/foto-warung-desa.jpg') center / cover no-repeat;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+#pengenalan-etalase.tentang-etalase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(120, 52, 14, .80);
+}
+.tentang-etalase-inner { max-width: 640px; }
+
+#pengenalan-etalase.tentang-etalase h2 {
+  color: #FFFFFF;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+#pengenalan-etalase.tentang-etalase p {
+  color: rgba(255, 255, 255, .92);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+.tentang-etalase .tentang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.8rem;
+  background: #FFFFFF;
+  color: #5A2A0C;
+  border: 2px solid #FFFFFF;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  letter-spacing: .3px;
+  transition: background .25s, color .25s;
+}
+.tentang-etalase .tentang-btn:hover {
+  background: transparent;
+  color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  #pengenalan-etalase.tentang-etalase { min-height: 0; padding: 3rem 0; }
+}
+
+
+/* Logo desa di navbar (gambar, bukan teks) */
+.brand-logo {
+  height: 48px;
+  width: auto;
+  max-width: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ============================================================
+   ANIMASI SCROLL — halus, satu gerakan naik pendek per elemen
+   ============================================================ */
+.js-anim .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  transition-delay: var(--d, 0s);
+}
+.js-anim .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+/* Pembuka halaman: isi hero muncul berurutan sekali saat dimuat */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+#hero-desa .hero-content > * { animation: heroIn .7s ease both; }
+#hero-desa .hero-content > :nth-child(2) { animation-delay: .12s; }
+#hero-desa .hero-content > :nth-child(3) { animation-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .reveal { opacity: 1; transform: none; transition: none; }
+  #hero-desa .hero-content > * { animation: none; }
 }
